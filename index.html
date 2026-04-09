@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitebox News</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #faf9f6;
+    color: #1a1a1a;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+  .container-narrow { max-width: 560px; margin: 0 auto; padding: 0 20px; }
+
+  header { text-align: center; margin-bottom: 24px; }
+  h1 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .subtitle { font-size: 13px; color: #888; font-style: italic; }
+
+  /* Tabs */
+  .tabs {
+    display: flex; gap: 0; margin-bottom: 28px;
+    border-bottom: 2px solid #e5e4e0;
+    max-width: 560px; margin-left: auto; margin-right: auto;
+  }
+  .tab {
+    padding: 10px 20px; font-size: 13px; font-weight: 600; color: #888;
+    cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px;
+    transition: all 0.2s; background: none;
+    border-top: none; border-left: none; border-right: none; font-family: inherit;
+  }
+  .tab:hover { color: #1a1a1a; }
+  .tab.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Map */
+  .map-wrap {
+    background: #1a1a2e;
+    border-radius: 16px;
+    padding: 20px 12px 16px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .map-wrap svg { display: block; width: 100%; height: auto; }
+  .map-slider-wrap {
+    padding: 8px 16px 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .map-slider-wrap span { color: #888; font-size: 11px; white-space: nowrap; }
+  .map-slider {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 4px;
+    background: rgba(255,255,255,0.12); border-radius: 2px;
+    outline: none; cursor: pointer;
+  }
+  .map-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: #60a5fa; border: 2px solid #1a1a2e;
+    box-shadow: 0 0 6px rgba(96,165,250,0.4);
+    cursor: grab;
+  }
+  .map-slider::-moz-range-thumb {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: #60a5fa; border: 2px solid #1a1a2e;
+    box-shadow: 0 0 6px rgba(96,165,250,0.4);
+    cursor: grab;
+  }
+
+  /* Country dots */
+  .dot {
+    cursor: pointer;
+    transition: r 0.2s, filter 0.2s;
+  }
+  .dot:hover { filter: brightness(1.4) drop-shadow(0 0 6px currentColor); }
+  .dot-ring {
+    fill: none; stroke-width: 1.5; opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .dot:hover + .dot-ring, .dot-active + .dot-ring { opacity: 1; }
+
+  /* Continent colors */
+  .c-am { fill: #60a5fa; }      /* blue */
+  .c-eu { fill: #a78bfa; }      /* purple */
+  .c-af { fill: #f59e0b; }      /* amber */
+  .c-as { fill: #f87171; }      /* red */
+  .c-oc { fill: #34d399; }      /* green */
+  .c-fav { fill: #fbbf24; }     /* gold - favorites */
+  .ring-am { stroke: #60a5fa; }
+  .ring-eu { stroke: #a78bfa; }
+  .ring-af { stroke: #f59e0b; }
+  .ring-as { stroke: #f87171; }
+  .ring-oc { stroke: #34d399; }
+  .ring-fav { stroke: #fbbf24; }
+
+  /* Tooltip */
+  .tooltip {
+    position: absolute;
+    background: #fff;
+    color: #1a1a1a;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    white-space: nowrap;
+    z-index: 10;
+    transform: translate(-50%, -110%);
+  }
+  .tooltip.show { opacity: 1; }
+  .tooltip .tt-flag { font-size: 16px; margin-right: 6px; vertical-align: -1px; }
+  .tooltip .tt-meta { font-size: 10px; color: #999; margin-left: 4px; }
+
+  /* Legend */
+  .legend {
+    display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11px; color: #8888aa; font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .legend-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+
+  /* Favorites bar */
+  .favs {
+    display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;
+  }
+  a.fav-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px; background: #fff; border-radius: 12px;
+    text-decoration: none; color: #1a1a1a;
+    border: 1px solid #e5e4e0; font-size: 14px; font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  a.fav-chip:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+    border-color: #d97706;
+  }
+  a.fav-chip .chip-flag { font-size: 20px; }
+  a.fav-chip .chip-label { font-family: 'Newsreader', serif; font-weight: 600; }
+
+  /* Mobile list fallback */
+  .mobile-list { display: none; }
+
+  @media (max-width: 600px) {
+    .map-wrap { display: none; }
+    .legend { display: none; }
+    .mobile-list { display: block; }
+    .mobile-section { margin-bottom: 20px; }
+    .mobile-section-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: #999; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .mobile-section-title::after { content: ""; flex: 1; height: 1px; background: #e5e4e0; }
+    .mobile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    a.m-card {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 14px; background: #fff; border-radius: 10px;
+      text-decoration: none; color: inherit;
+      border: 1px solid #e5e4e0; transition: all 0.2s;
+    }
+    a.m-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    a.m-card .m-flag { font-size: 20px; }
+    a.m-card .m-name { font-size: 13px; font-weight: 500; }
+  }
+  @media (max-width: 380px) {
+    .mobile-grid { grid-template-columns: 1fr; }
+    .favs { flex-direction: column; align-items: stretch; }
+  }
+
+  /* Editorial */
+  .editorial { font-family: 'Newsreader', Georgia, serif; line-height: 1.85; }
+  .editorial .epigraph {
+    font-style: italic; color: #555; font-size: 17px;
+    padding: 24px 28px; border-left: 3px solid #d4d0c8;
+    margin-bottom: 32px; background: #f5f4f0; border-radius: 0 10px 10px 0;
+  }
+  .editorial .epigraph .attribution {
+    display: block; margin-top: 10px; font-size: 13px; color: #999;
+    font-style: normal; font-family: 'Inter', sans-serif;
+  }
+  .editorial p { font-size: 16px; color: #333; margin-bottom: 20px; }
+  .editorial p:last-child { margin-bottom: 0; }
+  .editorial .sign { margin-top: 28px; font-style: italic; color: #888; font-size: 15px; }
+
+  footer { margin-top: 40px; font-size: 11px; color: #aaa; text-align: center; padding-bottom: 24px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Whitebox News</h1>
+    <p class="subtitle">Media blindspots across the globe &mdash; 155 countries</p>
+    <p style="font-size: 12px; margin-top: 6px;"><a href="https://franciscorichter.github.io/noticias-mama/" style="color: #aaa; text-decoration: none;">Espa&ntilde;ol</a></p>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('reportes')">Map</button>
+    <button class="tab" onclick="showTab('editorial')">Editorial</button>
+  </div>
+
+  <div id="reportes" class="tab-content active">
+
+    <div class="map-wrap" id="mapWrap">
+      <div class="tooltip" id="tooltip"></div>
+      <svg viewBox="-30 0 1060 500" xmlns="http://www.w3.org/2000/svg" id="mapSvg">
+        <defs>
+          <radialGradient id="glow-am"><stop offset="0%" stop-color="#60a5fa" stop-opacity="0.3"/><stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-eu"><stop offset="0%" stop-color="#a78bfa" stop-opacity="0.3"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-af"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-as"><stop offset="0%" stop-color="#f87171" stop-opacity="0.3"/><stop offset="100%" stop-color="#f87171" stop-opacity="0"/></radialGradient>
+          <radialGradient id="glow-oc"><stop offset="0%" stop-color="#34d399" stop-opacity="0.3"/><stop offset="100%" stop-color="#34d399" stop-opacity="0"/></radialGradient>
+        </defs>
+
+        <!-- Subtle grid lines -->
+        <g stroke="#ffffff08" stroke-width="0.5">
+          <line x1="0" y1="250" x2="1000" y2="250"/><!-- equator -->
+          <line x1="0" y1="125" x2="1000" y2="125"/>
+          <line x1="0" y1="375" x2="1000" y2="375"/>
+          <line x1="500" y1="0" x2="500" y2="500"/>
+          <line x1="250" y1="0" x2="250" y2="500"/>
+          <line x1="750" y1="0" x2="750" y2="500"/>
+        </g>
+
+        <!-- Subtle latitude/longitude grid for context -->
+        <g stroke="#ffffff06" stroke-width="0.5" fill="none">
+          <line x1="0" y1="83" x2="1000" y2="83"/><!-- 60N -->
+          <line x1="0" y1="167" x2="1000" y2="167"/><!-- 30N -->
+          <line x1="0" y1="333" x2="1000" y2="333"/><!-- 30S -->
+          <line x1="0" y1="417" x2="1000" y2="417"/><!-- 60S -->
+          <line x1="167" y1="0" x2="167" y2="500"/>
+          <line x1="333" y1="0" x2="333" y2="500"/>
+          <line x1="667" y1="0" x2="667" y2="500"/>
+          <line x1="833" y1="0" x2="833" y2="500"/>
+        </g>
+
+        <!-- Country dots — Americas (blue) -->
+        <a href="argentina.html"><circle class="dot c-am" cx="338" cy="344" r="4.5" data-name="Argentina" data-flag="&#127462;&#127479;" data-m="23"/></a>
+        <a href="bolivia.html"><circle class="dot c-am" cx="311" cy="296" r="4" data-name="Bolivia" data-flag="&#127463;&#127476;" data-m="22"/></a>
+        <a href="brasil.html"><circle class="dot c-am" cx="367" cy="294" r="4.5" data-name="Brazil" data-flag="&#127463;&#127479;" data-m="23"/></a>
+        <a href="chile.html"><circle class="dot c-am" cx="304" cy="343" r="5.5" data-name="Chile" data-flag="&#127464;&#127473;" data-m="12"/></a>
+        <a href="colombia.html"><circle class="dot c-am" cx="294" cy="237" r="4.5" data-name="Colombia" data-flag="&#127464;&#127476;" data-m="22"/></a>
+        <a href="costarica.html"><circle class="dot c-am" cx="266" cy="223" r="3.5" data-name="Costa Rica" data-flag="&#127464;&#127479;" data-m="22"/></a>
+        <a href="cuba.html"><circle class="dot c-am" cx="271" cy="200" r="3.5" data-name="Cuba" data-flag="&#127464;&#127482;" data-m="10"/></a>
+        <a href="ecuador.html"><circle class="dot c-am" cx="282" cy="250" r="4" data-name="Ecuador" data-flag="&#127466;&#127464;" data-m="20"/></a>
+        <a href="elsalvador.html"><circle class="dot c-am" cx="252" cy="212" r="3.5" data-name="El Salvador" data-flag="&#127480;&#127483;" data-m="22"/></a>
+        <a href="guatemala.html"><circle class="dot c-am" cx="248" cy="209" r="3.5" data-name="Guatemala" data-flag="&#127468;&#127481;" data-m="22"/></a>
+        <a href="honduras.html"><circle class="dot c-am" cx="256" cy="212" r="3.5" data-name="Honduras" data-flag="&#127469;&#127475;" data-m="22"/></a>
+        <a href="mexico.html"><circle class="dot c-am" cx="225" cy="196" r="5" data-name="Mexico" data-flag="&#127474;&#127485;" data-m="22"/></a>
+        <a href="nicaragua.html"><circle class="dot c-am" cx="260" cy="216" r="3.5" data-name="Nicaragua" data-flag="&#127475;&#127470;" data-m="22"/></a>
+        <a href="panama.html"><circle class="dot c-am" cx="279" cy="225" r="3.5" data-name="Panama" data-flag="&#127477;&#127462;" data-m="22"/></a>
+        <a href="paraguay.html"><circle class="dot c-am" cx="340" cy="319" r="4" data-name="Paraguay" data-flag="&#127477;&#127486;" data-m="21"/></a>
+        <a href="peru.html"><circle class="dot c-am" cx="286" cy="283" r="4.5" data-name="Peru" data-flag="&#127477;&#127466;" data-m="22"/></a>
+        <a href="uruguay.html"><circle class="dot c-am" cx="344" cy="358" r="4" data-name="Uruguay" data-flag="&#127482;&#127486;" data-m="20"/></a>
+        <a href="venezuela.html"><circle class="dot c-am" cx="314" cy="221" r="4" data-name="Venezuela" data-flag="&#127483;&#127466;" data-m="20"/></a>
+        <a href="belice.html"><circle class="dot c-am" cx="253" cy="202" r="3" data-name="Belize" data-flag="&#127463;&#127487;" data-m="5"/></a>
+        <a href="canada.html"><circle class="dot c-am" cx="290" cy="124" r="4.5" data-name="Canada" data-flag="&#127464;&#127462;" data-m="10"/></a>
+        <a href="eeuu.html"><circle class="dot c-am" cx="286" cy="142" r="5" data-name="USA" data-flag="&#127482;&#127480;" data-m="10"/></a>
+        <a href="guyana.html"><circle class="dot c-am" cx="338" cy="231" r="3" data-name="Guyana" data-flag="&#127468;&#127486;" data-m="5"/></a>
+        <a href="haiti.html"><circle class="dot c-am" cx="299" cy="199" r="3" data-name="Haiti" data-flag="&#127469;&#127481;" data-m="6"/></a>
+        <a href="jamaica.html"><circle class="dot c-am" cx="287" cy="200" r="3" data-name="Jamaica" data-flag="&#127471;&#127474;" data-m="5"/></a>
+        <a href="puertorico.html"><circle class="dot c-am" cx="316" cy="199" r="3" data-name="Puerto Rico" data-flag="&#127477;&#127479;" data-m="6"/></a>
+        <a href="dominicana.html"><circle class="dot c-am" cx="306" cy="199" r="3.5" data-name="Dominican Rep." data-flag="&#127465;&#127476;" data-m="9"/></a>
+        <a href="surinam.html"><circle class="dot c-am" cx="347" cy="234" r="3" data-name="Suriname" data-flag="&#127480;&#127479;" data-m="5"/></a>
+        <a href="trinidadytobago.html"><circle class="dot c-am" cx="327" cy="221" r="3" data-name="Trinidad &amp; Tobago" data-flag="&#127481;&#127481;" data-m="5"/></a>
+        <a href="antiguabarbuda.html"><circle class="dot c-am" cx="328" cy="202" r="3" data-name="Antigua &amp; Barbuda" data-flag="&#127462;&#127468;" data-m="3"/></a>
+        <a href="bahamas.html"><circle class="dot c-am" cx="285" cy="181" r="3" data-name="Bahamas" data-flag="&#127463;&#127480;" data-m="3"/></a>
+        <a href="barbados.html"><circle class="dot c-am" cx="335" cy="213" r="3" data-name="Barbados" data-flag="&#127463;&#127463;" data-m="3"/></a>
+
+        <!-- Europe (purple) -->
+        <a href="espana.html"><circle class="dot c-eu" cx="489" cy="138" r="4.5" data-name="Spain" data-flag="&#127466;&#127480;" data-m="12"/></a>
+        <a href="greece.html"><circle class="dot c-eu" cx="565" cy="144" r="4" data-name="Greece" data-flag="&#127468;&#127479;" data-m="9"/></a>
+        <a href="italy.html"><circle class="dot c-eu" cx="535" cy="133" r="4" data-name="Italy" data-flag="&#127470;&#127481;" data-m="10"/></a>
+        <a href="netherlands.html"><circle class="dot c-eu" cx="514" cy="105" r="4" data-name="Netherlands" data-flag="&#127475;&#127473;" data-m="9"/></a>
+        <a href="portugal.html"><circle class="dot c-eu" cx="475" cy="141" r="4" data-name="Portugal" data-flag="&#127477;&#127481;" data-m="9"/></a>
+        <a href="uk.html"><circle class="dot c-eu" cx="500" cy="107" r="4" data-name="United Kingdom" data-flag="&#127468;&#127463;" data-m="9"/></a>
+        <a href="switzerland.html"><circle class="dot c-eu" cx="521" cy="120" r="4" data-name="Switzerland" data-flag="&#127464;&#127469;" data-m="10"/></a>
+        <a href="germany.html"><circle class="dot c-eu" cx="528" cy="108" r="4" data-name="Germany" data-flag="&#127465;&#127466;" data-m="8"/></a>
+        <a href="france.html"><circle class="dot c-eu" cx="494" cy="121" r="4" data-name="France" data-flag="&#127467;&#127479;" data-m="9"/></a>
+        <a href="poland.html"><circle class="dot c-eu" cx="555" cy="105" r="4" data-name="Poland" data-flag="&#127477;&#127473;" data-m="8"/></a>
+        <a href="sweden.html"><circle class="dot c-eu" cx="550" cy="85" r="4" data-name="Sweden" data-flag="&#127480;&#127466;" data-m="7"/></a>
+        <a href="norway.html"><circle class="dot c-eu" cx="530" cy="84" r="4" data-name="Norway" data-flag="&#127475;&#127476;" data-m="6"/></a>
+        <a href="denmark.html"><circle class="dot c-eu" cx="535" cy="95" r="4" data-name="Denmark" data-flag="&#127465;&#127472;" data-m="6"/></a>
+        <a href="finland.html"><circle class="dot c-eu" cx="569" cy="83" r="4" data-name="Finland" data-flag="&#127467;&#127470;" data-m="6"/></a>
+        <a href="ireland.html"><circle class="dot c-eu" cx="482" cy="102" r="4" data-name="Ireland" data-flag="&#127470;&#127466;" data-m="6"/></a>
+        <a href="austria.html"><circle class="dot c-eu" cx="546" cy="116" r="4" data-name="Austria" data-flag="&#127462;&#127481;" data-m="7"/></a>
+        <a href="belgium.html"><circle class="dot c-eu" cx="512" cy="109" r="4" data-name="Belgium" data-flag="&#127463;&#127466;" data-m="7"/></a>
+        <a href="czech.html"><circle class="dot c-eu" cx="540" cy="111" r="4" data-name="Czech Republic" data-flag="&#127464;&#127487;" data-m="7"/></a>
+        <a href="romania.html"><circle class="dot c-eu" cx="572" cy="127" r="4" data-name="Romania" data-flag="&#127479;&#127476;" data-m="7"/></a>
+        <a href="hungary.html"><circle class="dot c-eu" cx="553" cy="118" r="4" data-name="Hungary" data-flag="&#127469;&#127482;" data-m="7"/></a>
+        <a href="ukraine.html"><circle class="dot c-eu" cx="585" cy="110" r="4" data-name="Ukraine" data-flag="&#127482;&#127462;" data-m="7"/></a>
+        <a href="serbia.html"><circle class="dot c-eu" cx="557" cy="128" r="4" data-name="Serbia" data-flag="&#127479;&#127480;" data-m="7"/></a>
+        <a href="albania.html"><circle class="dot c-eu" cx="556" cy="136" r="3" data-name="Albania" data-flag="&#127462;&#127473;" data-m="3"/></a>
+        <a href="belarus.html"><circle class="dot c-eu" cx="578" cy="100" r="3" data-name="Belarus" data-flag="&#127463;&#127486;" data-m="3"/></a>
+        <a href="bosnia.html"><circle class="dot c-eu" cx="549" cy="128" r="3" data-name="Bosnia" data-flag="&#127463;&#127462;" data-m="3"/></a>
+        <a href="croatia.html"><circle class="dot c-eu" cx="543" cy="124" r="3" data-name="Croatia" data-flag="&#127469;&#127479;" data-m="3"/></a>
+        <a href="cyprus.html"><circle class="dot c-eu" cx="593" cy="152" r="3" data-name="Cyprus" data-flag="&#127464;&#127486;" data-m="3"/></a>
+        <a href="estonia.html"><circle class="dot c-eu" cx="569" cy="87" r="3" data-name="Estonia" data-flag="&#127466;&#127466;" data-m="3"/></a>
+        <a href="iceland.html"><circle class="dot c-eu" cx="447" cy="69" r="3" data-name="Iceland" data-flag="&#127470;&#127480;" data-m="3"/></a>
+        <a href="kosovo.html"><circle class="dot c-eu" cx="558" cy="132" r="3" data-name="Kosovo" data-flag="&#127485;&#127472;" data-m="3"/></a>
+        <a href="latvia.html"><circle class="dot c-eu" cx="568" cy="92" r="3" data-name="Latvia" data-flag="&#127473;&#127483;" data-m="3"/></a>
+        <a href="lithuania.html"><circle class="dot c-eu" cx="566" cy="97" r="3" data-name="Lithuania" data-flag="&#127473;&#127481;" data-m="3"/></a>
+        <a href="luxembourg.html"><circle class="dot c-eu" cx="517" cy="112" r="3" data-name="Luxembourg" data-flag="&#127473;&#127482;" data-m="3"/></a>
+        <a href="malta.html"><circle class="dot c-eu" cx="540" cy="150" r="3" data-name="Malta" data-flag="&#127474;&#127481;" data-m="3"/></a>
+        <a href="moldova.html"><circle class="dot c-eu" cx="580" cy="119" r="3" data-name="Moldova" data-flag="&#127474;&#127465;" data-m="3"/></a>
+        <a href="montenegro.html"><circle class="dot c-eu" cx="554" cy="132" r="3" data-name="Montenegro" data-flag="&#127474;&#127466;" data-m="3"/></a>
+        <a href="northmacedonia.html"><circle class="dot c-eu" cx="560" cy="135" r="3" data-name="North Macedonia" data-flag="&#127474;&#127472;" data-m="3"/></a>
+        <a href="slovakia.html"><circle class="dot c-eu" cx="555" cy="115" r="3" data-name="Slovakia" data-flag="&#127480;&#127472;" data-m="3"/></a>
+        <a href="slovenia.html"><circle class="dot c-eu" cx="540" cy="122" r="3" data-name="Slovenia" data-flag="&#127480;&#127470;" data-m="3"/></a>
+
+        <!-- Africa (amber) -->
+        <a href="southafrica.html"><circle class="dot c-af" cx="540" cy="321" r="4.5" data-name="South Africa" data-flag="&#127487;&#127462;" data-m="8"/></a>
+        <a href="nigeria.html"><circle class="dot c-af" cx="512" cy="225" r="4.5" data-name="Nigeria" data-flag="&#127475;&#127468;" data-m="8"/></a>
+        <a href="kenya.html"><circle class="dot c-af" cx="560" cy="253" r="4" data-name="Kenya" data-flag="&#127472;&#127466;" data-m="7"/></a>
+        <a href="egypt.html"><circle class="dot c-af" cx="559" cy="183" r="4.5" data-name="Egypt" data-flag="&#127466;&#127468;" data-m="7"/></a>
+        <a href="morocco.html"><circle class="dot c-af" cx="481" cy="166" r="4" data-name="Morocco" data-flag="&#127474;&#127462;" data-m="7"/></a>
+        <a href="ghana.html"><circle class="dot c-af" cx="497" cy="228" r="4" data-name="Ghana" data-flag="&#127468;&#127469;" data-m="6"/></a>
+        <a href="ethiopia.html"><circle class="dot c-af" cx="607" cy="225" r="4" data-name="Ethiopia" data-flag="&#127466;&#127481;" data-m="6"/></a>
+        <a href="tanzania.html"><circle class="dot c-af" cx="597" cy="268" r="3.5" data-name="Tanzania" data-flag="&#127481;&#127487;" data-m="5"/></a>
+        <a href="senegal.html"><circle class="dot c-af" cx="459" cy="209" r="4" data-name="Senegal" data-flag="&#127480;&#127475;" data-m="6"/></a>
+        <a href="algeria.html"><circle class="dot c-af" cx="508" cy="148" r="4" data-name="Algeria" data-flag="&#127465;&#127487;" data-m="6"/></a>
+        <a href="tunisia.html"><circle class="dot c-af" cx="528" cy="148" r="3.5" data-name="Tunisia" data-flag="&#127481;&#127475;" data-m="5"/></a>
+        <a href="uganda.html"><circle class="dot c-af" cx="591" cy="249" r="3.5" data-name="Uganda" data-flag="&#127482;&#127468;" data-m="5"/></a>
+        <a href="ivorycoast.html"><circle class="dot c-af" cx="485" cy="229" r="3.5" data-name="Ivory Coast" data-flag="&#127464;&#127470;" data-m="5"/></a>
+        <a href="drcongo.html"><circle class="dot c-af" cx="561" cy="262" r="3.5" data-name="DR Congo" data-flag="&#127464;&#127465;" data-m="5"/></a>
+        <a href="cameroon.html"><circle class="dot c-af" cx="532" cy="239" r="3.5" data-name="Cameroon" data-flag="&#127464;&#127474;" data-m="5"/></a>
+        <a href="angola.html"><circle class="dot c-af" cx="551" cy="285" r="3" data-name="Angola" data-flag="&#127462;&#127476;" data-m="3"/></a>
+        <a href="benin.html"><circle class="dot c-af" cx="506" cy="224" r="3" data-name="Benin" data-flag="&#127463;&#127471;" data-m="3"/></a>
+        <a href="botswana.html"><circle class="dot c-af" cx="572" cy="312" r="3" data-name="Botswana" data-flag="&#127463;&#127484;" data-m="3"/></a>
+        <a href="burkinafaso.html"><circle class="dot c-af" cx="496" cy="216" r="3" data-name="Burkina Faso" data-flag="&#127463;&#127467;" data-m="3"/></a>
+        <a href="chad.html"><circle class="dot c-af" cx="552" cy="207" r="3" data-name="Chad" data-flag="&#127481;&#127465;" data-m="3"/></a>
+        <a href="congobrazzaville.html"><circle class="dot c-af" cx="544" cy="262" r="3" data-name="Congo-Brazzaville" data-flag="&#127464;&#127468;" data-m="3"/></a>
+        <a href="guinea.html"><circle class="dot c-af" cx="473" cy="222" r="3" data-name="Guinea" data-flag="&#127468;&#127475;" data-m="3"/></a>
+        <a href="libya.html"><circle class="dot c-af" cx="548" cy="177" r="3" data-name="Libya" data-flag="&#127473;&#127486;" data-m="3"/></a>
+        <a href="madagascar.html"><circle class="dot c-af" cx="630" cy="302" r="3" data-name="Madagascar" data-flag="&#127474;&#127468;" data-m="3"/></a>
+        <a href="malawi.html"><circle class="dot c-af" cx="595" cy="287" r="3" data-name="Malawi" data-flag="&#127474;&#127484;" data-m="3"/></a>
+        <a href="mali.html"><circle class="dot c-af" cx="489" cy="201" r="3" data-name="Mali" data-flag="&#127474;&#127473;" data-m="3"/></a>
+        <a href="mozambique.html"><circle class="dot c-af" cx="599" cy="302" r="3" data-name="Mozambique" data-flag="&#127474;&#127487;" data-m="3"/></a>
+        <a href="namibia.html"><circle class="dot c-af" cx="551" cy="313" r="3" data-name="Namibia" data-flag="&#127475;&#127462;" data-m="3"/></a>
+        <a href="niger.html"><circle class="dot c-af" cx="522" cy="201" r="3" data-name="Niger" data-flag="&#127475;&#127466;" data-m="3"/></a>
+        <a href="rwanda.html"><circle class="dot c-af" cx="583" cy="255" r="3" data-name="Rwanda" data-flag="&#127479;&#127484;" data-m="3"/></a>
+        <a href="somalia.html"><circle class="dot c-af" cx="628" cy="236" r="3" data-name="Somalia" data-flag="&#127480;&#127476;" data-m="3"/></a>
+        <a href="southsudan.html"><circle class="dot c-af" cx="588" cy="231" r="3" data-name="South Sudan" data-flag="&#127480;&#127480;" data-m="3"/></a>
+        <a href="sudan.html"><circle class="dot c-af" cx="584" cy="214" r="3" data-name="Sudan" data-flag="&#127480;&#127465;" data-m="3"/></a>
+        <a href="togo.html"><circle class="dot c-af" cx="503" cy="226" r="3" data-name="Togo" data-flag="&#127481;&#127468;" data-m="3"/></a>
+        <a href="zambia.html"><circle class="dot c-af" cx="579" cy="293" r="3" data-name="Zambia" data-flag="&#127487;&#127474;" data-m="3"/></a>
+        <a href="zimbabwe.html"><circle class="dot c-af" cx="581" cy="303" r="3" data-name="Zimbabwe" data-flag="&#127487;&#127484;" data-m="3"/></a>
+
+        <!-- Asia (red) -->
+        <a href="japan.html"><circle class="dot c-as" cx="889" cy="151" r="4.5" data-name="Japan" data-flag="&#127471;&#127477;" data-m="7"/></a>
+        <a href="southkorea.html"><circle class="dot c-as" cx="853" cy="153" r="4" data-name="South Korea" data-flag="&#127472;&#127479;" data-m="7"/></a>
+        <a href="india.html"><circle class="dot c-as" cx="714" cy="192" r="4.5" data-name="India" data-flag="&#127470;&#127475;" data-m="8"/></a>
+        <a href="israel.html"><circle class="dot c-as" cx="597" cy="162" r="4" data-name="Israel" data-flag="&#127470;&#127473;" data-m="7"/></a>
+        <a href="turkey.html"><circle class="dot c-as" cx="591" cy="139" r="4.5" data-name="Turkey" data-flag="&#127481;&#127479;" data-m="8"/></a>
+        <a href="china.html"><circle class="dot c-as" cx="823" cy="139" r="4" data-name="China" data-flag="&#127464;&#127475;" data-m="7"/></a>
+        <a href="indonesia.html"><circle class="dot c-as" cx="797" cy="267" r="4" data-name="Indonesia" data-flag="&#127470;&#127465;" data-m="7"/></a>
+        <a href="thailand.html"><circle class="dot c-as" cx="779" cy="212" r="4" data-name="Thailand" data-flag="&#127481;&#127469;" data-m="6"/></a>
+        <a href="philippines.html"><circle class="dot c-as" cx="836" cy="209" r="4" data-name="Philippines" data-flag="&#127477;&#127469;" data-m="7"/></a>
+        <a href="pakistan.html"><circle class="dot c-as" cx="703" cy="156" r="4" data-name="Pakistan" data-flag="&#127477;&#127472;" data-m="6"/></a>
+        <a href="saudiarabia.html"><circle class="dot c-as" cx="630" cy="182" r="4" data-name="Saudi Arabia" data-flag="&#127480;&#127462;" data-m="6"/></a>
+        <a href="uae.html"><circle class="dot c-as" cx="651" cy="182" r="3.5" data-name="UAE" data-flag="&#127462;&#127466;" data-m="5"/></a>
+        <a href="malaysia.html"><circle class="dot c-as" cx="782" cy="241" r="4" data-name="Malaysia" data-flag="&#127474;&#127486;" data-m="6"/></a>
+        <a href="singapore.html"><circle class="dot c-as" cx="788" cy="246" r="4" data-name="Singapore" data-flag="&#127480;&#127468;" data-m="6"/></a>
+        <a href="taiwan.html"><circle class="dot c-as" cx="838" cy="181" r="4" data-name="Taiwan" data-flag="&#127481;&#127484;" data-m="6"/></a>
+        <a href="bangladesh.html"><circle class="dot c-as" cx="751" cy="184" r="4" data-name="Bangladesh" data-flag="&#127463;&#127465;" data-m="6"/></a>
+        <a href="vietnam.html"><circle class="dot c-as" cx="794" cy="192" r="4" data-name="Vietnam" data-flag="&#127483;&#127475;" data-m="6"/></a>
+        <a href="afghanistan.html"><circle class="dot c-as" cx="681" cy="158" r="3" data-name="Afghanistan" data-flag="&#127462;&#127467;" data-m="3"/></a>
+        <a href="armenia.html"><circle class="dot c-as" cx="624" cy="139" r="3" data-name="Armenia" data-flag="&#127462;&#127474;" data-m="3"/></a>
+        <a href="azerbaijan.html"><circle class="dot c-as" cx="639" cy="138" r="3" data-name="Azerbaijan" data-flag="&#127462;&#127487;" data-m="3"/></a>
+        <a href="bahrain.html"><circle class="dot c-as" cx="641" cy="178" r="3" data-name="Bahrain" data-flag="&#127463;&#127469;" data-m="3"/></a>
+        <a href="cambodia.html"><circle class="dot c-as" cx="791" cy="215" r="3" data-name="Cambodia" data-flag="&#127472;&#127469;" data-m="3"/></a>
+        <a href="georgia.html"><circle class="dot c-as" cx="621" cy="133" r="3" data-name="Georgia" data-flag="&#127468;&#127466;" data-m="3"/></a>
+        <a href="iran.html"><circle class="dot c-as" cx="649" cy="160" r="3" data-name="Iran" data-flag="&#127470;&#127479;" data-m="3"/></a>
+        <a href="iraq.html"><circle class="dot c-as" cx="623" cy="158" r="3" data-name="Iraq" data-flag="&#127470;&#127478;" data-m="3"/></a>
+        <a href="jordan.html"><circle class="dot c-as" cx="601" cy="161" r="3" data-name="Jordan" data-flag="&#127471;&#127476;" data-m="3"/></a>
+        <a href="kazakhstan.html"><circle class="dot c-as" cx="686" cy="117" r="3" data-name="Kazakhstan" data-flag="&#127472;&#127487;" data-m="3"/></a>
+        <a href="kuwait.html"><circle class="dot c-as" cx="632" cy="169" r="3" data-name="Kuwait" data-flag="&#127472;&#127484;" data-m="3"/></a>
+        <a href="laos.html"><circle class="dot c-as" cx="785" cy="195" r="3" data-name="Laos" data-flag="&#127473;&#127462;" data-m="3"/></a>
+        <a href="lebanon.html"><circle class="dot c-as" cx="599" cy="156" r="3" data-name="Lebanon" data-flag="&#127473;&#127463;" data-m="3"/></a>
+        <a href="mongolia.html"><circle class="dot c-as" cx="788" cy="120" r="3" data-name="Mongolia" data-flag="&#127474;&#127475;" data-m="3"/></a>
+        <a href="myanmar.html"><circle class="dot c-as" cx="767" cy="189" r="3" data-name="Myanmar" data-flag="&#127474;&#127474;" data-m="3"/></a>
+        <a href="nepal.html"><circle class="dot c-as" cx="734" cy="171" r="3" data-name="Nepal" data-flag="&#127475;&#127477;" data-m="3"/></a>
+        <a href="oman.html"><circle class="dot c-as" cx="655" cy="192" r="3" data-name="Oman" data-flag="&#127476;&#127474;" data-m="3"/></a>
+        <a href="palestine.html"><circle class="dot c-as" cx="598" cy="161" r="3" data-name="Palestine" data-flag="&#127477;&#127480;" data-m="3"/></a>
+        <a href="qatar.html"><circle class="dot c-as" cx="642" cy="180" r="3" data-name="Qatar" data-flag="&#127478;&#127462;" data-m="3"/></a>
+        <a href="srilanka.html"><circle class="dot c-as" cx="724" cy="228" r="3" data-name="Sri Lanka" data-flag="&#127473;&#127472;" data-m="3"/></a>
+        <a href="syria.html"><circle class="dot c-as" cx="608" cy="153" r="3" data-name="Syria" data-flag="&#127480;&#127486;" data-m="3"/></a>
+        <a href="uzbekistan.html"><circle class="dot c-as" cx="679" cy="135" r="3" data-name="Uzbekistan" data-flag="&#127482;&#127487;" data-m="3"/></a>
+        <a href="yemen.html"><circle class="dot c-as" cx="633" cy="207" r="3" data-name="Yemen" data-flag="&#127486;&#127466;" data-m="3"/></a>
+
+        <!-- Oceania (green) -->
+        <a href="australia.html"><circle class="dot c-oc" cx="914" cy="343" r="4.5" data-name="Australia" data-flag="&#127462;&#127482;" data-m="8"/></a>
+        <a href="newzealand.html"><circle class="dot c-oc" cx="986" cy="380" r="4" data-name="New Zealand" data-flag="&#127475;&#127487;" data-m="6"/></a>
+        <a href="fiji.html"><circle class="dot c-oc" cx="995" cy="310" r="3.5" data-name="Fiji" data-flag="&#127467;&#127471;" data-m="4"/></a>
+        <a href="papuanewguinea.html"><circle class="dot c-oc" cx="908" cy="268" r="4" data-name="Papua N. Guinea" data-flag="&#127477;&#127468;" data-m="4"/></a>
+        <a href="samoa.html"><circle class="dot c-oc" cx="23" cy="290" r="3.5" data-name="Samoa" data-flag="&#127484;&#127480;" data-m="3"/></a>
+        <a href="tonga.html"><circle class="dot c-oc" cx="13" cy="309" r="3.5" data-name="Tonga" data-flag="&#127481;&#127476;" data-m="3"/></a>
+        <a href="vanuatu.html"><circle class="dot c-oc" cx="968" cy="299" r="3.5" data-name="Vanuatu" data-flag="&#127483;&#127482;" data-m="3"/></a>
+        <a href="solomonislands.html"><circle class="dot c-oc" cx="944" cy="276" r="3.5" data-name="Solomon Islands" data-flag="&#127480;&#127463;" data-m="3"/></a>
+      </svg>
+
+      <div class="map-slider-wrap">
+        <span>&#127758;</span>
+        <input type="range" class="map-slider" id="mapPan" min="-500" max="500" value="0" step="5">
+        <span>&#127759;</span>
+      </div>
+
+      <div class="legend">
+        <span class="legend-item"><span class="legend-dot" style="background:#60a5fa"></span>Americas</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#a78bfa"></span>Europe</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>Africa</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#f87171"></span>Asia</span>
+        <span class="legend-item"><span class="legend-dot" style="background:#34d399"></span>Oceania</span>
+      </div>
+    </div>
+
+    <!-- Mobile fallback list -->
+    <div class="mobile-list">
+      <div class="mobile-section">
+        <div class="mobile-section-title">Americas</div>
+        <div class="mobile-grid">
+          <a class="m-card" href="argentina.html"><span class="m-flag">&#127462;&#127479;</span><span class="m-name">Argentina</span></a>
+          <a class="m-card" href="bolivia.html"><span class="m-flag">&#127463;&#127476;</span><span class="m-name">Bolivia</span></a>
+          <a class="m-card" href="brasil.html"><span class="m-flag">&#127463;&#127479;</span><span class="m-name">Brazil</span></a>
+          <a class="m-card" href="chile.html"><span class="m-flag">&#127464;&#127473;</span><span class="m-name">Chile</span></a>
+          <a class="m-card" href="colombia.html"><span class="m-flag">&#127464;&#127476;</span><span class="m-name">Colombia</span></a>
+          <a class="m-card" href="costarica.html"><span class="m-flag">&#127464;&#127479;</span><span class="m-name">Costa Rica</span></a>
+          <a class="m-card" href="cuba.html"><span class="m-flag">&#127464;&#127482;</span><span class="m-name">Cuba</span></a>
+          <a class="m-card" href="ecuador.html"><span class="m-flag">&#127466;&#127464;</span><span class="m-name">Ecuador</span></a>
+          <a class="m-card" href="elsalvador.html"><span class="m-flag">&#127480;&#127483;</span><span class="m-name">El Salvador</span></a>
+          <a class="m-card" href="eeuu.html"><span class="m-flag">&#127482;&#127480;</span><span class="m-name">USA</span></a>
+          <a class="m-card" href="guatemala.html"><span class="m-flag">&#127468;&#127481;</span><span class="m-name">Guatemala</span></a>
+          <a class="m-card" href="guyana.html"><span class="m-flag">&#127468;&#127486;</span><span class="m-name">Guyana</span></a>
+          <a class="m-card" href="haiti.html"><span class="m-flag">&#127469;&#127481;</span><span class="m-name">Haiti</span></a>
+          <a class="m-card" href="honduras.html"><span class="m-flag">&#127469;&#127475;</span><span class="m-name">Honduras</span></a>
+          <a class="m-card" href="jamaica.html"><span class="m-flag">&#127471;&#127474;</span><span class="m-name">Jamaica</span></a>
+          <a class="m-card" href="mexico.html"><span class="m-flag">&#127474;&#127485;</span><span class="m-name">Mexico</span></a>
+          <a class="m-card" href="nicaragua.html"><span class="m-flag">&#127475;&#127470;</span><span class="m-name">Nicaragua</span></a>
+          <a class="m-card" href="panama.html"><span class="m-flag">&#127477;&#127462;</span><span class="m-name">Panama</span></a>
+          <a class="m-card" href="paraguay.html"><span class="m-flag">&#127477;&#127486;</span><span class="m-name">Paraguay</span></a>
+          <a class="m-card" href="peru.html"><span class="m-flag">&#127477;&#127466;</span><span class="m-name">Peru</span></a>
+          <a class="m-card" href="puertorico.html"><span class="m-flag">&#127477;&#127479;</span><span class="m-name">Puerto Rico</span></a>
+          <a class="m-card" href="dominicana.html"><span class="m-flag">&#127465;&#127476;</span><span class="m-name">Dominican Rep.</span></a>
+          <a class="m-card" href="surinam.html"><span class="m-flag">&#127480;&#127479;</span><span class="m-name">Suriname</span></a>
+          <a class="m-card" href="trinidadytobago.html"><span class="m-flag">&#127481;&#127481;</span><span class="m-name">Trinidad &amp; Tobago</span></a>
+          <a class="m-card" href="uruguay.html"><span class="m-flag">&#127482;&#127486;</span><span class="m-name">Uruguay</span></a>
+          <a class="m-card" href="venezuela.html"><span class="m-flag">&#127483;&#127466;</span><span class="m-name">Venezuela</span></a>
+          <a class="m-card" href="belice.html"><span class="m-flag">&#127463;&#127487;</span><span class="m-name">Belize</span></a>
+          <a class="m-card" href="canada.html"><span class="m-flag">&#127464;&#127462;</span><span class="m-name">Canada</span></a>
+          <a class="m-card" href="antiguabarbuda.html"><span class="m-flag">&#127462;&#127468;</span><span class="m-name">Antigua &amp; Barbuda</span></a>
+          <a class="m-card" href="bahamas.html"><span class="m-flag">&#127463;&#127480;</span><span class="m-name">Bahamas</span></a>
+          <a class="m-card" href="barbados.html"><span class="m-flag">&#127463;&#127463;</span><span class="m-name">Barbados</span></a>
+        </div>
+      </div>
+      <div class="mobile-section">
+        <div class="mobile-section-title">Europe</div>
+        <div class="mobile-grid">
+          <a class="m-card" href="espana.html"><span class="m-flag">&#127466;&#127480;</span><span class="m-name">Spain</span></a>
+          <a class="m-card" href="greece.html"><span class="m-flag">&#127468;&#127479;</span><span class="m-name">Greece</span></a>
+          <a class="m-card" href="italy.html"><span class="m-flag">&#127470;&#127481;</span><span class="m-name">Italy</span></a>
+          <a class="m-card" href="netherlands.html"><span class="m-flag">&#127475;&#127473;</span><span class="m-name">Netherlands</span></a>
+          <a class="m-card" href="portugal.html"><span class="m-flag">&#127477;&#127481;</span><span class="m-name">Portugal</span></a>
+          <a class="m-card" href="uk.html"><span class="m-flag">&#127468;&#127463;</span><span class="m-name">United Kingdom</span></a>
+          <a class="m-card" href="switzerland.html"><span class="m-flag">&#127464;&#127469;</span><span class="m-name">Switzerland</span></a>
+          <a class="m-card" href="germany.html"><span class="m-flag">&#127465;&#127466;</span><span class="m-name">Germany</span></a>
+          <a class="m-card" href="france.html"><span class="m-flag">&#127467;&#127479;</span><span class="m-name">France</span></a>
+          <a class="m-card" href="poland.html"><span class="m-flag">&#127477;&#127473;</span><span class="m-name">Poland</span></a>
+          <a class="m-card" href="sweden.html"><span class="m-flag">&#127480;&#127466;</span><span class="m-name">Sweden</span></a>
+          <a class="m-card" href="norway.html"><span class="m-flag">&#127475;&#127476;</span><span class="m-name">Norway</span></a>
+          <a class="m-card" href="denmark.html"><span class="m-flag">&#127465;&#127472;</span><span class="m-name">Denmark</span></a>
+          <a class="m-card" href="finland.html"><span class="m-flag">&#127467;&#127470;</span><span class="m-name">Finland</span></a>
+          <a class="m-card" href="ireland.html"><span class="m-flag">&#127470;&#127466;</span><span class="m-name">Ireland</span></a>
+          <a class="m-card" href="austria.html"><span class="m-flag">&#127462;&#127481;</span><span class="m-name">Austria</span></a>
+          <a class="m-card" href="belgium.html"><span class="m-flag">&#127463;&#127466;</span><span class="m-name">Belgium</span></a>
+          <a class="m-card" href="czech.html"><span class="m-flag">&#127464;&#127487;</span><span class="m-name">Czech Republic</span></a>
+          <a class="m-card" href="romania.html"><span class="m-flag">&#127479;&#127476;</span><span class="m-name">Romania</span></a>
+          <a class="m-card" href="hungary.html"><span class="m-flag">&#127469;&#127482;</span><span class="m-name">Hungary</span></a>
+          <a class="m-card" href="ukraine.html"><span class="m-flag">&#127482;&#127462;</span><span class="m-name">Ukraine</span></a>
+          <a class="m-card" href="serbia.html"><span class="m-flag">&#127479;&#127480;</span><span class="m-name">Serbia</span></a>
+          <a class="m-card" href="albania.html"><span class="m-flag">&#127462;&#127473;</span><span class="m-name">Albania</span></a>
+          <a class="m-card" href="belarus.html"><span class="m-flag">&#127463;&#127486;</span><span class="m-name">Belarus</span></a>
+          <a class="m-card" href="bosnia.html"><span class="m-flag">&#127463;&#127462;</span><span class="m-name">Bosnia</span></a>
+          <a class="m-card" href="croatia.html"><span class="m-flag">&#127469;&#127479;</span><span class="m-name">Croatia</span></a>
+          <a class="m-card" href="cyprus.html"><span class="m-flag">&#127464;&#127486;</span><span class="m-name">Cyprus</span></a>
+          <a class="m-card" href="estonia.html"><span class="m-flag">&#127466;&#127466;</span><span class="m-name">Estonia</span></a>
+          <a class="m-card" href="iceland.html"><span class="m-flag">&#127470;&#127480;</span><span class="m-name">Iceland</span></a>
+          <a class="m-card" href="kosovo.html"><span class="m-flag">&#127485;&#127472;</span><span class="m-name">Kosovo</span></a>
+          <a class="m-card" href="latvia.html"><span class="m-flag">&#127473;&#127483;</span><span class="m-name">Latvia</span></a>
+          <a class="m-card" href="lithuania.html"><span class="m-flag">&#127473;&#127481;</span><span class="m-name">Lithuania</span></a>
+          <a class="m-card" href="luxembourg.html"><span class="m-flag">&#127473;&#127482;</span><span class="m-name">Luxembourg</span></a>
+          <a class="m-card" href="malta.html"><span class="m-flag">&#127474;&#127481;</span><span class="m-name">Malta</span></a>
+          <a class="m-card" href="moldova.html"><span class="m-flag">&#127474;&#127465;</span><span class="m-name">Moldova</span></a>
+          <a class="m-card" href="montenegro.html"><span class="m-flag">&#127474;&#127466;</span><span class="m-name">Montenegro</span></a>
+          <a class="m-card" href="northmacedonia.html"><span class="m-flag">&#127474;&#127472;</span><span class="m-name">North Macedonia</span></a>
+          <a class="m-card" href="slovakia.html"><span class="m-flag">&#127480;&#127472;</span><span class="m-name">Slovakia</span></a>
+          <a class="m-card" href="slovenia.html"><span class="m-flag">&#127480;&#127470;</span><span class="m-name">Slovenia</span></a>
+        </div>
+      </div>
+      <div class="mobile-section">
+        <div class="mobile-section-title">Africa</div>
+        <div class="mobile-grid">
+          <a class="m-card" href="egypt.html"><span class="m-flag">&#127466;&#127468;</span><span class="m-name">Egypt</span></a>
+          <a class="m-card" href="kenya.html"><span class="m-flag">&#127472;&#127466;</span><span class="m-name">Kenya</span></a>
+          <a class="m-card" href="morocco.html"><span class="m-flag">&#127474;&#127462;</span><span class="m-name">Morocco</span></a>
+          <a class="m-card" href="nigeria.html"><span class="m-flag">&#127475;&#127468;</span><span class="m-name">Nigeria</span></a>
+          <a class="m-card" href="southafrica.html"><span class="m-flag">&#127487;&#127462;</span><span class="m-name">South Africa</span></a>
+          <a class="m-card" href="ghana.html"><span class="m-flag">&#127468;&#127469;</span><span class="m-name">Ghana</span></a>
+          <a class="m-card" href="ethiopia.html"><span class="m-flag">&#127466;&#127481;</span><span class="m-name">Ethiopia</span></a>
+          <a class="m-card" href="tanzania.html"><span class="m-flag">&#127481;&#127487;</span><span class="m-name">Tanzania</span></a>
+          <a class="m-card" href="senegal.html"><span class="m-flag">&#127480;&#127475;</span><span class="m-name">Senegal</span></a>
+          <a class="m-card" href="algeria.html"><span class="m-flag">&#127465;&#127487;</span><span class="m-name">Algeria</span></a>
+          <a class="m-card" href="tunisia.html"><span class="m-flag">&#127481;&#127475;</span><span class="m-name">Tunisia</span></a>
+          <a class="m-card" href="uganda.html"><span class="m-flag">&#127482;&#127468;</span><span class="m-name">Uganda</span></a>
+          <a class="m-card" href="ivorycoast.html"><span class="m-flag">&#127464;&#127470;</span><span class="m-name">Ivory Coast</span></a>
+          <a class="m-card" href="drcongo.html"><span class="m-flag">&#127464;&#127465;</span><span class="m-name">DR Congo</span></a>
+          <a class="m-card" href="cameroon.html"><span class="m-flag">&#127464;&#127474;</span><span class="m-name">Cameroon</span></a>
+          <a class="m-card" href="angola.html"><span class="m-flag">&#127462;&#127476;</span><span class="m-name">Angola</span></a>
+          <a class="m-card" href="benin.html"><span class="m-flag">&#127463;&#127471;</span><span class="m-name">Benin</span></a>
+          <a class="m-card" href="botswana.html"><span class="m-flag">&#127463;&#127484;</span><span class="m-name">Botswana</span></a>
+          <a class="m-card" href="burkinafaso.html"><span class="m-flag">&#127463;&#127467;</span><span class="m-name">Burkina Faso</span></a>
+          <a class="m-card" href="chad.html"><span class="m-flag">&#127481;&#127465;</span><span class="m-name">Chad</span></a>
+          <a class="m-card" href="congobrazzaville.html"><span class="m-flag">&#127464;&#127468;</span><span class="m-name">Congo-Brazzaville</span></a>
+          <a class="m-card" href="guinea.html"><span class="m-flag">&#127468;&#127475;</span><span class="m-name">Guinea</span></a>
+          <a class="m-card" href="libya.html"><span class="m-flag">&#127473;&#127486;</span><span class="m-name">Libya</span></a>
+          <a class="m-card" href="madagascar.html"><span class="m-flag">&#127474;&#127468;</span><span class="m-name">Madagascar</span></a>
+          <a class="m-card" href="malawi.html"><span class="m-flag">&#127474;&#127484;</span><span class="m-name">Malawi</span></a>
+          <a class="m-card" href="mali.html"><span class="m-flag">&#127474;&#127473;</span><span class="m-name">Mali</span></a>
+          <a class="m-card" href="mozambique.html"><span class="m-flag">&#127474;&#127487;</span><span class="m-name">Mozambique</span></a>
+          <a class="m-card" href="namibia.html"><span class="m-flag">&#127475;&#127462;</span><span class="m-name">Namibia</span></a>
+          <a class="m-card" href="niger.html"><span class="m-flag">&#127475;&#127466;</span><span class="m-name">Niger</span></a>
+          <a class="m-card" href="rwanda.html"><span class="m-flag">&#127479;&#127484;</span><span class="m-name">Rwanda</span></a>
+          <a class="m-card" href="somalia.html"><span class="m-flag">&#127480;&#127476;</span><span class="m-name">Somalia</span></a>
+          <a class="m-card" href="southsudan.html"><span class="m-flag">&#127480;&#127480;</span><span class="m-name">South Sudan</span></a>
+          <a class="m-card" href="sudan.html"><span class="m-flag">&#127480;&#127465;</span><span class="m-name">Sudan</span></a>
+          <a class="m-card" href="togo.html"><span class="m-flag">&#127481;&#127468;</span><span class="m-name">Togo</span></a>
+          <a class="m-card" href="zambia.html"><span class="m-flag">&#127487;&#127474;</span><span class="m-name">Zambia</span></a>
+          <a class="m-card" href="zimbabwe.html"><span class="m-flag">&#127487;&#127484;</span><span class="m-name">Zimbabwe</span></a>
+        </div>
+      </div>
+      <div class="mobile-section">
+        <div class="mobile-section-title">Asia</div>
+        <div class="mobile-grid">
+          <a class="m-card" href="southkorea.html"><span class="m-flag">&#127472;&#127479;</span><span class="m-name">South Korea</span></a>
+          <a class="m-card" href="india.html"><span class="m-flag">&#127470;&#127475;</span><span class="m-name">India</span></a>
+          <a class="m-card" href="israel.html"><span class="m-flag">&#127470;&#127473;</span><span class="m-name">Israel</span></a>
+          <a class="m-card" href="japan.html"><span class="m-flag">&#127471;&#127477;</span><span class="m-name">Japan</span></a>
+          <a class="m-card" href="turkey.html"><span class="m-flag">&#127481;&#127479;</span><span class="m-name">Turkey</span></a>
+          <a class="m-card" href="china.html"><span class="m-flag">&#127464;&#127475;</span><span class="m-name">China</span></a>
+          <a class="m-card" href="indonesia.html"><span class="m-flag">&#127470;&#127465;</span><span class="m-name">Indonesia</span></a>
+          <a class="m-card" href="thailand.html"><span class="m-flag">&#127481;&#127469;</span><span class="m-name">Thailand</span></a>
+          <a class="m-card" href="philippines.html"><span class="m-flag">&#127477;&#127469;</span><span class="m-name">Philippines</span></a>
+          <a class="m-card" href="pakistan.html"><span class="m-flag">&#127477;&#127472;</span><span class="m-name">Pakistan</span></a>
+          <a class="m-card" href="saudiarabia.html"><span class="m-flag">&#127480;&#127462;</span><span class="m-name">Saudi Arabia</span></a>
+          <a class="m-card" href="uae.html"><span class="m-flag">&#127462;&#127466;</span><span class="m-name">UAE</span></a>
+          <a class="m-card" href="malaysia.html"><span class="m-flag">&#127474;&#127486;</span><span class="m-name">Malaysia</span></a>
+          <a class="m-card" href="singapore.html"><span class="m-flag">&#127480;&#127468;</span><span class="m-name">Singapore</span></a>
+          <a class="m-card" href="taiwan.html"><span class="m-flag">&#127481;&#127484;</span><span class="m-name">Taiwan</span></a>
+          <a class="m-card" href="bangladesh.html"><span class="m-flag">&#127463;&#127465;</span><span class="m-name">Bangladesh</span></a>
+          <a class="m-card" href="vietnam.html"><span class="m-flag">&#127483;&#127475;</span><span class="m-name">Vietnam</span></a>
+          <a class="m-card" href="afghanistan.html"><span class="m-flag">&#127462;&#127467;</span><span class="m-name">Afghanistan</span></a>
+          <a class="m-card" href="armenia.html"><span class="m-flag">&#127462;&#127474;</span><span class="m-name">Armenia</span></a>
+          <a class="m-card" href="azerbaijan.html"><span class="m-flag">&#127462;&#127487;</span><span class="m-name">Azerbaijan</span></a>
+          <a class="m-card" href="bahrain.html"><span class="m-flag">&#127463;&#127469;</span><span class="m-name">Bahrain</span></a>
+          <a class="m-card" href="cambodia.html"><span class="m-flag">&#127472;&#127469;</span><span class="m-name">Cambodia</span></a>
+          <a class="m-card" href="georgia.html"><span class="m-flag">&#127468;&#127466;</span><span class="m-name">Georgia</span></a>
+          <a class="m-card" href="iran.html"><span class="m-flag">&#127470;&#127479;</span><span class="m-name">Iran</span></a>
+          <a class="m-card" href="iraq.html"><span class="m-flag">&#127470;&#127478;</span><span class="m-name">Iraq</span></a>
+          <a class="m-card" href="jordan.html"><span class="m-flag">&#127471;&#127476;</span><span class="m-name">Jordan</span></a>
+          <a class="m-card" href="kazakhstan.html"><span class="m-flag">&#127472;&#127487;</span><span class="m-name">Kazakhstan</span></a>
+          <a class="m-card" href="kuwait.html"><span class="m-flag">&#127472;&#127484;</span><span class="m-name">Kuwait</span></a>
+          <a class="m-card" href="laos.html"><span class="m-flag">&#127473;&#127462;</span><span class="m-name">Laos</span></a>
+          <a class="m-card" href="lebanon.html"><span class="m-flag">&#127473;&#127463;</span><span class="m-name">Lebanon</span></a>
+          <a class="m-card" href="mongolia.html"><span class="m-flag">&#127474;&#127475;</span><span class="m-name">Mongolia</span></a>
+          <a class="m-card" href="myanmar.html"><span class="m-flag">&#127474;&#127474;</span><span class="m-name">Myanmar</span></a>
+          <a class="m-card" href="nepal.html"><span class="m-flag">&#127475;&#127477;</span><span class="m-name">Nepal</span></a>
+          <a class="m-card" href="oman.html"><span class="m-flag">&#127476;&#127474;</span><span class="m-name">Oman</span></a>
+          <a class="m-card" href="palestine.html"><span class="m-flag">&#127477;&#127480;</span><span class="m-name">Palestine</span></a>
+          <a class="m-card" href="qatar.html"><span class="m-flag">&#127478;&#127462;</span><span class="m-name">Qatar</span></a>
+          <a class="m-card" href="srilanka.html"><span class="m-flag">&#127473;&#127472;</span><span class="m-name">Sri Lanka</span></a>
+          <a class="m-card" href="syria.html"><span class="m-flag">&#127480;&#127486;</span><span class="m-name">Syria</span></a>
+          <a class="m-card" href="uzbekistan.html"><span class="m-flag">&#127482;&#127487;</span><span class="m-name">Uzbekistan</span></a>
+          <a class="m-card" href="yemen.html"><span class="m-flag">&#127486;&#127466;</span><span class="m-name">Yemen</span></a>
+        </div>
+      </div>
+      <div class="mobile-section">
+        <div class="mobile-section-title">Oceania</div>
+        <div class="mobile-grid">
+          <a class="m-card" href="australia.html"><span class="m-flag">&#127462;&#127482;</span><span class="m-name">Australia</span></a>
+          <a class="m-card" href="fiji.html"><span class="m-flag">&#127467;&#127471;</span><span class="m-name">Fiji</span></a>
+          <a class="m-card" href="newzealand.html"><span class="m-flag">&#127475;&#127487;</span><span class="m-name">New Zealand</span></a>
+          <a class="m-card" href="papuanewguinea.html"><span class="m-flag">&#127477;&#127468;</span><span class="m-name">Papua N. Guinea</span></a>
+          <a class="m-card" href="samoa.html"><span class="m-flag">&#127484;&#127480;</span><span class="m-name">Samoa</span></a>
+          <a class="m-card" href="tonga.html"><span class="m-flag">&#127481;&#127476;</span><span class="m-name">Tonga</span></a>
+          <a class="m-card" href="vanuatu.html"><span class="m-flag">&#127483;&#127482;</span><span class="m-name">Vanuatu</span></a>
+          <a class="m-card" href="solomonislands.html"><span class="m-flag">&#127480;&#127463;</span><span class="m-name">Solomon Islands</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="editorial" class="tab-content">
+    <div class="container-narrow">
+    <div class="editorial">
+      <div class="epigraph">
+        &laquo;I&rsquo;m scared of carjackings.&raquo;
+        <br>
+        &laquo;But Mom, you don&rsquo;t have a car or a garage...&raquo;
+        <span class="attribution">&mdash; A conversation between my grandmother and my mother</span>
+      </div>
+      <p>
+        My grandmother lived in fear of carjackings. The news channels repeated them
+        so often that it seemed like they were happening on every corner, every hour.
+        But she didn&rsquo;t have a car. Or a garage. Her fear didn&rsquo;t come from reality &mdash;
+        it came from what the media showed her every day.
+      </p>
+      <p>
+        That anecdote captures something that happens to all of us. What we know about
+        the world doesn&rsquo;t come from what we experience, but from what someone decided
+        to tell us. And the media doesn&rsquo;t show the world as it is: they choose which
+        stories to tell, which to ignore, and from which angle to present them. Every
+        newspaper, every channel, has its own filter. And we, without realizing it,
+        end up seeing only one piece of the puzzle.
+      </p>
+      <p>
+        This site was born from a simple idea: what if we compare what left-wing,
+        centrist, and right-wing outlets say about the same events? Not to declare
+        who is right, but to see what each one leaves out. Those gaps &mdash; the
+        &ldquo;blindspots&rdquo; &mdash; are the stories that millions of people never see,
+        simply because they read one newspaper and not another.
+      </p>
+      <p>
+        There are no ads here, no algorithms deciding what to show you, and no need
+        to click through three pop-ups before reading a story. Just an honest summary,
+        written plainly, so that anyone &mdash; with or without a garage &mdash; can find
+        out what is really going on.
+      </p>
+      <p class="sign">
+        &mdash; Francisco
+      </p>
+    </div>
+    </div>
+  </div>
+
+  <footer>
+    Whitebox News &middot; 155 countries &middot; Automated media analysis
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  var tooltip = document.getElementById('tooltip');
+  var mapWrap = document.getElementById('mapWrap');
+  var mapSvg = document.getElementById('mapSvg');
+  if (!mapSvg) return;
+
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var XLINK_NS = 'http://www.w3.org/1999/xlink';
+  var MAP_W = 1000;
+
+  // 1. Collect original dot data, then create clones at +/-MAP_W
+  var origDots = mapSvg.getElementsByTagName('circle');
+  var dotData = [];
+  for (var i = 0; i < origDots.length; i++) {
+    var c = origDots[i];
+    if (!c.getAttribute('data-name')) continue; // skip non-dot circles
+    var a = c.parentNode; // the <a> wrapper
+    if (!a || a.tagName.toLowerCase() !== 'a') continue;
+    dotData.push({
+      cx: parseFloat(c.getAttribute('cx')),
+      cy: c.getAttribute('cy'),
+      r: c.getAttribute('r'),
+      cls: c.getAttribute('class'),
+      name: c.getAttribute('data-name'),
+      flag: c.getAttribute('data-flag'),
+      m: c.getAttribute('data-m'),
+      href: a.getAttribute('href') || a.getAttributeNS(XLINK_NS, 'href') || ''
+    });
+  }
+
+  // Create clones using createElementNS to avoid namespace issues
+  dotData.forEach(function(d) {
+    [MAP_W, -MAP_W].forEach(function(offset) {
+      var a = document.createElementNS(SVG_NS, 'a');
+      a.setAttribute('href', d.href);
+      var circle = document.createElementNS(SVG_NS, 'circle');
+      circle.setAttribute('cx', d.cx + offset);
+      circle.setAttribute('cy', d.cy);
+      circle.setAttribute('r', d.r);
+      circle.setAttribute('class', d.cls);
+      circle.setAttribute('data-name', d.name);
+      circle.setAttribute('data-flag', d.flag);
+      circle.setAttribute('data-m', d.m);
+      circle.setAttribute('opacity', '0.85');
+      a.appendChild(circle);
+      mapSvg.appendChild(a);
+    });
+  });
+
+  // 2. Tooltip — event delegation on SVG
+  mapSvg.addEventListener('mouseover', function(e) {
+    var t = e.target;
+    if (t.tagName !== 'circle' || !t.getAttribute('data-name')) return;
+    tooltip.innerHTML = '<span class="tt-flag">' + t.getAttribute('data-flag') + '</span>'
+      + t.getAttribute('data-name')
+      + '<span class="tt-meta">' + t.getAttribute('data-m') + ' outlets</span>';
+    tooltip.classList.add('show');
+  });
+  mapSvg.addEventListener('mousemove', function(e) {
+    if (!tooltip.classList.contains('show')) return;
+    var rect = mapWrap.getBoundingClientRect();
+    tooltip.style.left = (e.clientX - rect.left) + 'px';
+    tooltip.style.top = (e.clientY - rect.top - 8) + 'px';
+  });
+  mapSvg.addEventListener('mouseout', function(e) {
+    if (e.target.tagName === 'circle') tooltip.classList.remove('show');
+  });
+
+  // 3. Slider — pan viewBox, clones handle wrap-around
+  var panSlider = document.getElementById('mapPan');
+  var vb = mapSvg.getAttribute('viewBox').split(' ');
+  var vbX = parseFloat(vb[0]), vbY = vb[1], vbW = vb[2], vbH = vb[3];
+
+  panSlider.addEventListener('input', function() {
+    var shift = parseInt(panSlider.value);
+    mapSvg.setAttribute('viewBox', (vbX + shift) + ' ' + vbY + ' ' + vbW + ' ' + vbH);
+  });
+
+  // 4. Pulse animation on load (originals only)
+  for (var j = 0; j < origDots.length; j++) {
+    (function(dot, idx) {
+      if (!dot.getAttribute('data-name')) return;
+      dot.style.opacity = '0';
+      setTimeout(function() {
+        dot.style.transition = 'opacity 0.4s';
+        dot.style.opacity = '1';
+      }, 30 + idx * 15);
+    })(origDots[j], j);
+  }
+})();
+
+// Tabs
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
