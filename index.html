@@ -91,6 +91,10 @@
   }
   .dot:hover + .dot-ring, .dot-active + .dot-ring { opacity: 1; }
 
+  /* No-data dots: greyed out, no pointer */
+  .dot-nodata { opacity: 0.25; cursor: default; pointer-events: none; }
+  .dot-nodata:hover { filter: none; }
+
   /* Continent colors */
   .c-am { fill: #60a5fa; }      /* blue */
   .c-eu { fill: #a78bfa; }      /* purple */
@@ -286,9 +290,9 @@
         <a href="dominicana.html"><circle class="dot c-am" cx="306" cy="199" r="3.5" data-name="Dominican Rep." data-flag="&#127465;&#127476;" data-m="9"/></a>
         <a href="surinam.html"><circle class="dot c-am" cx="347" cy="234" r="3" data-name="Suriname" data-flag="&#127480;&#127479;" data-m="5"/></a>
         <a href="trinidadytobago.html"><circle class="dot c-am" cx="327" cy="221" r="3" data-name="Trinidad &amp; Tobago" data-flag="&#127481;&#127481;" data-m="5"/></a>
-        <a href="antiguabarbuda.html"><circle class="dot c-am" cx="328" cy="202" r="3" data-name="Antigua &amp; Barbuda" data-flag="&#127462;&#127468;" data-m="3"/></a>
+        <circle class="dot dot-nodata c-am" cx="328" cy="202" r="3" data-name="Antigua &amp; Barbuda" data-flag="&#127462;&#127468;" data-m="3"/>
         <a href="bahamas.html"><circle class="dot c-am" cx="285" cy="181" r="3" data-name="Bahamas" data-flag="&#127463;&#127480;" data-m="3"/></a>
-        <a href="barbados.html"><circle class="dot c-am" cx="335" cy="213" r="3" data-name="Barbados" data-flag="&#127463;&#127463;" data-m="3"/></a>
+        <circle class="dot dot-nodata c-am" cx="335" cy="213" r="3" data-name="Barbados" data-flag="&#127463;&#127463;" data-m="3"/>
 
       </svg>
 
@@ -336,9 +340,9 @@
           <a class="m-card" href="venezuela.html"><span class="m-flag">&#127483;&#127466;</span><span class="m-name">Venezuela</span></a>
           <a class="m-card" href="belice.html"><span class="m-flag">&#127463;&#127487;</span><span class="m-name">Belize</span></a>
           <a class="m-card" href="canada.html"><span class="m-flag">&#127464;&#127462;</span><span class="m-name">Canada</span></a>
-          <a class="m-card" href="antiguabarbuda.html"><span class="m-flag">&#127462;&#127468;</span><span class="m-name">Antigua &amp; Barbuda</span></a>
+          <span class="m-card" style="opacity:0.3;pointer-events:none"><span class="m-flag">&#127462;&#127468;</span><span class="m-name">Antigua &amp; Barbuda</span></span>
           <a class="m-card" href="bahamas.html"><span class="m-flag">&#127463;&#127480;</span><span class="m-name">Bahamas</span></a>
-          <a class="m-card" href="barbados.html"><span class="m-flag">&#127463;&#127463;</span><span class="m-name">Barbados</span></a>
+          <span class="m-card" style="opacity:0.3;pointer-events:none"><span class="m-flag">&#127463;&#127463;</span><span class="m-name">Barbados</span></span>
         </div>
       </div>
     </div>
