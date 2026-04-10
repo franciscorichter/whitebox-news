@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News from Ecuador &mdash; April 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --blue: #2563eb;
+    --purple: #7c3aed;
+    --red: #dc2626;
+    --amber: #d97706;
+    --green: #059669;
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #e5e4e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { text-align: center; padding: 48px 0 36px; border-bottom: 3px double var(--text); margin-bottom: 36px; }
+  header .flag { font-size: 36px; margin-bottom: 8px; }
+  header .logo { font-family: 'Newsreader', Georgia, serif; font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+  header .edition { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  header .date { font-family: 'Newsreader', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
+  header .subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .toc a { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.2s; }
+  .toc a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .section-divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
+  .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .section-divider h2 { font-family: 'Newsreader', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; font-style: italic; }
+  .explainer { background: #f0fdf4; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid #bbf7d0; position: relative; }
+  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--green); color: #fff; border-radius: 50%; font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+  .explainer h3 { font-size: 15px; font-weight: 700; color: #166534; margin-bottom: 8px; }
+  .explainer p { font-size: 13.5px; color: #15803d; line-height: 1.75; }
+  .explainer .legend { display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #166534; }
+  .legend-swatch { width: 24px; height: 12px; border-radius: 3px; }
+  .media-map { background: var(--card); border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); }
+  .media-map h3 { font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .media-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .media-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; }
+  .media-col.left h4 { color: var(--blue); }
+  .media-col.center h4 { color: var(--purple); }
+  .media-col.right h4 { color: var(--red); }
+  .media-col ul { list-style: none; font-size: 12px; color: var(--text-secondary); line-height: 1.9; }
+  .story { background: var(--card); border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); transition: box-shadow 0.2s; }
+  .story:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .blindspot-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .blindspot-tag.no-right { background: #fef3c7; color: #92400e; }
+  .blindspot-tag.low-left { background: #dbeafe; color: #1e40af; }
+  .blindspot-tag.low-right { background: #fef3c7; color: #92400e; }
+  .blindspot-tag.dual { background: #fce7f3; color: #9d174d; }
+  .blindspot-tag.balanced { background: #f0fdf4; color: #166534; }
+  .source-count { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  .story h2 { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .story h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .story h2 a:hover { border-bottom-color: var(--text); }
+  .story .summary { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.75; }
+  .story .context { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.7; padding: 12px 16px; background: #f9fafb; border-radius: 8px; border-left: 3px solid var(--border); }
+  .story .context strong { color: var(--text); }
+  .coverage-bar-container { margin-top: 16px; }
+  .coverage-bar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; }
+  .coverage-bar { display: flex; height: 32px; border-radius: 10px; overflow: hidden; font-size: 11px; font-weight: 700; }
+  .bar-left { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-center { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-right { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-left span, .bar-center span, .bar-right span { padding: 0 8px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+  .sources-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .sources-list a { font-size: 11px; color: var(--text-muted); text-decoration: none; padding: 3px 10px; border-radius: 6px; background: #f3f4f6; border: 1px solid #e5e7eb; transition: all 0.15s; font-weight: 500; }
+  .sources-list a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .sources-list .bias-left { border-left: 3px solid var(--blue); }
+  .sources-list .bias-center { border-left: 3px solid var(--purple); }
+  .sources-list .bias-right { border-left: 3px solid var(--red); }
+  .takeaway { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #78350f; line-height: 1.7; }
+  .takeaway strong { color: #92400e; }
+  .highlight-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
+  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%); pointer-events: none; }
+  .highlight-section .section-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #fbbf24; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: #fbbf24; }
+  .highlight-section h2 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
+  .highlight-section .hl-summary { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.7; }
+  .outlet-comparison { display: flex; flex-direction: column; gap: 8px; }
+  .outlet-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: background 0.15s; }
+  .outlet-row:hover { background: rgba(255,255,255,0.1); }
+  .outlet-bias { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; width: 52px; text-align: center; padding: 4px 0; border-radius: 5px; flex-shrink: 0; }
+  .outlet-bias.left { background: var(--blue); }
+  .outlet-bias.center { background: var(--purple); }
+  .outlet-bias.right { background: var(--red); }
+  .outlet-name { font-size: 12px; font-weight: 700; width: 120px; flex-shrink: 0; color: #e2e8f0; }
+  .outlet-headline { font-family: 'Newsreader', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
+  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(251,191,36,0.1); border-radius: 10px; border: 1px solid rgba(251,191,36,0.2); }
+  .hl-analysis p { font-size: 13px; color: #fde68a; line-height: 1.7; }
+  .hl-analysis strong { color: #fbbf24; }
+  .weekly-summary { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid #fde68a; }
+  .weekly-summary h3 { font-family: 'Newsreader', Georgia, serif; font-size: 20px; font-weight: 600; color: #78350f; margin-bottom: 18px; }
+  .weekly-summary .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(217,119,6,0.15); }
+  .stat-box .num { font-size: 28px; font-weight: 700; color: #92400e; line-height: 1; }
+  .stat-box .label { font-size: 11px; color: #b45309; margin-top: 4px; font-weight: 500; }
+  .weekly-summary p { font-size: 14px; color: #78350f; line-height: 1.75; margin-bottom: 12px; }
+  .weekly-summary strong { color: #92400e; }
+  .bias-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .bias-card { padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
+  .bias-card.right-missed { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); color: #991b1b; }
+  .bias-card.left-missed { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); color: #1e3a5f; }
+  .bias-card strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.7; }
+  footer { text-align: center; padding: 36px 0 16px; border-top: 3px double var(--border); margin-top: 48px; }
+  footer .made-by { font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-style: italic; color: var(--text-secondary); margin-bottom: 8px; }
+  footer .credits { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
+  @media (max-width: 520px) {
+    .container { padding: 16px 14px 40px; }
+    header .logo { font-size: 32px; }
+    .story { padding: 20px; }
+    .story h2 { font-size: 19px; }
+    .highlight-section { padding: 24px 20px; }
+    .highlight-section h2 { font-size: 20px; }
+    .outlet-row { flex-wrap: wrap; gap: 6px; }
+    .outlet-name { width: auto; }
+    .outlet-headline { min-width: 100%; }
+    .weekly-summary .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-box .num { font-size: 22px; }
+    .bias-summary { grid-template-columns: 1fr; }
+    .media-columns { grid-template-columns: 1fr; }
+    .date-nav { flex-wrap: wrap; }
+  }
+  .date-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .date-nav-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
+  .date-link { font-size: 11px; color: var(--text-secondary); text-decoration: none; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--border); transition: all 0.15s; font-weight: 500; }
+  .date-link:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .date-link.active { background: var(--text); color: #fff; border-color: var(--text); font-weight: 700; pointer-events: none; }
+.lang-switcher { display: flex; gap: 8px; justify-content: center; margin: 8px 0; }
+.lang-switcher a { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 14px; }
+.lang-switcher a:hover { background: var(--bg-secondary); }
+.lang-switcher a.active { background: var(--text-primary); color: var(--bg); border-color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="flag"></div>
+  <div class="logo">News from Ecuador</div>
+  <div class="edition">Media blindspot report for Ecuador</div>
+  <div class="date">Friday, April 10, 2026</div>
+  <div class="lang-switcher"><a href="https://franciscorichter.github.io/noticias-mama/ecuador.html">Español</a><a class="active" href="#">English</a></div>
+  <p class="subtitle">An analysis of the most important news from Ecuador, showing which outlets covered them, which ignored them, and how each side framed the same events.</p>
+  <div class="date-nav">
+  <a href="ecuador.html" class="date-link active">10 abr</a> <a href="reports/ecuador/2026-04-09.html" class="date-link">9 abr</a>
+</div>
+</header>
+
+<nav class="toc">
+  <a href="#blindspots">Blindspots</a>
+  <a href="#titulares">Same facts, different headlines</a>
+  <a href="#resumen">Summary</a>
+</nav>
+
+<div class="explainer">
+  <h3>How to read this report</h3>
+  <p>Each story includes a <strong>coverage bar</strong> showing what percentage of outlets from each political leaning reported it. When one side has little or no coverage, that's a <strong>&ldquo;blindspot&rdquo;</strong>: millions of readers on that side probably never saw it.</p>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span>
+  </div>
+</div>
+
+<div class="media-map">
+  <h3>Media map of Ecuador</h3>
+  <div class="media-columns">
+    <div class="media-col left">
+      <h4>Left</h4>
+      <ul><li>Wambra</li>
+        <li>Plan V</li>
+        <li>La Barra Espaciadora</li>
+        <li>Pichincha Comunicaciones</li></ul>
+    </div>
+    <div class="media-col center">
+      <h4>Center</h4>
+      <ul><li>Primicias</li>
+        <li>GK</li>
+        <li>La Hora</li></ul>
+    </div>
+    <div class="media-col right">
+      <h4>Right</h4>
+      <ul><li>El Universo</li>
+        <li>El Comercio Ecuador</li>
+        <li>Ecuavisa</li>
+        <li>Teleamazonas</li></ul>
+    </div>
+  </div>
+</div>
+
+<div id="blindspots">
+<div class="section-divider"><h2>Left-wing blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-leaning outlet covered the state of exception in this cluster, missing civil liberties critique</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://www.elcomercio.com" target="_blank" rel="noopener">State of exception in April 2026 and traffic accidents</a></h2>
+  <p class="summary">Ecuador&#x27;s state of exception was analyzed by the media amid ongoing security concerns. A traffic accident involving a police patrol in Quito left four people injured. Regional news covered daily updates from Tungurahua province.</p>
+  <div class="context">
+    <strong>Context:</strong> Ecuador has heavily relied on states of exception to combat organized crime and insecurity, raising concerns about civil liberties and the normalization of emergency powers.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:2%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.elcomercio.com" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://gk.city" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.lahora.com.ec" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Recurring states of exception in Ecuador continue to be a key governance tool, with center outlets providing explanations but limited critical analysis from the left.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-leaning outlet covered the procurement reform, missing potential critique of whether reforms go far enough</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://www.elcomercio.com" target="_blank" rel="noopener">President Noboa reforms Public Procurement Law regulations</a></h2>
+  <p class="summary">President Daniel Noboa issued reforms to the regulations of the Public Procurement Law, aiming to strengthen transparency in government contracts. Several media outlets covered the executive decree.</p>
+  <div class="context">
+    <strong>Context:</strong> Public procurement reform is critical in Ecuador, where corruption in government contracts has been a persistent problem and a driver of public distrust in institutions.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:1%"><span></span></div>
+      <div class="bar-right" style="width:2%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.elcomercio.com" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.ecuavisa.com" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.primicias.ec" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Noboa&#x27;s public procurement reform signals an anti-corruption push, but the absence of left coverage means potential critiques remain unexplored.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only right-leaning sports coverage; left and center outlets did not cover this sports story</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.elcomercio.com" target="_blank" rel="noopener">Ecuadorian defender Arboleda reappears amid dispute with Sao Paulo</a></h2>
+  <p class="summary">National team defender Robert Arboleda appeared in Guayaquil attending a Serie B match amidst his ongoing contractual dispute with Brazilian club Sao Paulo. His presence fueled speculation about his future.</p>
+  <div class="context">
+    <strong>Context:</strong> Arboleda is a prominent Ecuadorian footballer, and his conflict with Sao Paulo has garnered attention as it could affect his availability for the national team.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-right" style="width:2%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.elcomercio.com" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.ecuavisa.com" target="_blank" rel="noopener" class="bias-right"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Arboleda&#x27;s contractual dispute with Sao Paulo remains unresolved as he appears in Ecuador, raising questions about his future with the club.</div>
+</div>
+<div class="section-divider"><h2>Right-wing blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No right-leaning outlet covered these Quito governance issues in this cluster</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://www.lahora.com.ec" target="_blank" rel="noopener">Quito faces transportation crisis and political debates</a></h2>
+  <p class="summary">Quito&#x27;s public transport system was described as a &#x27;time bomb&#x27; due to security and service issues. Meanwhile, the debate over the possible cantonization of Quito&#x27;s parishes resumed ahead of local elections, and criticism of the general prosecutor selection process increased.</p>
+  <div class="context">
+    <strong>Context:</strong> Transportation challenges in Quito and its political fragmentation reflect broader governance issues in Ecuador&#x27;s capital, where rapid growth has outpaced infrastructure and institutional capacity.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:2%"><span></span></div>
+      <div class="bar-center" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.lahora.com.ec" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://planv.com.ec" target="_blank" rel="noopener" class="bias-left"></a>
+    <a href="https://planv.com.ec" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Quito faces accumulating challenges in transport security, political restructuring, and judicial appointments, primarily covered by center and left outlets.</div>
+</div>
+
+</div>
+
+<div id="titulares">
+
+</div>
+
+<div id="resumen">
+<div class="weekly-summary">
+  <h3>Weekly summary</h3>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="num">4</div>
+      <div class="label">Stories analyzed</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">11</div>
+      <div class="label">Outlets monitored</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">?</div>
+      <div class="label">Articles verified</div>
+    </div>
+  </div>
+
+  <p><strong>Main topics:</strong> </p>
+  <p><strong>Most balanced outlet:</strong> </p>
+
+  <div class="bias-summary">
+    <div class="bias-card right-missed">
+      <strong>The right didn't cover or downplayed:</strong>
+      
+    </div>
+    <div class="bias-card left-missed">
+      <strong>The left didn't cover:</strong>
+      
+    </div>
+  </div>
+
+  <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 15px;">
+    <strong>&ldquo;&rdquo;</strong>
+  </p>
+</div>
+</div>
+
+<footer>
+  <p class="credits">
+    Automated media analysis for Ecuador &middot; Friday, April 10, 2026<br>
+    Sources verified via RSS and cross-search &middot; Analysis by local AI
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News from Chile &mdash; April 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --blue: #2563eb;
+    --purple: #7c3aed;
+    --red: #dc2626;
+    --amber: #d97706;
+    --green: #059669;
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #e5e4e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { text-align: center; padding: 48px 0 36px; border-bottom: 3px double var(--text); margin-bottom: 36px; }
+  header .flag { font-size: 36px; margin-bottom: 8px; }
+  header .logo { font-family: 'Newsreader', Georgia, serif; font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+  header .edition { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  header .date { font-family: 'Newsreader', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
+  header .subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .toc a { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.2s; }
+  .toc a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .section-divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
+  .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .section-divider h2 { font-family: 'Newsreader', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; font-style: italic; }
+  .explainer { background: #f0fdf4; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid #bbf7d0; position: relative; }
+  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--green); color: #fff; border-radius: 50%; font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+  .explainer h3 { font-size: 15px; font-weight: 700; color: #166534; margin-bottom: 8px; }
+  .explainer p { font-size: 13.5px; color: #15803d; line-height: 1.75; }
+  .explainer .legend { display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #166534; }
+  .legend-swatch { width: 24px; height: 12px; border-radius: 3px; }
+  .media-map { background: var(--card); border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); }
+  .media-map h3 { font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .media-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .media-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; }
+  .media-col.left h4 { color: var(--blue); }
+  .media-col.center h4 { color: var(--purple); }
+  .media-col.right h4 { color: var(--red); }
+  .media-col ul { list-style: none; font-size: 12px; color: var(--text-secondary); line-height: 1.9; }
+  .story { background: var(--card); border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); transition: box-shadow 0.2s; }
+  .story:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .blindspot-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .blindspot-tag.no-right { background: #fef3c7; color: #92400e; }
+  .blindspot-tag.low-left { background: #dbeafe; color: #1e40af; }
+  .blindspot-tag.low-right { background: #fef3c7; color: #92400e; }
+  .blindspot-tag.dual { background: #fce7f3; color: #9d174d; }
+  .blindspot-tag.balanced { background: #f0fdf4; color: #166534; }
+  .source-count { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  .story h2 { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .story h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .story h2 a:hover { border-bottom-color: var(--text); }
+  .story .summary { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.75; }
+  .story .context { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.7; padding: 12px 16px; background: #f9fafb; border-radius: 8px; border-left: 3px solid var(--border); }
+  .story .context strong { color: var(--text); }
+  .coverage-bar-container { margin-top: 16px; }
+  .coverage-bar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; }
+  .coverage-bar { display: flex; height: 32px; border-radius: 10px; overflow: hidden; font-size: 11px; font-weight: 700; }
+  .bar-left { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-center { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-right { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-left span, .bar-center span, .bar-right span { padding: 0 8px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+  .sources-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .sources-list a { font-size: 11px; color: var(--text-muted); text-decoration: none; padding: 3px 10px; border-radius: 6px; background: #f3f4f6; border: 1px solid #e5e7eb; transition: all 0.15s; font-weight: 500; }
+  .sources-list a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .sources-list .bias-left { border-left: 3px solid var(--blue); }
+  .sources-list .bias-center { border-left: 3px solid var(--purple); }
+  .sources-list .bias-right { border-left: 3px solid var(--red); }
+  .takeaway { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #78350f; line-height: 1.7; }
+  .takeaway strong { color: #92400e; }
+  .highlight-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
+  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%); pointer-events: none; }
+  .highlight-section .section-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #fbbf24; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: #fbbf24; }
+  .highlight-section h2 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
+  .highlight-section .hl-summary { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.7; }
+  .outlet-comparison { display: flex; flex-direction: column; gap: 8px; }
+  .outlet-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: background 0.15s; }
+  .outlet-row:hover { background: rgba(255,255,255,0.1); }
+  .outlet-bias { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; width: 52px; text-align: center; padding: 4px 0; border-radius: 5px; flex-shrink: 0; }
+  .outlet-bias.left { background: var(--blue); }
+  .outlet-bias.center { background: var(--purple); }
+  .outlet-bias.right { background: var(--red); }
+  .outlet-name { font-size: 12px; font-weight: 700; width: 120px; flex-shrink: 0; color: #e2e8f0; }
+  .outlet-headline { font-family: 'Newsreader', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
+  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(251,191,36,0.1); border-radius: 10px; border: 1px solid rgba(251,191,36,0.2); }
+  .hl-analysis p { font-size: 13px; color: #fde68a; line-height: 1.7; }
+  .hl-analysis strong { color: #fbbf24; }
+  .weekly-summary { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid #fde68a; }
+  .weekly-summary h3 { font-family: 'Newsreader', Georgia, serif; font-size: 20px; font-weight: 600; color: #78350f; margin-bottom: 18px; }
+  .weekly-summary .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(217,119,6,0.15); }
+  .stat-box .num { font-size: 28px; font-weight: 700; color: #92400e; line-height: 1; }
+  .stat-box .label { font-size: 11px; color: #b45309; margin-top: 4px; font-weight: 500; }
+  .weekly-summary p { font-size: 14px; color: #78350f; line-height: 1.75; margin-bottom: 12px; }
+  .weekly-summary strong { color: #92400e; }
+  .bias-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .bias-card { padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
+  .bias-card.right-missed { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); color: #991b1b; }
+  .bias-card.left-missed { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); color: #1e3a5f; }
+  .bias-card strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.7; }
+  footer { text-align: center; padding: 36px 0 16px; border-top: 3px double var(--border); margin-top: 48px; }
+  footer .made-by { font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-style: italic; color: var(--text-secondary); margin-bottom: 8px; }
+  footer .credits { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
+  @media (max-width: 520px) {
+    .container { padding: 16px 14px 40px; }
+    header .logo { font-size: 32px; }
+    .story { padding: 20px; }
+    .story h2 { font-size: 19px; }
+    .highlight-section { padding: 24px 20px; }
+    .highlight-section h2 { font-size: 20px; }
+    .outlet-row { flex-wrap: wrap; gap: 6px; }
+    .outlet-name { width: auto; }
+    .outlet-headline { min-width: 100%; }
+    .weekly-summary .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-box .num { font-size: 22px; }
+    .bias-summary { grid-template-columns: 1fr; }
+    .media-columns { grid-template-columns: 1fr; }
+    .date-nav { flex-wrap: wrap; }
+  }
+  .date-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .date-nav-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
+  .date-link { font-size: 11px; color: var(--text-secondary); text-decoration: none; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--border); transition: all 0.15s; font-weight: 500; }
+  .date-link:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .date-link.active { background: var(--text); color: #fff; border-color: var(--text); font-weight: 700; pointer-events: none; }
+.lang-switcher { display: flex; gap: 8px; justify-content: center; margin: 8px 0; }
+.lang-switcher a { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 14px; }
+.lang-switcher a:hover { background: var(--bg-secondary); }
+.lang-switcher a.active { background: var(--text-primary); color: var(--bg); border-color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="flag"></div>
+  <div class="logo">News from Chile</div>
+  <div class="edition">Media blindspot report for Chile</div>
+  <div class="date">Friday, April 10, 2026</div>
+  <div class="lang-switcher"><a href="https://franciscorichter.github.io/noticias-mama/chile.html">Español</a><a class="active" href="#">English</a></div>
+  <p class="subtitle">An analysis of the most important news from Chile, showing which outlets covered them, which ignored them, and how each side framed the same events.</p>
+  <div class="date-nav">
+  <a href="chile.html" class="date-link active">10 abr</a> <a href="reports/chile/2026-04-09.html" class="date-link">9 abr</a> <a href="reports/chile/2026-04-08.html" class="date-link">8 abr</a>
+</div>
+</header>
+
+<nav class="toc">
+  <a href="#blindspots">Blindspots</a>
+  <a href="#titulares">Same facts, different headlines</a>
+  <a href="#resumen">Summary</a>
+</nav>
+
+<div class="explainer">
+  <h3>How to read this report</h3>
+  <p>Each story includes a <strong>coverage bar</strong> showing what percentage of outlets from each political leaning reported it. When one side has little or no coverage, that's a <strong>&ldquo;blindspot&rdquo;</strong>: millions of readers on that side probably never saw it.</p>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span>
+  </div>
+</div>
+
+<div class="media-map">
+  <h3>Media map of Chile</h3>
+  <div class="media-columns">
+    <div class="media-col left">
+      <h4>Left</h4>
+      <ul><li>El Mostrador</li>
+        <li>El Desconcierto</li>
+        <li>The Clinic</li>
+        <li>Ciper Chile</li>
+        <li>Interferencia</li>
+        <li>Radio U. Chile</li></ul>
+    </div>
+    <div class="media-col center">
+      <h4>Center</h4>
+      <ul><li>T13</li>
+        <li>Cooperativa</li>
+        <li>BioBio Chile</li>
+        <li>Pauta</li>
+        <li>CNN Chile</li></ul>
+    </div>
+    <div class="media-col right">
+      <h4>Right</h4>
+      <ul><li>El Mercurio / Emol</li>
+        <li>La Tercera</li>
+        <li>El Libero</li>
+        <li>Ex-Ante</li></ul>
+    </div>
+  </div>
+</div>
+
+<div id="blindspots">
+<div class="section-divider"><h2>Same data, opposing narratives</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Covered across the spectrum, although left-wing media had minimal presence with only The Clinic reporting</span>
+    <span class="source-count">11 verified sources</span>
+  </div>
+  <h2><a href="https://www.latercera.com/nacional/noticia/lincolao-tras-agresion-en-u-austral-no-tengo-miedo-esto-no-me-va-a-parar-a-mi-ni-al-resto-de-los-ministros/" target="_blank" rel="noopener">Minister Lincolao Assaulted by Students at Austral University</a></h2>
+  <p class="summary">Science Minister Ximena Lincolao was physically assaulted and briefly detained by students at Austral University in Valdivia. President Kast condemned the attack, labeling the perpetrators as an &#x27;ideologized group&#x27; seeking to intimidate. The student federation also condemned the violence.</p>
+  <div class="context">
+    <strong>Context:</strong> The incident highlights tensions between Kast&#x27;s government and university student movements. The widespread condemnation suggests that the attack crossed acceptable protest limits.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:1%"><span></span></div>
+      <div class="bar-center" style="width:6%"><span>6%</span></div>
+      <div class="bar-right" style="width:4%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.latercera.com/nacional/noticia/lincolao-tras-agresion-en-u-austral-no-tengo-miedo-esto-no-me-va-a-parar-a-mi-ni-al-resto-de-los-ministros/" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.latercera.com/politica/noticia/flanqueado-por-las-mujeres-de-su-gabinete-y-la-primera-dama-presidente-kast-entrega-su-apoyo-a-ministra-lin" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.ex-ante.cl" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.ex-ante.cl" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.t13.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.t13.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.cooperativa.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.cnnchile.com" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.cnnchile.com" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.cnnchile.com" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.theclinic.cl/2026/04/08/kast-apunto-a-grupo-ideologizado-tras-agresion-a-ministra-lincolao-su-actuar-no-tiene-explicacion-ni-justificacion" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A rare moment of cross-spectrum consensus condemning political violence, though right-wing media emphasized presidential firmness while the center focused on the minister&#x27;s defiant response.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only center-focused media covered this story; both left and right were absent, leaving their readers misinformed about a serious case of police abuse</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://www.cooperativa.cl" target="_blank" rel="noopener">Former Carabineros Imprisoned for Sexual Abuse in Police Van</a></h2>
+  <p class="summary">Former Carabineros officers were placed in preventive detention after being accused of sexual abuse committed inside a police vehicle during an official procedure. Another officer was fired for inconsistencies in a shooting report.</p>
+  <div class="context">
+    <strong>Context:</strong> Police misconduct remains a sensitive issue in Chile, especially after the 2019 social uprising and ongoing debates about police reform under Kast&#x27;s government.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:3%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.cooperativa.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.biobiochile.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.cnnchile.com" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A serious case of police sexual abuse was covered exclusively by centrist media, while both left-wing (who typically focus on police accountability) and right-wing media remained silent.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Covered by both left and right but absent in center-focused media</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.emol.com" target="_blank" rel="noopener">Young Women Now Drink More Than Men, Raising Health Concerns</a></h2>
+  <p class="summary">A new study reveals that young Chilean women have surpassed men in alcohol consumption, raising concerns about increased health risks. Separately, armed individuals were found in schools in Hualpen and Antofagasta.</p>
+  <div class="context">
+    <strong>Context:</strong> The reversal of the traditional gender gap in alcohol consumption represents a significant change in public health with implications for health policies.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:1%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.emol.com" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.elmostrador.cl" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A notable public health finding on changing gender patterns in alcohol consumption received minimal but politically diverse coverage.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Both left and right opined on school security policies, but center-focused media were absent from this important debate</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://ellibero.cl/tribuna/seguridad-en-colegios-mas-alla-de-los-porticos/" target="_blank" rel="noopener">Debate on School Security Intensifies After Recent Violence</a></h2>
+  <p class="summary">A public debate on school security intensified with opinion columns and legislative proposals from the government. One article argues that security goes beyond metal detectors, while another responds to a previous comment on the topic.</p>
+  <div class="context">
+    <strong>Context:</strong> Chile has seen recent incidents of school violence, leading the government to present new security measures to Congress while experts debate the appropriate response.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:2%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://ellibero.cl/tribuna/seguridad-en-colegios-mas-alla-de-los-porticos/" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.ciperchile.cl/2026/04/08/respuesta-a-columna-de-pablo-barrientos/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=respuesta-a-columna-de-pablo-" target="_blank" rel="noopener" class="bias-left"></a>
+    <a href="https://www.ciperchile.cl/2026/04/07/radar-07-04-26/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=radar-07-04-26" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The debate on school security shows a left-right divide, with right-wing media favoring concrete security measures and left-wing media emphasizing systemic causes and questioning punitive approaches.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Right-wing media provided detailed coverage while left-wing media briefly mentioned it in a news roundup; center-focused media were absent</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.ex-ante.cl" target="_blank" rel="noopener">State Ski Lodge Property Sparks Debate on Spending</a></h2>
+  <p class="summary">A state-owned property in the La Parva ski lodge was cited by politician Quiroz as an example of misuse of public funds. The luxurious nature of the property contrasts with its ostensible public purpose.</p>
+  <div class="context">
+    <strong>Context:</strong> Debates over public spending are central to Kast&#x27;s fiscal austerity agenda. Scrutiny of state properties fuels broader discussions about government efficiency.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:1%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.ex-ante.cl" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.ciperchile.cl/2026/04/08/radar-08-04-26/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=radar-08-04-26" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A state ski lodge property became a symbol in the debate over fiscal spending, with right-wing media providing detailed coverage and left-wing media only a brief mention.</div>
+</div>
+<div class="section-divider"><h2>Left-wing blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-wing media covered this case of corruption against a right-wing senator, which is unusual given their typical editorial focus</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://www.latercera.com/politica/noticia/acusaciones-sin-sustento-senadora-camila-flores-rn-sale-al-paso-de-investigacion-por-fraude-al-fisco-que-ll" target="_blank" rel="noopener">Senator Camila Flores Under Investigation for Tax Fraud</a></h2>
+  <p class="summary">Prosecutors in Valparaíso are investigating Senator Camila Flores (RN) for alleged tax fraud, dubbed &#x27;Flores&#x27; quota.&#x27; The senator dismissed the accusations as unfounded.</p>
+  <div class="context">
+    <strong>Context:</strong> Flores is a senator from National Renewal, part of Kast&#x27;s governing coalition. A corruption investigation into a legislator from the ruling party has significant political implications.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:2%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.latercera.com/politica/noticia/acusaciones-sin-sustento-senadora-camila-flores-rn-sale-al-paso-de-investigacion-por-fraude-al-fisco-que-ll" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.biobiochile.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.cnnchile.com" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A corruption investigation into a ruling party senator received surprisingly limited coverage, with left-wing media—who typically amplify such cases—completely absent.</div>
+</div>
+<div class="section-divider"><h2>Right-wing blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-wing media covered this dictatorship justice story; center and right-wing media completely ignored it</span>
+    <span class="source-count">3 verified sources</span>
+  </div>
+  <h2><a href="https://eldesconcierto.cl/actualidad/extradicion-adriana-rivas-los-3-escenarios-que-podria-enfrentar-la-exagente-la-dina-fallo-judicial-australia-n545" target="_blank" rel="noopener">Former Secret Police Agent Faces Extradition</a></h2>
+  <p class="summary">A judicial decision in Australia has advanced the extradition of Adriana Rivas, former DINA agent accused of kidnappings during Pinochet&#x27;s dictatorship. Her lawyer says a 15-year legal process is nearing its end.</p>
+  <div class="context">
+    <strong>Context:</strong> Trials for human rights violations during Pinochet&#x27;s era remain politically charged in Chile. Kast&#x27;s government has had an ambiguous relationship with historical memory issues.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:3%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://eldesconcierto.cl/actualidad/extradicion-adriana-rivas-los-3-escenarios-que-podria-enfrentar-la-exagente-la-dina-fallo-judicial-australia-n545" target="_blank" rel="noopener" class="bias-left"></a>
+    <a href="https://interferencia.cl" target="_blank" rel="noopener" class="bias-left"></a>
+    <a href="https://radio.uchile.cl/2026/04/08/abogado-francisco-ugas-por-extradicion-de-adriana-rivas-se-acerca-el-termino-de-un-proceso-de-mas-de-15-anos/" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The extradition of a former Pinochet-era secret police agent was covered exclusively by left-wing media, showing how human rights justice stories remain ideologically isolated in Chile.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Right-wing media did not cover this case of animal cruelty; only center and left-wing media reported on it</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.t13.cl" target="_blank" rel="noopener">Dog Burning Case Sparks Public Outrage</a></h2>
+  <p class="summary">A case of animal cruelty involving a burned dog attracted media attention and public outrage. The coverage appeared alongside broader regional news from Latin America.</p>
+  <div class="context">
+    <strong>Context:</strong> Animal cruelty cases have generated increasing public anger in Chile, where animal protection laws have been strengthened in recent years.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:1%"><span></span></div>
+      <div class="bar-center" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.t13.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://interferencia.cl" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Cruelty to animals continues to generate significant public interest, though coverage was limited to center and left-wing media.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No right-wing media covered this historic gender milestone in Chilean academia</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.cooperativa.cl" target="_blank" rel="noopener">First Woman Elected Rector of the University of Concepción</a></h2>
+  <p class="summary">Jacqueline Sepulveda became the first woman elected rector in the history of the University of Concepción, one of Chile&#x27;s most important and traditional universities.</p>
+  <div class="context">
+    <strong>Context:</strong> This milestone reflects broader advances in gender equity in Chilean higher education, where women have historically been underrepresented in university leadership positions.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:1%"><span></span></div>
+      <div class="bar-center" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.cooperativa.cl" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://www.theclinic.cl/2026/04/08/jacqueline-sepulveda-se-convierte-en-la-primera-rectora-mujer-de-la-historia-de-la-universidad-de-concepcion/" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> An emblematic moment for gender equality in Chilean academia went unnoticed by right-wing media, suggesting different editorial priorities around diversity milestones.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-wing media offered a critical analysis of the government&#x27;s punitive approach to school violence</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.ciperchile.cl/2026/04/07/violencia-escolar-y-el-error-de-diagnosticar-a-distancia/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=violencia-es" target="_blank" rel="noopener">Experts Warn Against Remote Diagnosis of School Violence</a></h2>
+  <p class="summary">Opinion articles and expert comments warn against diagnosing the causes of school violence from afar, arguing that simplistic explanations and authoritarian responses can worsen the problem.</p>
+  <div class="context">
+    <strong>Context:</strong> After recent violent incidents in Chilean schools, public discourse has focused on root causes, with experts rejecting punitive approaches favored by the government.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:2%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.ciperchile.cl/2026/04/07/violencia-escolar-y-el-error-de-diagnosticar-a-distancia/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=violencia-es" target="_blank" rel="noopener" class="bias-left"></a>
+    <a href="https://radio.uchile.cl/2026/04/08/juan-alejandro-gonzalez-y-proyectos-contra-la-violencia-escolar-construyen-una-sociabilidad-autoritaria-y-de-descon" target="_blank" rel="noopener" class="bias-left"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The debate on approaches to school violence remains ideologically isolated, with left-wing media emphasizing systemic analysis while center and right-wing media focus on security measures.</div>
+</div>
+
+</div>
+
+<div id="titulares">
+
+</div>
+
+<div id="resumen">
+<div class="weekly-summary">
+  <h3>Weekly summary</h3>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="num">10</div>
+      <div class="label">Stories analyzed</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">15</div>
+      <div class="label">Outlets monitored</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">?</div>
+      <div class="label">Articles verified</div>
+    </div>
+  </div>
+
+  <p><strong>Main topics:</strong> </p>
+  <p><strong>Most balanced outlet:</strong> </p>
+
+  <div class="bias-summary">
+    <div class="bias-card right-missed">
+      <strong>The right didn't cover or downplayed:</strong>
+      
+    </div>
+    <div class="bias-card left-missed">
+      <strong>The left didn't cover:</strong>
+      
+    </div>
+  </div>
+
+  <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 15px;">
+    <strong>&ldquo;&rdquo;</strong>
+  </p>
+</div>
+</div>
+
+<footer>
+  <p class="credits">
+    Automated media analysis for Chile &middot; Friday, April 10, 2026<br>
+    Sources verified via RSS and cross-search &middot; Analysis by local AI
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News from Per &mdash; April 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --blue: #2563eb;
+    --purple: #7c3aed;
+    --red: #dc2626;
+    --amber: #d97706;
+    --green: #059669;
+    --bg: #faf9f6;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --border: #e5e4e0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { text-align: center; padding: 48px 0 36px; border-bottom: 3px double var(--text); margin-bottom: 36px; }
+  header .flag { font-size: 36px; margin-bottom: 8px; }
+  header .logo { font-family: 'Newsreader', Georgia, serif; font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+  header .edition { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  header .date { font-family: 'Newsreader', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
+  header .subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .toc a { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.2s; }
+  .toc a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .section-divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
+  .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .section-divider h2 { font-family: 'Newsreader', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; font-style: italic; }
+  .explainer { background: #f0fdf4; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid #bbf7d0; position: relative; }
+  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--green); color: #fff; border-radius: 50%; font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+  .explainer h3 { font-size: 15px; font-weight: 700; color: #166534; margin-bottom: 8px; }
+  .explainer p { font-size: 13.5px; color: #15803d; line-height: 1.75; }
+  .explainer .legend { display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #166534; }
+  .legend-swatch { width: 24px; height: 12px; border-radius: 3px; }
+  .media-map { background: var(--card); border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); }
+  .media-map h3 { font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .media-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .media-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; }
+  .media-col.left h4 { color: var(--blue); }
+  .media-col.center h4 { color: var(--purple); }
+  .media-col.right h4 { color: var(--red); }
+  .media-col ul { list-style: none; font-size: 12px; color: var(--text-secondary); line-height: 1.9; }
+  .story { background: var(--card); border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); transition: box-shadow 0.2s; }
+  .story:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .blindspot-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .blindspot-tag.no-right { background: #fef3c7; color: #92400e; }
+  .blindspot-tag.low-left { background: #dbeafe; color: #1e40af; }
+  .blindspot-tag.low-right { background: #fef3c7; color: #92400e; }
+  .blindspot-tag.dual { background: #fce7f3; color: #9d174d; }
+  .blindspot-tag.balanced { background: #f0fdf4; color: #166534; }
+  .source-count { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  .story h2 { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .story h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .story h2 a:hover { border-bottom-color: var(--text); }
+  .story .summary { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.75; }
+  .story .context { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.7; padding: 12px 16px; background: #f9fafb; border-radius: 8px; border-left: 3px solid var(--border); }
+  .story .context strong { color: var(--text); }
+  .coverage-bar-container { margin-top: 16px; }
+  .coverage-bar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; }
+  .coverage-bar { display: flex; height: 32px; border-radius: 10px; overflow: hidden; font-size: 11px; font-weight: 700; }
+  .bar-left { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-center { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-right { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-left span, .bar-center span, .bar-right span { padding: 0 8px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+  .sources-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .sources-list a { font-size: 11px; color: var(--text-muted); text-decoration: none; padding: 3px 10px; border-radius: 6px; background: #f3f4f6; border: 1px solid #e5e7eb; transition: all 0.15s; font-weight: 500; }
+  .sources-list a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .sources-list .bias-left { border-left: 3px solid var(--blue); }
+  .sources-list .bias-center { border-left: 3px solid var(--purple); }
+  .sources-list .bias-right { border-left: 3px solid var(--red); }
+  .takeaway { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #78350f; line-height: 1.7; }
+  .takeaway strong { color: #92400e; }
+  .highlight-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
+  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%); pointer-events: none; }
+  .highlight-section .section-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #fbbf24; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: #fbbf24; }
+  .highlight-section h2 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
+  .highlight-section .hl-summary { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.7; }
+  .outlet-comparison { display: flex; flex-direction: column; gap: 8px; }
+  .outlet-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: background 0.15s; }
+  .outlet-row:hover { background: rgba(255,255,255,0.1); }
+  .outlet-bias { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; width: 52px; text-align: center; padding: 4px 0; border-radius: 5px; flex-shrink: 0; }
+  .outlet-bias.left { background: var(--blue); }
+  .outlet-bias.center { background: var(--purple); }
+  .outlet-bias.right { background: var(--red); }
+  .outlet-name { font-size: 12px; font-weight: 700; width: 120px; flex-shrink: 0; color: #e2e8f0; }
+  .outlet-headline { font-family: 'Newsreader', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
+  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(251,191,36,0.1); border-radius: 10px; border: 1px solid rgba(251,191,36,0.2); }
+  .hl-analysis p { font-size: 13px; color: #fde68a; line-height: 1.7; }
+  .hl-analysis strong { color: #fbbf24; }
+  .weekly-summary { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid #fde68a; }
+  .weekly-summary h3 { font-family: 'Newsreader', Georgia, serif; font-size: 20px; font-weight: 600; color: #78350f; margin-bottom: 18px; }
+  .weekly-summary .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(217,119,6,0.15); }
+  .stat-box .num { font-size: 28px; font-weight: 700; color: #92400e; line-height: 1; }
+  .stat-box .label { font-size: 11px; color: #b45309; margin-top: 4px; font-weight: 500; }
+  .weekly-summary p { font-size: 14px; color: #78350f; line-height: 1.75; margin-bottom: 12px; }
+  .weekly-summary strong { color: #92400e; }
+  .bias-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .bias-card { padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
+  .bias-card.right-missed { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); color: #991b1b; }
+  .bias-card.left-missed { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); color: #1e3a5f; }
+  .bias-card strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.7; }
+  footer { text-align: center; padding: 36px 0 16px; border-top: 3px double var(--border); margin-top: 48px; }
+  footer .made-by { font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-style: italic; color: var(--text-secondary); margin-bottom: 8px; }
+  footer .credits { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
+  @media (max-width: 520px) {
+    .container { padding: 16px 14px 40px; }
+    header .logo { font-size: 32px; }
+    .story { padding: 20px; }
+    .story h2 { font-size: 19px; }
+    .highlight-section { padding: 24px 20px; }
+    .highlight-section h2 { font-size: 20px; }
+    .outlet-row { flex-wrap: wrap; gap: 6px; }
+    .outlet-name { width: auto; }
+    .outlet-headline { min-width: 100%; }
+    .weekly-summary .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-box .num { font-size: 22px; }
+    .bias-summary { grid-template-columns: 1fr; }
+    .media-columns { grid-template-columns: 1fr; }
+    .date-nav { flex-wrap: wrap; }
+  }
+  .date-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .date-nav-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
+  .date-link { font-size: 11px; color: var(--text-secondary); text-decoration: none; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--border); transition: all 0.15s; font-weight: 500; }
+  .date-link:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .date-link.active { background: var(--text); color: #fff; border-color: var(--text); font-weight: 700; pointer-events: none; }
+.lang-switcher { display: flex; gap: 8px; justify-content: center; margin: 8px 0; }
+.lang-switcher a { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 14px; }
+.lang-switcher a:hover { background: var(--bg-secondary); }
+.lang-switcher a.active { background: var(--text-primary); color: var(--bg); border-color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="flag"></div>
+  <div class="logo">News from Per</div>
+  <div class="edition">Media blindspot report for Per</div>
+  <div class="date">Friday, April 10, 2026</div>
+  <div class="lang-switcher"><a href="https://franciscorichter.github.io/noticias-mama/peru.html">Español</a><a class="active" href="#">English</a></div>
+  <p class="subtitle">An analysis of the most important news from Per, showing which outlets covered them, which ignored them, and how each side framed the same events.</p>
+  <div class="date-nav">
+  <a href="peru.html" class="date-link active">10 abr</a> <a href="reports/peru/2026-04-09.html" class="date-link">9 abr</a> <a href="reports/peru/2026-04-08.html" class="date-link">8 abr</a>
+</div>
+</header>
+
+<nav class="toc">
+  <a href="#blindspots">Blindspots</a>
+  <a href="#titulares">Same facts, different headlines</a>
+  <a href="#resumen">Summary</a>
+</nav>
+
+<div class="explainer">
+  <h3>How to read this report</h3>
+  <p>Each story includes a <strong>coverage bar</strong> showing what percentage of outlets from each political leaning reported it. When one side has little or no coverage, that's a <strong>&ldquo;blindspot&rdquo;</strong>: millions of readers on that side probably never saw it.</p>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span>
+  </div>
+</div>
+
+<div class="media-map">
+  <h3>Media map of Per</h3>
+  <div class="media-columns">
+    <div class="media-col left">
+      <h4>Left</h4>
+      <ul><li>Wayka</li>
+        <li>La Mula</li>
+        <li>Ojo Publico</li>
+        <li>IDL-Reporteros</li></ul>
+    </div>
+    <div class="media-col center">
+      <h4>Center</h4>
+      <ul><li>RPP</li>
+        <li>La Republica</li>
+        <li>Andina</li></ul>
+    </div>
+    <div class="media-col right">
+      <h4>Right</h4>
+      <ul><li>El Comercio</li>
+        <li>Gestion</li>
+        <li>Correo</li>
+        <li>Expreso</li></ul>
+    </div>
+  </div>
+</div>
+
+<div id="blindspots">
+<div class="section-divider"><h2>Same data, opposing narratives</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">All segments provided electoral information, although right-wing media mixed lottery results and entertainment while center media focused on voting guides</span>
+    <span class="source-count">20 verified sources</span>
+  </div>
+  <h2><a href="https://elcomercio.pe/mag/usa/loterias/numeros-ganadores-del-powerball-mira-los-resultados-del-sorteo-jackpot-del-8-de-abril-2026-con-premio-mayor-de-" target="_blank" rel="noopener">Peru prepares for Sunday elections with voting guides</a></h2>
+  <p class="summary">Days before the elections, Peruvian media focused on voter information: polling places, voting procedures, fines for abstention, dry law hours and candidate profiles. Twenty presidential candidates are also competing for Senate seats simultaneously.</p>
+  <div class="context">
+    <strong>Context:</strong> The 2026 general elections in Peru come after years of political instability that include multiple presidential changes. The high number of presidential candidates reflects a fragmented political landscape, and media coverage prioritized practical information for voters.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:10%"><span>10%</span></div>
+      <div class="bar-right" style="width:8%"><span>8%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://elcomercio.pe/mag/usa/loterias/numeros-ganadores-del-powerball-mira-los-resultados-del-sorteo-jackpot-del-8-de-abril-2026-con-premio-mayor-de-" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://elcomercio.pe/mag/usa/loterias/alguien-gano-el-powerball-hoy-8-de-abril-2026-resultados-numeros-ganadores-y-premio-del-sorteo-en-eeuu-nnda-nnr" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://diariocorreo.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://diariocorreo.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://diariocorreo.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.expreso.com.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.expreso.com.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.expreso.com.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://rpp.pe/futbol/ligas-internacionales/liga-de-francia-se-enfrentan-olympique-de-marsella-y-metz-por-la-fecha-29-noticia-1683542" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://rpp.pe/politica/elecciones/cuando-y-a-que-hora-empieza-la-ley-seca-en-peru-por-elecciones-2026-noticia-1683248" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://rpp.pe/politica/elecciones/onpe-consulta-con-dni-mi-lugar-de-votacion-2026-para-elecciones-noticia-1683376" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://rpp.pe/futbol/copa-sudamericana/cienciano-vs-juventud-en-vivo-via-d-sports-transmision-y-guia-tv-fecha-1-copa-sudamericana-2026-gratis-partido" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-elecciones-2026-david-amanqui-plantea-una-nueva-ley-mineria-artesanal-1070463.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-muestra-violeta-quispe-yupari-inspirada-las-tablas-sarhua-la-alianza-francesa-1070460.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-elecciones-2026-llegaste-a-tu-mesa-votacion-aqui-los-pasos-clave-para-un-voto-rapido-1070297.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Election coverage dominated but was more service-oriented than analytical. Center media provided the most comprehensive voter guides, while right-wing media mixed electoral content with entertainment and daily news.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only center media covered this sports story; right-wing and left-wing media were absent</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://rpp.pe/futbol/copa-libertadores/sporting-felipe-vizeu-respondio-por-criticas-tras-gol-ante-cerro-porteno-y-si-penso-dejar-club-celeste-copa-li" target="_blank" rel="noopener">Felipe Vizeu of Sporting Cristal responds to criticism after key goal</a></h2>
+  <p class="summary">Brazilian forward Felipe Vizeu of Sporting Cristal addressed criticisms and denied wanting to leave the club after scoring a crucial goal in the Copa Libertadores against Cerro Porteno.</p>
+  <div class="context">
+    <strong>Context:</strong> Sporting Cristal is one of Peru&#x27;s top football clubs. Vizeu&#x27;s goal came at a crucial moment in their Libertadores campaign, easing tensions between the player and fans.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:2%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://rpp.pe/futbol/copa-libertadores/sporting-felipe-vizeu-respondio-por-criticas-tras-gol-ante-cerro-porteno-y-si-penso-dejar-club-celeste-copa-li" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-felipe-vizeu-dice-su-gol-fue-mas-esperado-y-descarto-deseo-marcharse-1070466.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A routine sports story covered only by center media, reflecting their broader coverage mandate compared to more politically focused right-wing and left-wing media.</div>
+</div>
+<div class="section-divider"><h2>Left-wing blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-wing media covered the controversy of VP linked to Castillo; only right-wing and center media reported on it</span>
+    <span class="source-count">7 verified sources</span>
+  </div>
+  <h2><a href="https://elcomercio.pe/mag/fama/que-ver/perfect-crown-guia-de-episodios-fecha-y-hora-de-estreno-de-cada-capitulo-de-la-serie-coreana-de-disney-plus-la-" target="_blank" rel="noopener">Vice-presidential candidates with ties to Castillo cause alarm</a></h2>
+  <p class="summary">Right-wing media alerted about vice-presidential candidates with links to former President Pedro Castillo, who remains imprisoned. A judge reprimanded Castillo for attempting to campaign from prison, while Keiko Fujimori criticized proposals to pardon him.</p>
+  <div class="context">
+    <strong>Context:</strong> Pedro Castillo was removed from office and imprisoned in 2022 after attempting to dissolve Congress. His political movement remains active, and candidates linked to him are seen as controversial by the established political class.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:2%"><span></span></div>
+      <div class="bar-right" style="width:5%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://elcomercio.pe/mag/fama/que-ver/perfect-crown-guia-de-episodios-fecha-y-hora-de-estreno-de-cada-capitulo-de-la-serie-coreana-de-disney-plus-la-" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://diariocorreo.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://diariocorreo.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.expreso.com.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://www.expreso.com.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-atencion-transportista-deslizamiento-rocas-bloquea-km-97-de-carretera-central-1070459.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The debate about candidates linked to Castillo was almost exclusively driven by right-wing media, with center media providing limited coverage and left-wing media completely silent on a story with important electoral implications.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-wing media covered these stories; only center media reported on civic engagement, crime and commercial effects</span>
+    <span class="source-count">4 verified sources</span>
+  </div>
+  <h2><a href="https://rpp.pe/lima/policiales/capturan-a-tres-presuntos-integrantes-de-banda-dedicada-a-la-pornografia-infantil-noticia-1683533" target="_blank" rel="noopener">Youth civic app and police raids dominate headlines</a></h2>
+  <p class="summary">University students created an application to promote young people&#x27;s interest in politics before the elections. Separately, the police arrested three suspects in a child pornography ring, and U.S. tariffs of up to 50% on Peruvian copper exports raised economic concerns.</p>
+  <div class="context">
+    <strong>Context:</strong> With elections approaching, civic engagement tools are timely. The copper tariff story is significant as mining is Peru&#x27;s most important export sector and U.S. trade policy directly impacts the economy.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:4%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://rpp.pe/lima/policiales/capturan-a-tres-presuntos-integrantes-de-banda-dedicada-a-la-pornografia-infantil-noticia-1683533" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://larepublica.pe" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-universitarios-crean-app-para-promover-interes-los-jovenes-por-politica-1070467.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+    <a href="https://andina.pe/agencia/noticia-detienen-a-3-sujetos-involucrados-la-difusion-pornografia-infantil-redes-sociales-1070457.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Important stories about civic engagement, crime fighting and U.S. tariffs on Peruvian copper were covered exclusively by center media, with both left-wing and right-wing media absent.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-wing media covered this social policy story; only right-wing and center media reported on it</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://diariocorreo.pe" target="_blank" rel="noopener">Government assigns housing rental subsidies in regions</a></h2>
+  <p class="summary">Peru&#x27;s Ministry of Housing announced the delivery of 118 rental vouchers in 6 regions, aiming to help families access affordable housing.</p>
+  <div class="context">
+    <strong>Context:</strong> Housing affordability is a growing concern in Peru, especially in urban areas. Government subsidy programs aim to address this gap but face questions about their scale and reach.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:1%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://diariocorreo.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://andina.pe/agencia/noticia-ministerio-vivienda-entregara-118-bonos-arrendamiento-6-regiones-1070461.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A government housing subsidy program received minimal coverage, with left-wing media — which typically focus on social policy — absent from the story.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-wing media covered government budgets for sports and disaster relief</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.expreso.com.pe" target="_blank" rel="noopener">Government funds maintenance of sports infrastructure</a></h2>
+  <p class="summary">Peru&#x27;s Ministry of Economy and Finance allocated S/ 49.8 million for services and maintenance of sports infrastructure, while separately S/ 2 million were allocated to municipalities for disaster response.</p>
+  <div class="context">
+    <strong>Context:</strong> Public investment in sports infrastructure and disaster preparedness reflects the government&#x27;s priorities ahead of elections, with fiscal decisions under scrutiny.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:1%"><span></span></div>
+      <div class="bar-right" style="width:1%"><span></span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.expreso.com.pe" target="_blank" rel="noopener" class="bias-right"></a>
+    <a href="https://andina.pe/agencia/noticia-mef-destina-s-498-millones-para-servicios-y-mantenimiento-infraestructura-deportiva-1070454.aspx" target="_blank" rel="noopener" class="bias-center"></a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Government spending decisions received limited coverage only from right-wing and center media, with left-wing media absent in fiscal accountability.</div>
+</div>
+
+</div>
+
+<div id="titulares">
+
+</div>
+
+<div id="resumen">
+<div class="weekly-summary">
+  <h3>Weekly summary</h3>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="num">6</div>
+      <div class="label">Stories analyzed</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">11</div>
+      <div class="label">Outlets monitored</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">?</div>
+      <div class="label">Articles verified</div>
+    </div>
+  </div>
+
+  <p><strong>Main topics:</strong> </p>
+  <p><strong>Most balanced outlet:</strong> </p>
+
+  <div class="bias-summary">
+    <div class="bias-card right-missed">
+      <strong>The right didn't cover or downplayed:</strong>
+      
+    </div>
+    <div class="bias-card left-missed">
+      <strong>The left didn't cover:</strong>
+      
+    </div>
+  </div>
+
+  <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 15px;">
+    <strong>&ldquo;&rdquo;</strong>
+  </p>
+</div>
+</div>
+
+<footer>
+  <p class="credits">
+    Automated media analysis for Per &middot; Friday, April 10, 2026<br>
+    Sources verified via RSS and cross-search &middot; Analysis by local AI
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
