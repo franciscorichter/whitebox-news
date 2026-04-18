@@ -699,7 +699,7 @@
   </div>
 
   <footer>
-    Whitebox News &middot; 155 countries &middot; Automated media analysis
+    Powered by <a href="https://www.whitebox.cl" style="color:#5ef4d6;text-decoration:none;">WhiteBox</a> &middot; <a href="https://www.whitebox.cl" style="color:#aaa;text-decoration:none;">www.whitebox.cl</a>
   </footer>
 
 </div>
@@ -828,7 +828,7 @@ setTimeout(function() {
     var subtitle = document.querySelector('.subtitle');
     if (subtitle) subtitle.innerHTML = 'Media blindspots across the world &mdash; ' + count + ' countries today';
     var footer = document.querySelector('footer');
-    if (footer) footer.textContent = 'Whitebox News \u00b7 ' + count + ' countries today \u00b7 Automated media analysis';
+    if (footer) footer.innerHTML = 'Powered by <a href=\"https://www.whitebox.cl\" style=\"color:#5ef4d6;text-decoration:none;\">WhiteBox</a> \u00b7 <a href=\"https://www.whitebox.cl\" style=\"color:#aaa;text-decoration:none;\">www.whitebox.cl</a>';
   }).catch(function() {});
 }, 2000);
 </script>
