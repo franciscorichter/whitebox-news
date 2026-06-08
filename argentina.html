@@ -1,55 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News from Argentina &mdash; April 10, 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-    --blue: #2563eb;
-    --purple: #7c3aed;
-    --red: #dc2626;
-    --amber: #d97706;
-    --green: #059669;
-    --bg: #faf9f6;
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News from Argentina — 9 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>:root {
+    --wb-dark: #03040a;
+    --wb-accent: #5ef4d6;
+    --wb-accent-dim: #3dd4b8;
+    --blue: #5c6370;
+    --purple: #8c919a;
+    --red: #a89080;
+    --amber: #d4940a;
+    --green: #2dba8e;
+    --bg: #fafbfd;
+    --bg-warm: #f6f7fb;
     --card: #ffffff;
-    --text: #1a1a1a;
-    --text-secondary: #555;
-    --text-muted: #888;
-    --border: #e5e4e0;
+    --text: #0a0b10;
+    --text-secondary: #4a4d55;
+    --text-muted: #8a8d95;
+    --border: #e2e4ea;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'IBM Plex Sans', 'Inter', -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
   .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
-  header { text-align: center; padding: 48px 0 36px; border-bottom: 3px double var(--text); margin-bottom: 36px; }
-  header .flag { font-size: 36px; margin-bottom: 8px; }
-  header .logo { font-family: 'Newsreader', Georgia, serif; font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
-  header .edition { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
-  header .date { font-family: 'Newsreader', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
+  header { text-align: center; padding: 48px 0 36px; border-bottom: 2px solid var(--text); margin-bottom: 36px; }
+  .wb-cube { width: 40px; height: 40px; color: var(--text); margin-bottom: 10px; }
+  .brand-bar { width: 80px; height: 3px; background: var(--wb-accent); margin: 16px auto 0; border-radius: 2px; }
+  header .logo { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 38px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+  header .edition { font-family: 'Space Grotesk', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  header .date { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
   header .subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
   .toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
-  .toc a { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.2s; }
-  .toc a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .toc a { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 8px; border: 1px solid var(--border); transition: all 0.2s; }
+  .toc a:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
   .section-divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
   .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-  .section-divider h2 { font-family: 'Newsreader', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; font-style: italic; }
-  .explainer { background: #f0fdf4; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid #bbf7d0; position: relative; }
-  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--green); color: #fff; border-radius: 50%; font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
-  .explainer h3 { font-size: 15px; font-weight: 700; color: #166534; margin-bottom: 8px; }
-  .explainer p { font-size: 13.5px; color: #15803d; line-height: 1.75; }
+  .section-divider h2 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; }
+  .explainer { background: rgba(94,244,214,0.08); border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid rgba(94,244,214,0.25); position: relative; }
+  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--wb-accent-dim); color: var(--wb-dark); border-radius: 50%; font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+  .explainer h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0a6b56; margin-bottom: 8px; }
+  .explainer p { font-size: 13.5px; color: #0a6b56; line-height: 1.75; }
   .explainer .legend { display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
-  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #166534; }
+  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #0a6b56; }
   .legend-swatch { width: 24px; height: 12px; border-radius: 3px; }
   .media-map { background: var(--card); border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); }
-  .media-map h3 { font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .media-map h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
   .media-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
   .media-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; }
   .media-col.left h4 { color: var(--blue); }
@@ -60,13 +59,13 @@
   .story:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
   .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
   .blindspot-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .blindspot-tag.no-right { background: #fef3c7; color: #92400e; }
-  .blindspot-tag.low-left { background: #dbeafe; color: #1e40af; }
-  .blindspot-tag.low-right { background: #fef3c7; color: #92400e; }
-  .blindspot-tag.dual { background: #fce7f3; color: #9d174d; }
-  .blindspot-tag.balanced { background: #f0fdf4; color: #166534; }
+  .blindspot-tag.no-right { background: #f0ece6; color: #5c4e3a; }
+  .blindspot-tag.low-left { background: #e8eaed; color: #3c4043; }
+  .blindspot-tag.low-right { background: #f0ece6; color: #5c4e3a; }
+  .blindspot-tag.dual { background: #eae6ee; color: #4a3d55; }
+  .blindspot-tag.balanced { background: rgba(94,244,214,0.12); color: #0a6b56; }
   .source-count { font-size: 11px; color: var(--text-muted); font-weight: 500; }
-  .story h2 { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .story h2 { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 21px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
   .story h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .story h2 a:hover { border-bottom-color: var(--text); }
   .story .summary { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.75; }
@@ -75,23 +74,23 @@
   .coverage-bar-container { margin-top: 16px; }
   .coverage-bar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; }
   .coverage-bar { display: flex; height: 32px; border-radius: 10px; overflow: hidden; font-size: 11px; font-weight: 700; }
-  .bar-left { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; display: flex; align-items: center; justify-content: center; }
-  .bar-center { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: #fff; display: flex; align-items: center; justify-content: center; }
-  .bar-right { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-left { background: linear-gradient(135deg, #6b7280, #4b5563); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-center { background: linear-gradient(135deg, #9ca3af, #7c8390); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-right { background: linear-gradient(135deg, #b8a898, #a08e7c); color: #fff; display: flex; align-items: center; justify-content: center; }
   .bar-left span, .bar-center span, .bar-right span { padding: 0 8px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
   .sources-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
   .sources-list a { font-size: 11px; color: var(--text-muted); text-decoration: none; padding: 3px 10px; border-radius: 6px; background: #f3f4f6; border: 1px solid #e5e7eb; transition: all 0.15s; font-weight: 500; }
-  .sources-list a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .sources-list a:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
   .sources-list .bias-left { border-left: 3px solid var(--blue); }
   .sources-list .bias-center { border-left: 3px solid var(--purple); }
   .sources-list .bias-right { border-left: 3px solid var(--red); }
-  .takeaway { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #78350f; line-height: 1.7; }
-  .takeaway strong { color: #92400e; }
-  .highlight-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
-  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%); pointer-events: none; }
-  .highlight-section .section-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #fbbf24; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: #fbbf24; }
-  .highlight-section h2 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
+  .takeaway { background: rgba(94,244,214,0.08); border-left: 4px solid var(--wb-accent-dim); padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #0a6b56; line-height: 1.7; }
+  .takeaway strong { color: #065e4a; }
+  .highlight-section { background: linear-gradient(135deg, var(--wb-dark) 0%, #0f1218 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
+  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(94,244,214,0.12) 0%, transparent 70%); pointer-events: none; }
+  .highlight-section .section-tag { font-family: 'Space Grotesk', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--wb-accent); font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: var(--wb-accent); }
+  .highlight-section h2 { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
   .highlight-section .hl-summary { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.7; }
   .outlet-comparison { display: flex; flex-direction: column; gap: 8px; }
   .outlet-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: background 0.15s; }
@@ -101,25 +100,27 @@
   .outlet-bias.center { background: var(--purple); }
   .outlet-bias.right { background: var(--red); }
   .outlet-name { font-size: 12px; font-weight: 700; width: 120px; flex-shrink: 0; color: #e2e8f0; }
-  .outlet-headline { font-family: 'Newsreader', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
-  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(251,191,36,0.1); border-radius: 10px; border: 1px solid rgba(251,191,36,0.2); }
-  .hl-analysis p { font-size: 13px; color: #fde68a; line-height: 1.7; }
-  .hl-analysis strong { color: #fbbf24; }
-  .weekly-summary { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid #fde68a; }
-  .weekly-summary h3 { font-family: 'Newsreader', Georgia, serif; font-size: 20px; font-weight: 600; color: #78350f; margin-bottom: 18px; }
+  .outlet-headline { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
+  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(94,244,214,0.08); border-radius: 10px; border: 1px solid rgba(94,244,214,0.15); }
+  .hl-analysis p { font-size: 13px; color: #a8f0df; line-height: 1.7; }
+  .hl-analysis strong { color: var(--wb-accent); }
+  .weekly-summary { background: linear-gradient(135deg, rgba(94,244,214,0.06), rgba(139,138,253,0.06)); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid rgba(94,244,214,0.2); }
+  .weekly-summary h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 18px; }
   .weekly-summary .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
-  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(217,119,6,0.15); }
-  .stat-box .num { font-size: 28px; font-weight: 700; color: #92400e; line-height: 1; }
-  .stat-box .label { font-size: 11px; color: #b45309; margin-top: 4px; font-weight: 500; }
-  .weekly-summary p { font-size: 14px; color: #78350f; line-height: 1.75; margin-bottom: 12px; }
-  .weekly-summary strong { color: #92400e; }
+  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(94,244,214,0.2); }
+  .stat-box .num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #065e4a; line-height: 1; }
+  .stat-box .label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #0a6b56; margin-top: 4px; font-weight: 500; }
+  .weekly-summary p { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+  .weekly-summary strong { color: var(--text); }
   .bias-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
   .bias-card { padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
-  .bias-card.right-missed { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); color: #991b1b; }
-  .bias-card.left-missed { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); color: #1e3a5f; }
+  .bias-card.right-missed { background: rgba(184,168,152,0.1); border: 1px solid rgba(184,168,152,0.2); color: #5c4e3a; }
+  .bias-card.left-missed { background: rgba(107,114,128,0.1); border: 1px solid rgba(107,114,128,0.2); color: #3c4043; }
   .bias-card strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.7; }
-  footer { text-align: center; padding: 36px 0 16px; border-top: 3px double var(--border); margin-top: 48px; }
-  footer .made-by { font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-style: italic; color: var(--text-secondary); margin-bottom: 8px; }
+  footer { text-align: center; padding: 36px 0 16px; border-top: 2px solid var(--text); margin-top: 48px; }
+  footer .wb-cube { width: 28px; height: 28px; color: var(--text-muted); margin-bottom: 6px; }
+  footer .wb-wordmark { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 10px; }
+  footer .brand-bar { width: 60px; height: 2px; background: var(--wb-accent-dim); margin: 8px auto 12px; border-radius: 2px; }
   footer .credits { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
   @media (max-width: 520px) {
     .container { padding: 16px 14px 40px; }
@@ -140,88 +141,51 @@
   .date-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
   .date-nav-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
   .date-link { font-size: 11px; color: var(--text-secondary); text-decoration: none; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--border); transition: all 0.15s; font-weight: 500; }
-  .date-link:hover { background: var(--text); color: #fff; border-color: var(--text); }
-  .date-link.active { background: var(--text); color: #fff; border-color: var(--text); font-weight: 700; pointer-events: none; }
-.lang-switcher { display: flex; gap: 8px; justify-content: center; margin: 8px 0; }
-.lang-switcher a { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 14px; }
-.lang-switcher a:hover { background: var(--bg-secondary); }
-.lang-switcher a.active { background: var(--text-primary); color: var(--bg); border-color: var(--text-primary); }
-</style>
-</head>
-<body>
-<div class="container">
-
-<header>
-  <div class="flag"></div>
-  <div class="logo">News from Argentina</div>
-  <div class="edition">Media blindspot report for Argentina</div>
-  <div class="date">Friday, April 10, 2026</div>
-  <div class="lang-switcher"><a href="https://franciscorichter.github.io/noticias-mama/argentina.html">Español</a><a class="active" href="#">English</a></div>
-  <p class="subtitle">An analysis of the most important news from Argentina, showing which outlets covered them, which ignored them, and how each side framed the same events.</p>
-</header>
-
-<nav class="toc">
-  <a href="#blindspots">Blindspots</a>
-  <a href="#titulares">Same facts, different headlines</a>
-  <a href="#resumen">Summary</a>
-</nav>
-
-<div class="explainer">
-  <h3>How to read this report</h3>
-  <p>Each story includes a <strong>coverage bar</strong> showing what percentage of outlets from each political leaning reported it. When one side has little or no coverage, that's a <strong>&ldquo;blindspot&rdquo;</strong>: millions of readers on that side probably never saw it.</p>
-  <div class="legend">
-    <span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span>
-    <span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span>
-    <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span>
-  </div>
-</div>
-
-<div class="media-map">
-  <h3>Media map of Argentina</h3>
-  <div class="media-columns">
-    <div class="media-col left">
-      <h4>Left</h4>
-      <ul></ul>
-    </div>
-    <div class="media-col center">
-      <h4>Center</h4>
-      <ul></ul>
-    </div>
-    <div class="media-col right">
-      <h4>Right</h4>
-      <ul></ul>
-    </div>
-  </div>
-</div>
-
-<div id="blindspots">
-<div class="section-divider"><h2>Same data, opposing narratives</h2></div>
+  .date-link:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
+  .date-link.active { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); font-weight: 700; pointer-events: none; }</style></head><body><div class="container">
+<header><div class="flag">🇦🇷</div><div class="logo">News from Argentina</div><div class="edition">BLINDSPOT REPORT</div><div class="date">Tuesday 9 June, 2026</div>
+<nav class="toc"><a href="#blindspots">Blindspots</a><a href="#titulares">Headlines</a><a href="#resumen">Summary</a></nav>
+<div class="explainer"><h3>How to read this report</h3><p>Each story includes a <strong>coverage bar</strong>. When one side has little coverage, that's a <strong>blindspot</strong>.</p>
+<div class="legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span><span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span><span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span></div></div>
+<div class="media-map"><h3>Media map</h3><div class="media-columns"><div class="media-col left"><h4>Left</h4><ul><li>El Watan</li>
+<li>Interlignes</li>
+<li>Radio M</li>
+<li>El Manchar</li>
+<li>Casbah Tribune</li></ul></div><div class="media-col center"><h4>Center</h4><ul><li>TSA</li>
+<li>APS</li>
+<li>El Khabar</li>
+<li>L Expression</li>
+<li>Le Soir d Algerie</li>
+<li>Algerie 360</li></ul></div><div class="media-col right"><h4>Right</h4><ul><li>Echorouk</li>
+<li>El Moudjahid</li>
+<li>Horizons</li></ul></div></div></div>
+<div id="blindspots"><div class="section-divider"><h2>Same data, opposing narratives</h2></div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">All three segments covered the strike, although with different emphases on causes and impact</span>
+    <span class="blindspot-tag balanced">All three segments covered the strike, though with different emphases on causes and impact</span>
     <span class="source-count">12 verified sources</span>
   </div>
-  <h2><a href="https://www.lanacion.com.ar/economia/dolar/dolar-hoy-dolar-blue-hoy-precio-en-vivo-a-cuanto-cotizan-este-jueves-9-de-abril-nid09042026/" target="_blank" rel="noopener">Bus strike and daily disruptions dominate headlines</a></h2>
-  <p class="summary">A strike by bus drivers from the UTA union disrupted public transport in Buenos Aires, while media also covered dollar exchange rates, pension payments, and daily anniversaries. The strike affected multiple bus lines with some normalizing throughout the day.</p>
+  <h2><a href="https://www.lanacion.com.ar/economia/dolar/dolar-hoy-dolar-blue-hoy-precio-en-vivo-a-cuanto-cotizan-este-jueves-9-de-April-nid09042026/" target="_blank" rel="noopener">Bus strike and disruptions to daily life dominate headlines</a></h2>
+  <p class="summary">A bus driver strike by the UTA union disrupted public transport in Buenos Aires, while media also covered dollar exchange rates, pension payments, and daily anniversaries. The strike affected multiple bus lines, with some normalizing throughout the day.</p>
   <div class="context">
-    <strong>Context:</strong> Transport strikes in Buenos Aires affect millions of commuters who rely on public buses. The conflict occurs amid Milei&#x27;s fiscal austerity policies and reduced subsidies for transport.
+    <strong>Context:</strong> Transport strikes in Buenos Aires affect millions of commuters who rely on public buses. The conflict occurs amid Milei&#x27;s fiscal austerity policies and the reduction of transport subsidies.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:25%"><span>Left 25%</span></div>
-      <div class="bar-center" style="width:25%"><span>Ctr 25%</span></div>
+      <div class="bar-center" style="width:25%"><span>Center 25%</span></div>
       <div class="bar-right" style="width:50%"><span>Right 50%</span></div>
     </div>
   </div>
   <div class="sources-list">
-    <a href="https://www.lanacion.com.ar/economia/dolar/dolar-hoy-dolar-blue-hoy-precio-en-vivo-a-cuanto-cotizan-este-jueves-9-de-abril-nid09042026/" target="_blank" rel="noopener" class="bias-right">La Nacion</a>
+    <a href="https://www.lanacion.com.ar/economia/dolar/dolar-hoy-dolar-blue-hoy-precio-en-vivo-a-cuanto-cotizan-este-jueves-9-de-April-nid09042026/" target="_blank" rel="noopener" class="bias-right">La Nacion</a>
     <a href="https://www.infobae.com" target="_blank" rel="noopener" class="bias-right">Infobae</a>
     <a href="https://www.infobae.com" target="_blank" rel="noopener" class="bias-right">Infobae</a>
     <a href="https://www.clarin.com" target="_blank" rel="noopener" class="bias-right">Clarin</a>
     <a href="https://www.perfil.com/noticias/politica/la-uta-confirmo-un-paro-de-colectivos-a-partir-de-la-medianoche.phtml" target="_blank" rel="noopener" class="bias-right">Perfil</a>
-    <a href="https://www.perfil.com/noticias/economia/a-cuanto-cotiza-el-dolar-hoy-jueves-9-de-abril-de-2026.phtml" target="_blank" rel="noopener" class="bias-right">Perfil</a>
+    <a href="https://www.perfil.com/noticias/economia/a-cuanto-cotiza-el-dolar-hoy-jueves-9-de-April-de-2026.phtml" target="_blank" rel="noopener" class="bias-right">Perfil</a>
     <a href="https://www.ambito.com" target="_blank" rel="noopener" class="bias-center">Ambito</a>
     <a href="https://www.cronista.com" target="_blank" rel="noopener" class="bias-center">El Cronista</a>
     <a href="https://www.cronista.com" target="_blank" rel="noopener" class="bias-center">El Cronista</a>
@@ -229,24 +193,24 @@
     <a href="https://www.eldestapeweb.com" target="_blank" rel="noopener" class="bias-left">El Destape</a>
     <a href="https://www.eldestapeweb.com" target="_blank" rel="noopener" class="bias-left">El Destape</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The bus strike received wide coverage but right-wing media focused on practical information about disruptions while left-wing media highlighted fare increases driving the conflict.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The bus strike received widespread coverage, but right-wing media focused on practical information regarding disruptions, while left-wing media highlighted the fare increases driving the conflict.</div>
 </div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">All three segments covered the reform, with very different frames between right (legislative achievement) and left (environmental setback)</span>
+    <span class="blindspot-tag balanced">All three segments covered the reform, with very different frameworks between the right (legislative achievement) and the left (environmental setback)</span>
     <span class="source-count">7 verified sources</span>
   </div>
   <h2><a href="https://www.lanacion.com.ar/politica/el-colegio-de-abogados-de-la-ciudad-de-buenos-aires-celebro-la-sancion-de-la-ley-de-glaciares-nid09042026/" target="_blank" rel="noopener">Congress approves glacier law reform to allow mining</a></h2>
-  <p class="summary">The Chamber of Deputies approved a reform of Argentina&#x27;s Glacier Protection Law, backed by provincial governors, to allow mining investments in glacial and periglacial zones. Environmental groups protested outside Congress during the vote.</p>
+  <p class="summary">The Chamber of Deputies approved a reform of Argentina&#x27;s Glacier Protection Law, backed by provincial governors, to allow mining investments in glacier and periglacial areas. Environmental groups protested outside Congress during the vote.</p>
   <div class="context">
-    <strong>Context:</strong> The original 2010 law prohibited mining in glacial areas. Milei&#x27;s government pushed for the reform to unlock mineral extraction in provinces like San Juan and Catamarca, making it one of the most debated recent environmental policy changes in Argentina.
+    <strong>Context:</strong> The original 2010 law prohibited mining in glacier areas. The Milei government pushed for the reform to unlock mineral extraction in provinces such as San Juan and Catamarca, making it one of the most debated environmental policy changes in recent Argentine history.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:29%"><span>Left 29%</span></div>
-      <div class="bar-center" style="width:29%"><span>Ctr 29%</span></div>
+      <div class="bar-center" style="width:29%"><span>Center 29%</span></div>
       <div class="bar-right" style="width:42%"><span>Right 42%</span></div>
     </div>
   </div>
@@ -259,24 +223,24 @@
     <a href="https://www.pagina12.com.ar" target="_blank" rel="noopener" class="bias-left">Pagina 12</a>
     <a href="https://www.pagina12.com.ar" target="_blank" rel="noopener" class="bias-left">Pagina 12</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The day&#x27;s top story received wide coverage but with dramatically different frames: right-wing media celebrated provincial consensus while left-wing media highlighted citizen protests against mining interests.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The day&#x27;s most important story received widespread coverage but with dramatically different frameworks: right-wing media celebrated the provincial consensus, while left-wing media highlighted citizen protests against mining interests.</div>
 </div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">Left-wing media led with Milei&#x27;s declining image while right-wing media focused on international affairs and trade; center media covered the economic context</span>
+    <span class="blindspot-tag balanced">Left-wing media led with Milei&#x27;s declining image, while right-wing media focused on international affairs and trade; centrist media covered the economic context.</span>
     <span class="source-count">4 verified sources</span>
   </div>
-  <h2><a href="https://www.lanacion.com.ar/el-mundo/dia-41-de-la-guerra-entre-estados-unidos-israel-e-iran-todo-lo-que-hay-que-saber-nid09042026/" target="_blank" rel="noopener">Milei&#x27;s approval rating plummets amid economic crisis</a></h2>
-  <p class="summary">Polls show that President Milei&#x27;s approval rate is in free fall due to the economic crisis. Meanwhile, the conflict in the Middle East continues to affect global markets and Argentina launched a beef export initiative to the US.</p>
+  <h2><a href="https://www.lanacion.com.ar/el-mundo/dia-41-de-la-guerra-entre-estados-unidos-israel-e-iran-todo-lo-que-hay-que-saber-nid09042026/" target="_blank" rel="noopener">Milei&#x27;s approval ratings plummet amid economic crisis</a></h2>
+  <p class="summary">Polls show President Milei&#x27;s approval rating is in freefall due to the economic crisis. Meanwhile, the conflict in the Middle East continues to affect global markets, and Argentina launched a beef export initiative to the US.</p>
   <div class="context">
-    <strong>Context:</strong> Milei&#x27;s economic austerity program has faced growing public resistance as inflation and unemployment persist. His falling approval threatens the government&#x27;s ability to push through additional reforms.
+    <strong>Context:</strong> Milei&#x27;s economic austerity program has faced growing public resistance as inflation and unemployment persist. His declining approval rating threatens the government&#x27;s ability to push through additional reforms.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:25%"><span>Left 25%</span></div>
-      <div class="bar-center" style="width:25%"><span>Ctr 25%</span></div>
+      <div class="bar-center" style="width:25%"><span>Center 25%</span></div>
       <div class="bar-right" style="width:50%"><span>Right 50%</span></div>
     </div>
   </div>
@@ -286,21 +250,21 @@
     <a href="https://www.ambito.com" target="_blank" rel="noopener" class="bias-center">Ambito</a>
     <a href="https://www.pagina12.com.ar" target="_blank" rel="noopener" class="bias-left">Pagina 12</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The framing gap is marked: left-wing media highlighted Milei&#x27;s plummeting approval as the headline while right-wing media focused on international news and export opportunities, avoiding domestic political damage narratives.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The framing gap is marked: left-wing media highlighted the plummeting approval of Milei as the headline, while right-wing media focused on international news and export opportunities, avoiding narratives of domestic political damage.</div>
 </div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">Left-wing media aggressively investigated while right-wing media covered the notary&#x27;s defense; center media were absent</span>
+    <span class="blindspot-tag balanced">Left-wing media investigated aggressively while right-wing media covered the notary&#x27;s defense; centrist media were absent.</span>
     <span class="source-count">4 verified sources</span>
   </div>
   <h2><a href="https://www.perfil.com/noticias/politica/la-escribana-de-adorni-volvio-a-tribunales-para-ampliar-su-declaracion-estoy-tranquila-con-mi-trabajo.phtml" target="_blank" rel="noopener">Adorni&#x27;s notary returns to court in real estate scandal</a></h2>
-  <p class="summary">The notary involved in the controversial property purchase by presidential spokesman Adorni unexpectedly returned to Comodoro Py court to expand his testimony. The case raises questions about the origin of funds used to buy an apartment.</p>
+  <p class="summary">The notary involved in the controversial property purchase of presidential spokesperson Adorni unexpectedly returned to the Comodoro Py court to expand their testimony. The case raises questions about the origin of the funds used to purchase an apartment.</p>
   <div class="context">
-    <strong>Context:</strong> Manuel Adorni is Milei&#x27;s presidential spokesperson. The scandal over funding sources for his apartment purchase has become a significant political liability, with questions about possible irregularities in the transaction.
+    <strong>Context:</strong> Manuel Adorni is Milei&#x27;s presidential spokesperson. The scandal regarding the funding sources for the purchase of his apartment has become a major political liability, with questions regarding potential irregularities in the transaction.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:75%"><span>Left 75%</span></div>
       <div class="bar-right" style="width:25%"><span>Right 25%</span></div>
@@ -312,85 +276,79 @@
     <a href="https://www.eldiarioar.com/politica/escribana-adorni-presento-vez-comodoro-py-despues-dio-detalles-prensa_1_13130633.html" target="_blank" rel="noopener" class="bias-left">elDiarioAR</a>
     <a href="https://www.eldestapeweb.com" target="_blank" rel="noopener" class="bias-left">El Destape</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Adorni&#x27;s real estate scandal shows a clear asymmetry in coverage: left-wing media treated it as a major corruption story while only one right-wing medium covered the notary&#x27;s self-defense angle. Center media ignored it completely.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Adorni&#x27;s real estate scandal shows a clear asymmetry in coverage: left-wing media treated it as a major corruption story, while only one right-wing outlet covered the notary&#x27;s self-defense angle. Centrist media ignored it completely.</div>
 </div>
-<div class="section-divider"><h2>Right-wing blindspots</h2></div>
+<div class="section-divider"><h2>Right blindspots</h2></div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">Right-leaning media did not cover this sports story, which only appeared in center and leftist media</span>
+    <span class="blindspot-tag balanced">Right-leaning media did not cover this sports story, which only appeared in centrist and left-wing media.</span>
     <span class="source-count">2 verified sources</span>
   </div>
-  <h2><a href="https://www.ambito.com" target="_blank" rel="noopener">River Plate draws with Blooming in Copa Sudamericana 2026 debut</a></h2>
-  <p class="summary">River Plate drew with Bolivian club Blooming in their Copa Sudamericana 2026 debut in Bolivia, playing with ten men from early in the match.</p>
+  <h2><a href="https://www.ambito.com" target="_blank" rel="noopener">River Plate draws with Blooming in their 2026 Copa Sudamericana debut</a></h2>
+  <p class="summary">River Plate drew with the Bolivian club Blooming in their 2026 Copa Sudamericana debut in Bolivia, playing with ten men from early in the match.</p>
   <div class="context">
-    <strong>Context:</strong> River Plate is one of Argentina&#x27;s largest football clubs. Playing at high altitude in Bolivia is always a challenge and the early red card made the draw a respectable result.
+    <strong>Context:</strong> River Plate is one of Argentina&#x27;s largest football clubs. Playing at high altitude in Bolivia is always a challenge, and the early red card made the draw a respectable result.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:50%"><span>Left 50%</span></div>
-      <div class="bar-center" style="width:50%"><span>Ctr 50%</span></div>
+      <div class="bar-center" style="width:50%"><span>Center 50%</span></div>
     </div>
   </div>
   <div class="sources-list">
     <a href="https://www.ambito.com" target="_blank" rel="noopener" class="bias-center">Ambito</a>
     <a href="https://www.eldiarioar.com/deportes/river-igualo-blooming-visita-bolivia-debut-copa-sudamericana-2026_1_13129398.html" target="_blank" rel="noopener" class="bias-left">elDiarioAR</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A routine sporting result that received limited coverage, with center and leftist media providing match reports.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A routine sporting result that received limited coverage, with center and left-wing media providing match reports.</div>
 </div>
-
-</div>
-
-<div id="titulares">
-
-</div>
-
-<div id="resumen">
-<div class="weekly-summary">
-  <h3>Weekly summary</h3>
-  <div class="stat-grid">
-    <div class="stat-box">
-      <div class="num">5</div>
-      <div class="label">Stories analyzed</div>
+</div><div id="titulares">
+<div class="highlight-section">
+  <div class="section-tag">Same story, different headlines</div>
+  <h2>Glacier Law Reform</h2>
+  <p class="hl-summary">The approval of legislative reform to allow mining activity.</p>
+  <div class="outlet-comparison">
+    <div class="outlet-row">
+      <span class="outlet-bias right">Right</span>
+      <span class="outlet-name">Clarin</span>
+      <span class="outlet-headline">&ldquo;Glacier Law: the Government secured a victory in the early hours of the morning, the key points of the reform that r&rdquo;</span>
     </div>
-    <div class="stat-box">
-      <div class="num">0</div>
-      <div class="label">Outlets monitored</div>
-    </div>
-    <div class="stat-box">
-      <div class="num">?</div>
-      <div class="label">Articles verified</div>
+    <div class="outlet-row">
+      <span class="outlet-bias left">Left</span>
+      <span class="outlet-name">Pagina 12</span>
+      <span class="outlet-headline">&ldquo;Glaciers: the Government and its allies approved the reform requested by mining companies&rdquo;</span>
     </div>
   </div>
+  <div class="hl-analysis">
+    <p><strong>&#128269; Analysis:</strong> Right-wing media present the news as a management success and a legislative breakthrough for the ruling party. In contrast, left-wing media frame the approval as a direct concession to the interests of mining companies. This difference in focus alters the perception of the law, shifting from a political triumph to a loss of environmental protection.</p>
+  </div>
+</div>
 
-  <p><strong>Main topics:</strong> </p>
-  <p><strong>Most balanced outlet:</strong> </p>
-
-  <div class="bias-summary">
-    <div class="bias-card right-missed">
-      <strong>The right didn't cover or downplayed:</strong>
-      
+<div class="highlight-section">
+  <div class="section-tag">Same story, different headlines</div>
+  <h2>Bus strike</h2>
+  <p class="hl-summary">The public transport strike and its impact on the city.</p>
+  <div class="outlet-comparison">
+    <div class="outlet-row">
+      <span class="outlet-bias right">Right</span>
+      <span class="outlet-name">Clarin</span>
+      <span class="outlet-headline">&ldquo;Bus strike: which lines are not running this Thursday, April 9, and how long the str&rdquo;</span>
     </div>
-    <div class="bias-card left-missed">
-      <strong>The left didn't cover:</strong>
-      
+    <div class="outlet-row">
+      <span class="outlet-bias left">Left</span>
+      <span class="outlet-name">El Destape</span>
+      <span class="outlet-headline">&ldquo;BUS STRIKE: this is the NEW FARE INCREASE and it is the highest of the year&rdquo;</span>
     </div>
   </div>
-
-  <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 15px;">
-    <strong>&ldquo;&rdquo;</strong>
-  </p>
+  <div class="hl-analysis">
+    <p><strong>&#128269; Analysis:</strong> The right-leaning press focuses on the practical utility of the information, prioritizing the impact on user mobility and the affected lines. The left-wing press, on the other hand, uses the headline to point to the root of the conflict, which is the fare increase. Thus, the focus shifts from passenger inconvenience to the political responsibility for the hike.</p>
+  </div>
 </div>
 </div>
-
-<footer>
-  <p class="credits">
-    Automated media analysis for Argentina &middot; Friday, April 10, 2026<br>
-    Sources verified via RSS and cross-search &middot; Analysis by local AI
-  </p>
-</footer>
-
-</div>
-</body>
-</html>
+<div id="resumen"><div class="weekly-summary"><h3>Daily summary</h3>
+<div class="stat-grid"><div class="stat-box"><div class="num">5</div><div class="label">Stories</div></div><div class="stat-box"><div class="num">14</div><div class="label">Outlets</div></div><div class="stat-box"><div class="num">29</div><div class="label">Articles</div></div></div>
+<p><strong>Main topics:</strong> Glacier Law Reform, Bus strike, Adorni&#x27;s notary scandal, Economic crisis and Milei&#x27;s approval</p><p><strong>Most balanced outlet:</strong> Scope, as it maintains a more technical focus centered on economic and legislative facts without resorting to narratives of conflict.</p>
+<div class="bias-summary"><div class="bias-card right-missed"><strong>The right didn't cover:</strong> The right tended to omit the impact of the fare increase as a driver of social conflict. It also minimized the influence of the mining sectors in the approval of the glacier reform.</div><div class="bias-card left-missed"><strong>The left didn't cover:</strong> The left did not provide visibility to the perspective of the professional sectors that celebrated the new law. Nor did it cover current news regarding commerce and exports that did not align with its narrative of crisis.</div></div>
+<p style="margin-top:20px;font-style:italic;text-align:center;font-size:15px;"><strong>&ldquo;The news is not just what happens, but the lens through which it is decided to be shown.&rdquo;</strong></p></div></div>
+<footer><p class="credits">WhiteBox News &middot; Automated media analysis &middot; Tuesday 9 June, 2026</p></footer></div></body></html>

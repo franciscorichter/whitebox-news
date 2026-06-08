@@ -92,7 +92,7 @@
   .dot:hover + .dot-ring, .dot-active + .dot-ring { opacity: 1; }
 
   /* No-data dots: greyed out, no pointer */
-  .dot-nodata { opacity: 0.25; cursor: default; pointer-events: none; }
+  .dot-nodata { display: none; }
   .dot-nodata:hover { filter: none; }
 
   /* Continent colors */
@@ -289,7 +289,7 @@
         <a href="argentina.html"><circle class="dot c-am dot-hasdata" cx="338" cy="344" r="4.5" data-name="Argentina" data-flag="&#127462;&#127479;" data-m="23"/></a>
         <a href="bolivia.html"><circle class="dot c-am dot-nodata" cx="311" cy="296" r="4" data-name="Bolivia" data-flag="&#127463;&#127476;" data-m="22"/></a>
         <a href="brasil.html"><circle class="dot c-am dot-nodata" cx="367" cy="294" r="4.5" data-name="Brazil" data-flag="&#127463;&#127479;" data-m="23"/></a>
-        <a href="chile.html"><circle class="dot c-am dot-hasdata" cx="304" cy="343" r="5.5" data-name="Chile" data-flag="&#127464;&#127473;" data-m="12"/></a>
+        <a href="chile.html"><circle class="dot c-am dot-nodata" cx="304" cy="343" r="5.5" data-name="Chile" data-flag="&#127464;&#127473;" data-m="12"/></a>
         <a href="colombia.html"><circle class="dot c-am dot-nodata" cx="294" cy="237" r="4.5" data-name="Colombia" data-flag="&#127464;&#127476;" data-m="22"/></a>
         <a href="costarica.html"><circle class="dot c-am dot-nodata" cx="266" cy="223" r="3.5" data-name="Costa Rica" data-flag="&#127464;&#127479;" data-m="22"/></a>
         <a href="cuba.html"><circle class="dot c-am dot-nodata" cx="271" cy="200" r="3.5" data-name="Cuba" data-flag="&#127464;&#127482;" data-m="10"/></a>
@@ -301,7 +301,7 @@
         <a href="nicaragua.html"><circle class="dot c-am dot-nodata" cx="260" cy="216" r="3.5" data-name="Nicaragua" data-flag="&#127475;&#127470;" data-m="22"/></a>
         <a href="panama.html"><circle class="dot c-am dot-nodata" cx="279" cy="225" r="3.5" data-name="Panama" data-flag="&#127477;&#127462;" data-m="22"/></a>
         <a href="paraguay.html"><circle class="dot c-am dot-nodata" cx="340" cy="319" r="4" data-name="Paraguay" data-flag="&#127477;&#127486;" data-m="21"/></a>
-        <a href="peru.html"><circle class="dot c-am dot-hasdata" cx="286" cy="283" r="4.5" data-name="Peru" data-flag="&#127477;&#127466;" data-m="22"/></a>
+        <a href="peru.html"><circle class="dot c-am dot-nodata" cx="286" cy="283" r="4.5" data-name="Peru" data-flag="&#127477;&#127466;" data-m="22"/></a>
         <a href="uruguay.html"><circle class="dot c-am dot-nodata" cx="344" cy="358" r="4" data-name="Uruguay" data-flag="&#127482;&#127486;" data-m="20"/></a>
         <a href="venezuela.html"><circle class="dot c-am dot-nodata" cx="314" cy="221" r="4" data-name="Venezuela" data-flag="&#127483;&#127466;" data-m="20"/></a>
         <a href="belice.html"><circle class="dot c-am dot-nodata" cx="253" cy="202" r="3" data-name="Belize" data-flag="&#127463;&#127487;" data-m="5"/></a>
@@ -328,9 +328,9 @@
         <a href="switzerland.html"><circle class="dot c-eu dot-nodata" cx="521" cy="120" r="4" data-name="Switzerland" data-flag="&#127464;&#127469;" data-m="10"/></a>
         <a href="germany.html"><circle class="dot c-eu dot-nodata" cx="528" cy="108" r="4" data-name="Germany" data-flag="&#127465;&#127466;" data-m="8"/></a>
         <a href="france.html"><circle class="dot c-eu dot-nodata" cx="494" cy="121" r="4" data-name="France" data-flag="&#127467;&#127479;" data-m="9"/></a>
-        <a href="poland.html"><circle class="dot c-eu dot-nodata" cx="555" cy="105" r="4" data-name="Poland" data-flag="&#127477;&#127473;" data-m="8"/></a>
-        <a href="sweden.html"><circle class="dot c-eu dot-nodata" cx="550" cy="85" r="4" data-name="Sweden" data-flag="&#127480;&#127466;" data-m="7"/></a>
-        <a href="norway.html"><circle class="dot c-eu dot-nodata" cx="530" cy="84" r="4" data-name="Norway" data-flag="&#127475;&#127476;" data-m="6"/></a>
+        <a href="poland.html"><circle class="dot c-eu dot-hasdata" cx="555" cy="105" r="4" data-name="Poland" data-flag="&#127477;&#127473;" data-m="8"/></a>
+        <a href="sweden.html"><circle class="dot c-eu dot-hasdata" cx="550" cy="85" r="4" data-name="Sweden" data-flag="&#127480;&#127466;" data-m="7"/></a>
+        <a href="norway.html"><circle class="dot c-eu dot-hasdata" cx="530" cy="84" r="4" data-name="Norway" data-flag="&#127475;&#127476;" data-m="6"/></a>
         <a href="denmark.html"><circle class="dot c-eu dot-nodata" cx="535" cy="95" r="4" data-name="Denmark" data-flag="&#127465;&#127472;" data-m="6"/></a>
         <a href="finland.html"><circle class="dot c-eu dot-nodata" cx="569" cy="83" r="4" data-name="Finland" data-flag="&#127467;&#127470;" data-m="6"/></a>
         <a href="ireland.html"><circle class="dot c-eu dot-nodata" cx="482" cy="102" r="4" data-name="Ireland" data-flag="&#127470;&#127466;" data-m="6"/></a>
@@ -366,14 +366,14 @@
         <a href="egypt.html"><circle class="dot c-af dot-nodata" cx="559" cy="183" r="4.5" data-name="Egypt" data-flag="&#127466;&#127468;" data-m="7"/></a>
         <a href="morocco.html"><circle class="dot c-af dot-nodata" cx="481" cy="166" r="4" data-name="Morocco" data-flag="&#127474;&#127462;" data-m="7"/></a>
         <a href="ghana.html"><circle class="dot c-af dot-nodata" cx="497" cy="228" r="4" data-name="Ghana" data-flag="&#127468;&#127469;" data-m="6"/></a>
-        <a href="ethiopia.html"><circle class="dot c-af dot-nodata" cx="607" cy="225" r="4" data-name="Ethiopia" data-flag="&#127466;&#127481;" data-m="6"/></a>
-        <a href="tanzania.html"><circle class="dot c-af dot-nodata" cx="597" cy="268" r="3.5" data-name="Tanzania" data-flag="&#127481;&#127487;" data-m="5"/></a>
-        <a href="senegal.html"><circle class="dot c-af dot-nodata" cx="459" cy="209" r="4" data-name="Senegal" data-flag="&#127480;&#127475;" data-m="6"/></a>
-        <a href="algeria.html"><circle class="dot c-af dot-nodata" cx="508" cy="148" r="4" data-name="Algeria" data-flag="&#127465;&#127487;" data-m="6"/></a>
-        <a href="tunisia.html"><circle class="dot c-af dot-nodata" cx="528" cy="148" r="3.5" data-name="Tunisia" data-flag="&#127481;&#127475;" data-m="5"/></a>
-        <a href="uganda.html"><circle class="dot c-af dot-nodata" cx="591" cy="249" r="3.5" data-name="Uganda" data-flag="&#127482;&#127468;" data-m="5"/></a>
-        <a href="ivorycoast.html"><circle class="dot c-af dot-nodata" cx="485" cy="229" r="3.5" data-name="Ivory Coast" data-flag="&#127464;&#127470;" data-m="5"/></a>
-        <a href="drcongo.html"><circle class="dot c-af dot-nodata" cx="561" cy="262" r="3.5" data-name="DR Congo" data-flag="&#127464;&#127465;" data-m="5"/></a>
+        <a href="ethiopia.html"><circle class="dot c-af dot-hasdata" cx="607" cy="225" r="4" data-name="Ethiopia" data-flag="&#127466;&#127481;" data-m="6"/></a>
+        <a href="tanzania.html"><circle class="dot c-af dot-hasdata" cx="597" cy="268" r="3.5" data-name="Tanzania" data-flag="&#127481;&#127487;" data-m="5"/></a>
+        <a href="senegal.html"><circle class="dot c-af dot-hasdata" cx="459" cy="209" r="4" data-name="Senegal" data-flag="&#127480;&#127475;" data-m="6"/></a>
+        <a href="algeria.html"><circle class="dot c-af dot-hasdata" cx="508" cy="148" r="4" data-name="Algeria" data-flag="&#127465;&#127487;" data-m="6"/></a>
+        <a href="tunisia.html"><circle class="dot c-af dot-hasdata" cx="528" cy="148" r="3.5" data-name="Tunisia" data-flag="&#127481;&#127475;" data-m="5"/></a>
+        <a href="uganda.html"><circle class="dot c-af dot-hasdata" cx="591" cy="249" r="3.5" data-name="Uganda" data-flag="&#127482;&#127468;" data-m="5"/></a>
+        <a href="ivorycoast.html"><circle class="dot c-af dot-hasdata" cx="485" cy="229" r="3.5" data-name="Ivory Coast" data-flag="&#127464;&#127470;" data-m="5"/></a>
+        <a href="drcongo.html"><circle class="dot c-af dot-hasdata" cx="561" cy="262" r="3.5" data-name="DR Congo" data-flag="&#127464;&#127465;" data-m="5"/></a>
         <a href="cameroon.html"><circle class="dot c-af dot-nodata" cx="532" cy="239" r="3.5" data-name="Cameroon" data-flag="&#127464;&#127474;" data-m="5"/></a>
         <circle class="dot c-af dot-nodata" cx="551" cy="285" r="3" data-name="Angola" data-flag="&#127462;&#127476;" data-m="3"/>
         <circle class="dot c-af dot-nodata" cx="506" cy="224" r="3" data-name="Benin" data-flag="&#127463;&#127471;" data-m="3"/>
@@ -403,18 +403,18 @@
         <a href="india.html"><circle class="dot c-as dot-nodata" cx="714" cy="192" r="4.5" data-name="India" data-flag="&#127470;&#127475;" data-m="8"/></a>
         <a href="israel.html"><circle class="dot c-as dot-nodata" cx="597" cy="162" r="4" data-name="Israel" data-flag="&#127470;&#127473;" data-m="7"/></a>
         <a href="turkey.html"><circle class="dot c-as dot-nodata" cx="591" cy="139" r="4.5" data-name="Turkey" data-flag="&#127481;&#127479;" data-m="8"/></a>
-        <a href="china.html"><circle class="dot c-as dot-nodata" cx="823" cy="139" r="4" data-name="China" data-flag="&#127464;&#127475;" data-m="7"/></a>
-        <a href="indonesia.html"><circle class="dot c-as dot-nodata" cx="797" cy="267" r="4" data-name="Indonesia" data-flag="&#127470;&#127465;" data-m="7"/></a>
-        <a href="thailand.html"><circle class="dot c-as dot-nodata" cx="779" cy="212" r="4" data-name="Thailand" data-flag="&#127481;&#127469;" data-m="6"/></a>
-        <a href="philippines.html"><circle class="dot c-as dot-nodata" cx="836" cy="209" r="4" data-name="Philippines" data-flag="&#127477;&#127469;" data-m="7"/></a>
-        <a href="pakistan.html"><circle class="dot c-as dot-nodata" cx="703" cy="156" r="4" data-name="Pakistan" data-flag="&#127477;&#127472;" data-m="6"/></a>
-        <a href="saudiarabia.html"><circle class="dot c-as dot-nodata" cx="630" cy="182" r="4" data-name="Saudi Arabia" data-flag="&#127480;&#127462;" data-m="6"/></a>
-        <a href="uae.html"><circle class="dot c-as dot-nodata" cx="651" cy="182" r="3.5" data-name="UAE" data-flag="&#127462;&#127466;" data-m="5"/></a>
+        <a href="china.html"><circle class="dot c-as dot-hasdata" cx="823" cy="139" r="4" data-name="China" data-flag="&#127464;&#127475;" data-m="7"/></a>
+        <a href="indonesia.html"><circle class="dot c-as dot-hasdata" cx="797" cy="267" r="4" data-name="Indonesia" data-flag="&#127470;&#127465;" data-m="7"/></a>
+        <a href="thailand.html"><circle class="dot c-as dot-hasdata" cx="779" cy="212" r="4" data-name="Thailand" data-flag="&#127481;&#127469;" data-m="6"/></a>
+        <a href="philippines.html"><circle class="dot c-as dot-hasdata" cx="836" cy="209" r="4" data-name="Philippines" data-flag="&#127477;&#127469;" data-m="7"/></a>
+        <a href="pakistan.html"><circle class="dot c-as dot-hasdata" cx="703" cy="156" r="4" data-name="Pakistan" data-flag="&#127477;&#127472;" data-m="6"/></a>
+        <a href="saudiarabia.html"><circle class="dot c-as dot-hasdata" cx="630" cy="182" r="4" data-name="Saudi Arabia" data-flag="&#127480;&#127462;" data-m="6"/></a>
+        <a href="uae.html"><circle class="dot c-as dot-hasdata" cx="651" cy="182" r="3.5" data-name="UAE" data-flag="&#127462;&#127466;" data-m="5"/></a>
         <a href="malaysia.html"><circle class="dot c-as dot-nodata" cx="782" cy="241" r="4" data-name="Malaysia" data-flag="&#127474;&#127486;" data-m="6"/></a>
         <a href="singapore.html"><circle class="dot c-as dot-nodata" cx="788" cy="246" r="4" data-name="Singapore" data-flag="&#127480;&#127468;" data-m="6"/></a>
-        <a href="taiwan.html"><circle class="dot c-as dot-nodata" cx="838" cy="181" r="4" data-name="Taiwan" data-flag="&#127481;&#127484;" data-m="6"/></a>
-        <a href="bangladesh.html"><circle class="dot c-as dot-nodata" cx="751" cy="184" r="4" data-name="Bangladesh" data-flag="&#127463;&#127465;" data-m="6"/></a>
-        <a href="vietnam.html"><circle class="dot c-as dot-nodata" cx="794" cy="192" r="4" data-name="Vietnam" data-flag="&#127483;&#127475;" data-m="6"/></a>
+        <a href="taiwan.html"><circle class="dot c-as dot-hasdata" cx="838" cy="181" r="4" data-name="Taiwan" data-flag="&#127481;&#127484;" data-m="6"/></a>
+        <a href="bangladesh.html"><circle class="dot c-as dot-hasdata" cx="751" cy="184" r="4" data-name="Bangladesh" data-flag="&#127463;&#127465;" data-m="6"/></a>
+        <a href="vietnam.html"><circle class="dot c-as dot-hasdata" cx="794" cy="192" r="4" data-name="Vietnam" data-flag="&#127483;&#127475;" data-m="6"/></a>
         <circle class="dot c-as dot-nodata" cx="681" cy="158" r="3" data-name="Afghanistan" data-flag="&#127462;&#127467;" data-m="3"/>
         <circle class="dot c-as dot-nodata" cx="624" cy="139" r="3" data-name="Armenia" data-flag="&#127462;&#127474;" data-m="3"/>
         <circle class="dot c-as dot-nodata" cx="639" cy="138" r="3" data-name="Azerbaijan" data-flag="&#127462;&#127487;" data-m="3"/>
