@@ -1,55 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News from Venezuela &mdash; April 10, 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-    --blue: #2563eb;
-    --purple: #7c3aed;
-    --red: #dc2626;
-    --amber: #d97706;
-    --green: #059669;
-    --bg: #faf9f6;
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News from Venezuela — 9 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>:root {
+    --wb-dark: #03040a;
+    --wb-accent: #5ef4d6;
+    --wb-accent-dim: #3dd4b8;
+    --blue: #5c6370;
+    --purple: #8c919a;
+    --red: #a89080;
+    --amber: #d4940a;
+    --green: #2dba8e;
+    --bg: #fafbfd;
+    --bg-warm: #f6f7fb;
     --card: #ffffff;
-    --text: #1a1a1a;
-    --text-secondary: #555;
-    --text-muted: #888;
-    --border: #e5e4e0;
+    --text: #0a0b10;
+    --text-secondary: #4a4d55;
+    --text-muted: #8a8d95;
+    --border: #e2e4ea;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'IBM Plex Sans', 'Inter', -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
   .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
-  header { text-align: center; padding: 48px 0 36px; border-bottom: 3px double var(--text); margin-bottom: 36px; }
-  header .flag { font-size: 36px; margin-bottom: 8px; }
-  header .logo { font-family: 'Newsreader', Georgia, serif; font-size: 42px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
-  header .edition { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
-  header .date { font-family: 'Newsreader', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
+  header { text-align: center; padding: 48px 0 36px; border-bottom: 2px solid var(--text); margin-bottom: 36px; }
+  .wb-cube { width: 40px; height: 40px; color: var(--text); margin-bottom: 10px; }
+  .brand-bar { width: 80px; height: 3px; background: var(--wb-accent); margin: 16px auto 0; border-radius: 2px; }
+  header .logo { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 38px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+  header .edition { font-family: 'Space Grotesk', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  header .date { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
   header .subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
   .toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
-  .toc a { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.2s; }
-  .toc a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .toc a { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 8px; border: 1px solid var(--border); transition: all 0.2s; }
+  .toc a:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
   .section-divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
   .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-  .section-divider h2 { font-family: 'Newsreader', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; font-style: italic; }
-  .explainer { background: #f0fdf4; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid #bbf7d0; position: relative; }
-  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--green); color: #fff; border-radius: 50%; font-family: 'Newsreader', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
-  .explainer h3 { font-size: 15px; font-weight: 700; color: #166534; margin-bottom: 8px; }
-  .explainer p { font-size: 13.5px; color: #15803d; line-height: 1.75; }
+  .section-divider h2 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; }
+  .explainer { background: rgba(94,244,214,0.08); border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid rgba(94,244,214,0.25); position: relative; }
+  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--wb-accent-dim); color: var(--wb-dark); border-radius: 50%; font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+  .explainer h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0a6b56; margin-bottom: 8px; }
+  .explainer p { font-size: 13.5px; color: #0a6b56; line-height: 1.75; }
   .explainer .legend { display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
-  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #166534; }
+  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #0a6b56; }
   .legend-swatch { width: 24px; height: 12px; border-radius: 3px; }
   .media-map { background: var(--card); border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); }
-  .media-map h3 { font-family: 'Newsreader', Georgia, serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .media-map h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
   .media-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
   .media-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; }
   .media-col.left h4 { color: var(--blue); }
@@ -60,13 +59,13 @@
   .story:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
   .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
   .blindspot-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .blindspot-tag.no-right { background: #fef3c7; color: #92400e; }
-  .blindspot-tag.low-left { background: #dbeafe; color: #1e40af; }
-  .blindspot-tag.low-right { background: #fef3c7; color: #92400e; }
-  .blindspot-tag.dual { background: #fce7f3; color: #9d174d; }
-  .blindspot-tag.balanced { background: #f0fdf4; color: #166534; }
+  .blindspot-tag.no-right { background: #f0ece6; color: #5c4e3a; }
+  .blindspot-tag.low-left { background: #e8eaed; color: #3c4043; }
+  .blindspot-tag.low-right { background: #f0ece6; color: #5c4e3a; }
+  .blindspot-tag.dual { background: #eae6ee; color: #4a3d55; }
+  .blindspot-tag.balanced { background: rgba(94,244,214,0.12); color: #0a6b56; }
   .source-count { font-size: 11px; color: var(--text-muted); font-weight: 500; }
-  .story h2 { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .story h2 { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 21px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
   .story h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .story h2 a:hover { border-bottom-color: var(--text); }
   .story .summary { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.75; }
@@ -75,23 +74,23 @@
   .coverage-bar-container { margin-top: 16px; }
   .coverage-bar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; }
   .coverage-bar { display: flex; height: 32px; border-radius: 10px; overflow: hidden; font-size: 11px; font-weight: 700; }
-  .bar-left { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; display: flex; align-items: center; justify-content: center; }
-  .bar-center { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: #fff; display: flex; align-items: center; justify-content: center; }
-  .bar-right { background: linear-gradient(135deg, #f87171, #dc2626); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-left { background: linear-gradient(135deg, #6b7280, #4b5563); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-center { background: linear-gradient(135deg, #9ca3af, #7c8390); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-right { background: linear-gradient(135deg, #b8a898, #a08e7c); color: #fff; display: flex; align-items: center; justify-content: center; }
   .bar-left span, .bar-center span, .bar-right span { padding: 0 8px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
   .sources-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
   .sources-list a { font-size: 11px; color: var(--text-muted); text-decoration: none; padding: 3px 10px; border-radius: 6px; background: #f3f4f6; border: 1px solid #e5e7eb; transition: all 0.15s; font-weight: 500; }
-  .sources-list a:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .sources-list a:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
   .sources-list .bias-left { border-left: 3px solid var(--blue); }
   .sources-list .bias-center { border-left: 3px solid var(--purple); }
   .sources-list .bias-right { border-left: 3px solid var(--red); }
-  .takeaway { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #78350f; line-height: 1.7; }
-  .takeaway strong { color: #92400e; }
-  .highlight-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
-  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%); pointer-events: none; }
-  .highlight-section .section-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #fbbf24; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: #fbbf24; }
-  .highlight-section h2 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
+  .takeaway { background: rgba(94,244,214,0.08); border-left: 4px solid var(--wb-accent-dim); padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #0a6b56; line-height: 1.7; }
+  .takeaway strong { color: #065e4a; }
+  .highlight-section { background: linear-gradient(135deg, var(--wb-dark) 0%, #0f1218 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
+  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(94,244,214,0.12) 0%, transparent 70%); pointer-events: none; }
+  .highlight-section .section-tag { font-family: 'Space Grotesk', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--wb-accent); font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: var(--wb-accent); }
+  .highlight-section h2 { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
   .highlight-section .hl-summary { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.7; }
   .outlet-comparison { display: flex; flex-direction: column; gap: 8px; }
   .outlet-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: background 0.15s; }
@@ -101,25 +100,27 @@
   .outlet-bias.center { background: var(--purple); }
   .outlet-bias.right { background: var(--red); }
   .outlet-name { font-size: 12px; font-weight: 700; width: 120px; flex-shrink: 0; color: #e2e8f0; }
-  .outlet-headline { font-family: 'Newsreader', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
-  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(251,191,36,0.1); border-radius: 10px; border: 1px solid rgba(251,191,36,0.2); }
-  .hl-analysis p { font-size: 13px; color: #fde68a; line-height: 1.7; }
-  .hl-analysis strong { color: #fbbf24; }
-  .weekly-summary { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid #fde68a; }
-  .weekly-summary h3 { font-family: 'Newsreader', Georgia, serif; font-size: 20px; font-weight: 600; color: #78350f; margin-bottom: 18px; }
+  .outlet-headline { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
+  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(94,244,214,0.08); border-radius: 10px; border: 1px solid rgba(94,244,214,0.15); }
+  .hl-analysis p { font-size: 13px; color: #a8f0df; line-height: 1.7; }
+  .hl-analysis strong { color: var(--wb-accent); }
+  .weekly-summary { background: linear-gradient(135deg, rgba(94,244,214,0.06), rgba(139,138,253,0.06)); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid rgba(94,244,214,0.2); }
+  .weekly-summary h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 18px; }
   .weekly-summary .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
-  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(217,119,6,0.15); }
-  .stat-box .num { font-size: 28px; font-weight: 700; color: #92400e; line-height: 1; }
-  .stat-box .label { font-size: 11px; color: #b45309; margin-top: 4px; font-weight: 500; }
-  .weekly-summary p { font-size: 14px; color: #78350f; line-height: 1.75; margin-bottom: 12px; }
-  .weekly-summary strong { color: #92400e; }
+  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(94,244,214,0.2); }
+  .stat-box .num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #065e4a; line-height: 1; }
+  .stat-box .label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #0a6b56; margin-top: 4px; font-weight: 500; }
+  .weekly-summary p { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+  .weekly-summary strong { color: var(--text); }
   .bias-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
   .bias-card { padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
-  .bias-card.right-missed { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); color: #991b1b; }
-  .bias-card.left-missed { background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); color: #1e3a5f; }
+  .bias-card.right-missed { background: rgba(184,168,152,0.1); border: 1px solid rgba(184,168,152,0.2); color: #5c4e3a; }
+  .bias-card.left-missed { background: rgba(107,114,128,0.1); border: 1px solid rgba(107,114,128,0.2); color: #3c4043; }
   .bias-card strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.7; }
-  footer { text-align: center; padding: 36px 0 16px; border-top: 3px double var(--border); margin-top: 48px; }
-  footer .made-by { font-family: 'Newsreader', Georgia, serif; font-size: 15px; font-style: italic; color: var(--text-secondary); margin-bottom: 8px; }
+  footer { text-align: center; padding: 36px 0 16px; border-top: 2px solid var(--text); margin-top: 48px; }
+  footer .wb-cube { width: 28px; height: 28px; color: var(--text-muted); margin-bottom: 6px; }
+  footer .wb-wordmark { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 10px; }
+  footer .brand-bar { width: 60px; height: 2px; background: var(--wb-accent-dim); margin: 8px auto 12px; border-radius: 2px; }
   footer .credits { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
   @media (max-width: 520px) {
     .container { padding: 16px 14px 40px; }
@@ -140,101 +141,58 @@
   .date-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
   .date-nav-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
   .date-link { font-size: 11px; color: var(--text-secondary); text-decoration: none; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--border); transition: all 0.15s; font-weight: 500; }
-  .date-link:hover { background: var(--text); color: #fff; border-color: var(--text); }
-  .date-link.active { background: var(--text); color: #fff; border-color: var(--text); font-weight: 700; pointer-events: none; }
-.lang-switcher { display: flex; gap: 8px; justify-content: center; margin: 8px 0; }
-.lang-switcher a { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 4px 10px; border: 1px solid var(--border); border-radius: 14px; }
-.lang-switcher a:hover { background: var(--bg-secondary); }
-.lang-switcher a.active { background: var(--text-primary); color: var(--bg); border-color: var(--text-primary); }
-</style>
-</head>
-<body>
-<div class="container">
-
-<header>
-  <div class="flag"></div>
-  <div class="logo">News from Venezuela</div>
-  <div class="edition">Media blindspot report for Venezuela</div>
-  <div class="date">Friday, April 10, 2026</div>
-  <div class="lang-switcher"><a href="https://franciscorichter.github.io/noticias-mama/venezuela.html">Español</a><a class="active" href="#">English</a></div>
-  <p class="subtitle">An analysis of the most important news from Venezuela, showing which outlets covered them, which ignored them, and how each side framed the same events.</p>
-</header>
-
-<nav class="toc">
-  <a href="#blindspots">Blindspots</a>
-  <a href="#titulares">Same facts, different headlines</a>
-  <a href="#resumen">Summary</a>
-</nav>
-
-<div class="explainer">
-  <h3>How to read this report</h3>
-  <p>Each story includes a <strong>coverage bar</strong> showing what percentage of outlets from each political leaning reported it. When one side has little or no coverage, that's a <strong>&ldquo;blindspot&rdquo;</strong>: millions of readers on that side probably never saw it.</p>
-  <div class="legend">
-    <span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span>
-    <span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span>
-    <span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span>
-  </div>
-</div>
-
-<div class="media-map">
-  <h3>Media map of Venezuela</h3>
-  <div class="media-columns">
-    <div class="media-col left">
-      <h4>Left</h4>
-      <ul></ul>
-    </div>
-    <div class="media-col center">
-      <h4>Center</h4>
-      <ul></ul>
-    </div>
-    <div class="media-col right">
-      <h4>Right</h4>
-      <ul></ul>
-    </div>
-  </div>
-</div>
-
-<div id="blindspots">
-<div class="section-divider"><h2>Same data, opposing narratives</h2></div>
+  .date-link:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
+  .date-link.active { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); font-weight: 700; pointer-events: none; }</style></head><body><div class="container">
+<header><div class="flag">🇻🇪</div><div class="logo">News from Venezuela</div><div class="edition">BLINDSPOT REPORT</div><div class="date">Tuesday 9 June, 2026</div>
+<nav class="toc"><a href="#blindspots">Blindspots</a><a href="#titulares">Headlines</a><a href="#resumen">Summary</a></nav>
+<div class="explainer"><h3>How to read this report</h3><p>Each story includes a <strong>coverage bar</strong>. When one side has little coverage, that's a <strong>blindspot</strong>.</p>
+<div class="legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span><span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span><span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span></div></div>
+<div class="media-map"><h3>Media map</h3><div class="media-columns"><div class="media-col left"><h4>Left</h4><ul><li>taz</li></ul></div><div class="media-col center"><h4>Center</h4><ul><li>Right Spiegel</li>
+<li>Süddeutsche Zeitung</li>
+<li>Die Zeit</li>
+<li>ARD Tagesschau</li></ul></div><div class="media-col right"><h4>Right</h4><ul><li>FAZ</li>
+<li>Die Welt</li>
+<li>Bild</li></ul></div></div></div>
+<div id="blindspots"><div class="section-divider"><h2>Same data, opposing narratives</h2></div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">Both media aligned with the government and the opposition covered this, offering very different frames of the same announcement</span>
+    <span class="blindspot-tag balanced">Both government-aligned and opposition media covered this, offering very different frameworks of the same announcement</span>
     <span class="source-count">4 verified sources</span>
   </div>
-  <h2><a href="https://efectococuyo.com/politica/delcy-rodriguez-promete-aumento-responsable-de-salarios-el-1-de-mayo-despues-de-una-peregrinacion-contra-el-bloqueo/" target="_blank" rel="noopener">The government promises a &#x27;responsible&#x27; salary increase for May 1st</a></h2>
-  <p class="summary">Vice President Delcy Rodríguez announced a &#x27;responsible&#x27; salary increase for May 1st, after a pilgrimage against international sanctions. The university union Fapuv responded that the only responsible increase is one that covers basic needs.</p>
+  <h2><a href="https://efectococuyo.com/politica/delcy-rodriguez-promete-aumento-responsable-de-salarios-el-1-de-May-despues-de-una-peregrinacion-contra-el-bloqueo/" target="_blank" rel="noopener">The government promises a &#x27;responsible&#x27; wage increase for May 1st</a></h2>
+  <p class="summary">Vice President Delcy Rodríguez announced a &#x27;responsible&#x27; wage increase for May 1st, following a pilgrimage against international sanctions. The Fapuv university union responded that the only responsible increase is one that covers basic needs.</p>
   <div class="context">
-    <strong>Context:</strong> Venezuelan salaries have been devastated by hyperinflation, with the minimum wage covering only a small fraction of the basic food basket. Salary announcements are politically charged events.
+    <strong>Context:</strong> Venezuelan wages have been devastated by hyperinflation, with the minimum wage covering only a small fraction of the basic food basket. Wage announcements are politically charged events.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:50%"><span>Left 50%</span></div>
       <div class="bar-right" style="width:50%"><span>Right 50%</span></div>
     </div>
   </div>
   <div class="sources-list">
-    <a href="https://efectococuyo.com/politica/delcy-rodriguez-promete-aumento-responsable-de-salarios-el-1-de-mayo-despues-de-una-peregrinacion-contra-el-bloqueo/" target="_blank" rel="noopener" class="bias-right">Efecto Cocuyo</a>
+    <a href="https://efectococuyo.com/politica/delcy-rodriguez-promete-aumento-responsable-de-salarios-el-1-de-May-despues-de-una-peregrinacion-contra-el-bloqueo/" target="_blank" rel="noopener" class="bias-right">Efecto Cocuyo</a>
     <a href="https://talcualdigital.com" target="_blank" rel="noopener" class="bias-right">Tal Cual</a>
     <a href="https://www.correodelorinoco.gob.ve" target="_blank" rel="noopener" class="bias-left">Correo del Orinoco</a>
     <a href="https://www.telesurtv.net" target="_blank" rel="noopener" class="bias-left">TeleSUR</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The government frames salary increases as responsible progress while critics say they are still insufficient to cover basic needs.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The government frames the wage increases as responsible progress, while critics say they remain insufficient to cover basic needs.</div>
 </div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">Right-leaning media focus on Iran&#x27;s nuclear defiance, while left-leaning media shift the focus to U.S. human rights issues.</span>
+    <span class="blindspot-tag balanced">Right-leaning media focus on Iran&#x27;s nuclear disobedience, while left-leaning media shift the focus toward US human rights issues.</span>
     <span class="source-count">4 verified sources</span>
   </div>
-  <h2><a href="https://www.elnacional.com/2026/04/iran-rechaza-frenar-enriquecimiento-de-uranio-pese-a-negociaciones-con-ee-uu/" target="_blank" rel="noopener">Iran refuses to halt uranium enrichment despite talks with the U.S.</a></h2>
-  <p class="summary">Iran rejected demands to halt uranium enrichment despite ongoing negotiations with the United States. Iran also reported over 3,000 deaths in its conflict with the U.S. and Israel. Separately, the detention of migrant children in the U.S. was highlighted.</p>
+  <h2><a href="https://www.elnacional.com/2026/04/iran-rechaza-frenar-enriquecimiento-de-uranio-pese-a-negociaciones-con-ee-uu/" target="_blank" rel="noopener">Iran refuses to halt uranium enrichment despite talks with the US.</a></h2>
+  <p class="summary">Iran rejected demands to stop uranium enrichment despite ongoing negotiations with the United States. Iran also reported more than 3,000 deaths in its conflict with the US and Israel. Separately, the detention of migrant children in the US was highlighted.</p>
   <div class="context">
-    <strong>Context:</strong> The conflict with Iran and nuclear negotiations have global implications, while the Venezuelan media framework reflects geopolitical alignments with Tehran.
+    <strong>Context:</strong> The conflict with Iran and nuclear negotiations have global implications, while the framing of Venezuelan media reflects geopolitical alignments with Tehran.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:25%"><span>Left 25%</span></div>
       <div class="bar-right" style="width:75%"><span>Right 75%</span></div>
@@ -246,24 +204,24 @@
     <a href="https://www.ntn24.com" target="_blank" rel="noopener" class="bias-right">NTN24</a>
     <a href="https://www.telesurtv.net" target="_blank" rel="noopener" class="bias-left">TeleSUR</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Venezuelan media cover Iran through contrasting geopolitical lenses, with opposition media focusing on nuclear risks and state media on U.S. behavior.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Venezuelan media cover Iran through contrasting geopolitical lenses, with opposition media focusing on nuclear risks and state media on US conduct.</div>
 </div>
-<div class="section-divider"><h2>Left-wing blindspots</h2></div>
+<div class="section-divider"><h2>Left blindspots</h2></div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">No left-leaning media covered the ceasefire, missing a potential anti-war or humanitarian frame</span>
+    <span class="blindspot-tag balanced">No left-leaning media outlets covered the ceasefire, missing a potential anti-war or humanitarian angle</span>
     <span class="source-count">2 verified sources</span>
   </div>
-  <h2><a href="https://www.ntn24.com" target="_blank" rel="noopener">The Pope welcomes the ceasefire in Iran as a &#x27;living sign of hope&#x27;</a></h2>
-  <p class="summary">Pope Francis welcomed the ceasefire in Iran as a &#x27;living sign of hope.&#x27; Meanwhile, the head of U.S. Central Command characterized Iran&#x27;s situation as a &#x27;generational military defeat&#x27;.</p>
+  <h2><a href="https://www.ntn24.com" target="_blank" rel="noopener">The Pope celebrates the ceasefire in Iran as a &#x27;sign of living hope&#x27;</a></h2>
+  <p class="summary">Pope Francis welcomed the ceasefire in Iran as a &#x27;sign of living hope.&#x27; Meanwhile, the head of the US Central Command characterized the situation in Iran as a &#x27;generational military defeat&#x27;.</p>
   <div class="context">
-    <strong>Context:</strong> The ceasefire comes after intense military confrontation, with very divergent interpretations of its meaning from religious, diplomatic, and military perspectives.
+    <strong>Context:</strong> The ceasefire comes after intense military clashes, with highly divergent interpretations of its significance from religious, diplomatic, and military perspectives.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
-      <div class="bar-center" style="width:50%"><span>Ctr 50%</span></div>
+      <div class="bar-center" style="width:50%"><span>Center 50%</span></div>
       <div class="bar-right" style="width:50%"><span>Right 50%</span></div>
     </div>
   </div>
@@ -271,7 +229,7 @@
     <a href="https://www.ntn24.com" target="_blank" rel="noopener" class="bias-right">NTN24</a>
     <a href="https://www.globovision.com" target="_blank" rel="noopener" class="bias-center">Globovision</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The ceasefire in Iran is interpreted very differently depending on the source: as hope for peace or evidence of military defeat.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The ceasefire in Iran is interpreted very differently depending on the source: as hope for peace or as evidence of military defeat.</div>
 </div>
 
 <div class="story">
@@ -279,13 +237,13 @@
     <span class="blindspot-tag balanced">Only opposition media covered this story; government-aligned media completely ignored the issue of political prisoners</span>
     <span class="source-count">2 verified sources</span>
   </div>
-  <h2><a href="https://efectococuyo.com/la-humanidad/foro-penal-ley-de-amnistia-relentiza-la-libertad-de-muchos-presos-politicos/" target="_blank" rel="noopener">Amnesty Law delays release of political prisoners</a></h2>
-  <p class="summary">The human rights organization Foro Penal reported that Venezuela&#x27;s Amnesty Law is actually delaying the release of many political prisoners. Families maintained a three-month vigil demanding fulfillment of release promises.</p>
+  <h2><a href="https://efectococuyo.com/la-humanidad/foro-penal-ley-de-amnistia-relentiza-la-libertad-de-muchos-presos-politicos/" target="_blank" rel="noopener">The Amnesty Law delays the release of political prisoners</a></h2>
+  <p class="summary">The human rights organization Foro Penal reported that Venezuela&#x27;s Amnesty Law is actually delaying the release of many political prisoners. Families held a three-month vigil demanding that promises of release be fulfilled.</p>
   <div class="context">
-    <strong>Context:</strong> Political imprisonment has been a central issue in the Venezuelan crisis, with the amnesty law intended to alleviate tensions but criticized for procedural delays.
+    <strong>Context:</strong> Political imprisonment has been a central theme in the Venezuelan crisis, with the amnesty law intended to ease tensions but criticized for procedural delays.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-right" style="width:100%"><span>Right 100%</span></div>
     </div>
@@ -294,37 +252,37 @@
     <a href="https://efectococuyo.com/la-humanidad/foro-penal-ley-de-amnistia-relentiza-la-libertad-de-muchos-presos-politicos/" target="_blank" rel="noopener" class="bias-right">Efecto Cocuyo</a>
     <a href="https://talcualdigital.com" target="_blank" rel="noopener" class="bias-right">Tal Cual</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The amnesty law designed to release political prisoners appears to be having the opposite effect, creating bureaucratic obstacles for their release.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> The amnesty law designed to release political prisoners appears to be having the opposite effect, creating bureaucratic obstacles to their release.</div>
 </div>
-<div class="section-divider"><h2>Right-wing blindspots</h2></div>
+<div class="section-divider"><h2>Right blindspots</h2></div>
 
 <div class="story">
   <div class="story-meta">
     <span class="blindspot-tag balanced">No opposition media covered this traffic disruption, focusing instead on political stories</span>
     <span class="source-count">2 verified sources</span>
   </div>
-  <h2><a href="http://www.eluniversal.com" target="_blank" rel="noopener">Caracas Metro temporarily suspends five MetroBus routes</a></h2>
-  <p class="summary">The Caracas Metro system announced the temporary suspension of five MetroBus routes due to road closures. Both government and independent media reported on the disruption.</p>
+  <h2><a href="http://www.eluniversal.com" target="_blank" rel="noopener">Metro de Caracas temporarily suspends five MetroBus routes</a></h2>
+  <p class="summary">The Metro de Caracas system announced the temporary suspension of five MetroBus routes due to road closures. Both government and independent media reported on the disruption.</p>
   <div class="context">
-    <strong>Context:</strong> Public transportation in Caracas has suffered years of deterioration, and any interruption in service disproportionately affects low-income commuters who depend on it.
+    <strong>Context:</strong> Public transportation in Caracas has suffered years of deterioration, and any service disruption disproportionately affects low-income commuters who rely on it.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:50%"><span>Left 50%</span></div>
-      <div class="bar-center" style="width:50%"><span>Ctr 50%</span></div>
+      <div class="bar-center" style="width:50%"><span>Center 50%</span></div>
     </div>
   </div>
   <div class="sources-list">
     <a href="http://www.eluniversal.com" target="_blank" rel="noopener" class="bias-center">El Universal</a>
     <a href="http://www.correodelorinoco.gob.ve" target="_blank" rel="noopener" class="bias-left">Correo del Orinoco</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> MetroBus route suspensions affect daily commuters in Caracas, with government media framing it as a temporary measure due to road work.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> MetroBus route suspensions are affecting daily commuters in Caracas, with government media framing it as a temporary measure due to roadwork.</div>
 </div>
 
 <div class="story">
   <div class="story-meta">
-    <span class="blindspot-tag balanced">Only government-aligned media reported on this poll; opposition media did not cover or question the 93% figure</span>
+    <span class="blindspot-tag balanced">Only government-aligned media reported on this poll; opposition media neither covered nor questioned the 93% figure</span>
     <span class="source-count">2 verified sources</span>
   </div>
   <h2><a href="https://www.correodelorinoco.gob.ve" target="_blank" rel="noopener">State media: 93% of Venezuelans demand an end to sanctions</a></h2>
@@ -333,7 +291,7 @@
     <strong>Context:</strong> U.S. sanctions on Venezuela remain a deeply polarizing issue, with the government blaming them for economic hardship while critics point to mismanagement and corruption.
   </div>
   <div class="coverage-bar-container">
-    <div class="coverage-bar-label">Coverage by political leaning</div>
+    <div class="coverage-bar-label">Coverage by leaning</div>
     <div class="coverage-bar">
       <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
     </div>
@@ -342,60 +300,54 @@
     <a href="https://www.correodelorinoco.gob.ve" target="_blank" rel="noopener" class="bias-left">Correo del Orinoco</a>
     <a href="https://www.telesurtv.net" target="_blank" rel="noopener" class="bias-left">TeleSUR</a>
   </div>
-  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A sanctions poll reported exclusively by state media lacks independent verification, highlighting Venezuela&#x27;s deeply divided information ecosystem.</div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A poll on sanctions reported exclusively by state media lacks independent verification, highlighting Venezuela&#x27;s deeply divided information ecosystem.</div>
 </div>
-
-</div>
-
-<div id="titulares">
-
-</div>
-
-<div id="resumen">
-<div class="weekly-summary">
-  <h3>Weekly summary</h3>
-  <div class="stat-grid">
-    <div class="stat-box">
-      <div class="num">6</div>
-      <div class="label">Stories analyzed</div>
+</div><div id="titulares">
+<div class="highlight-section">
+  <div class="section-tag">Same story, different headlines</div>
+  <h2>Responsible wage increase announced for May 1st</h2>
+  <p class="hl-summary">Comparison between the wage increase announcement and its political contextualization.</p>
+  <div class="outlet-comparison">
+    <div class="outlet-row">
+      <span class="outlet-bias right">Right</span>
+      <span class="outlet-name">Efecto Cocuyo</span>
+      <span class="outlet-headline">&ldquo;Delcy Rodríguez promises «responsible increase» in wages on May 1st after a «pilgrimage...&rdquo;</span>
     </div>
-    <div class="stat-box">
-      <div class="num">0</div>
-      <div class="label">Outlets monitored</div>
-    </div>
-    <div class="stat-box">
-      <div class="num">?</div>
-      <div class="label">Articles verified</div>
+    <div class="outlet-row">
+      <span class="outlet-bias left">Left</span>
+      <span class="outlet-name">Correo del Orinoco</span>
+      <span class="outlet-headline">&ldquo;Responsible wage increase announced for May 1st - correodelorinoco.g&rdquo;</span>
     </div>
   </div>
+  <div class="hl-analysis">
+    <p><strong>&#128269; Analysis:</strong> The right-wing outlet contextualizes the promise within a specific political event, adding a layer of scrutiny regarding the origin of the announcement. In contrast, the left-wing outlet presents the news in an institutional and direct manner, omitting the background of political mobilization. This difference in framing shifts the focus from political management to a purely administrative fact.</p>
+  </div>
+</div>
 
-  <p><strong>Main topics:</strong> </p>
-  <p><strong>Most balanced outlet:</strong> </p>
-
-  <div class="bias-summary">
-    <div class="bias-card right-missed">
-      <strong>The right didn't cover or downplayed:</strong>
-      
+<div class="highlight-section">
+  <div class="section-tag">Same story, different headlines</div>
+  <h2>The Pope celebrates the ceasefire in Iran</h2>
+  <p class="hl-summary">Contrast between the vision of military conflict and the vision of diplomatic hope.</p>
+  <div class="outlet-comparison">
+    <div class="outlet-row">
+      <span class="outlet-bias right">Right</span>
+      <span class="outlet-name">NTN24</span>
+      <span class="outlet-headline">&ldquo;&quot;Iran has suffered a generational military defeat&quot;: head of Central Command delivers new assessment d&rdquo;</span>
     </div>
-    <div class="bias-card left-missed">
-      <strong>The left didn't cover:</strong>
-      
+    <div class="outlet-row">
+      <span class="outlet-bias center">Center</span>
+      <span class="outlet-name">Globovision</span>
+      <span class="outlet-headline">&ldquo;The Pope celebrates the ceasefire in Iran as a &quot;sign of living hope&quot; - Globovision&rdquo;</span>
     </div>
   </div>
-
-  <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 15px;">
-    <strong>&ldquo;&rdquo;</strong>
-  </p>
+  <div class="hl-analysis">
+    <p><strong>&#128269; Analysis:</strong> The right-wing outlet focuses on the news from a perspective of confrontation and warfare outcomes, highlighting Iran&#x27;s defeat. The centrist outlet, in contrast, uses the Pope&#x27;s message to present a narrative of diplomacy and optimism. This demonstrates how the same geopolitical event can be interpreted as either a military victory or an opportunity for peace.</p>
+  </div>
 </div>
 </div>
-
-<footer>
-  <p class="credits">
-    Automated media analysis for Venezuela &middot; Friday, April 10, 2026<br>
-    Sources verified via RSS and cross-search &middot; Analysis by local AI
-  </p>
-</footer>
-
-</div>
-</body>
-</html>
+<div id="resumen"><div class="weekly-summary"><h3>Daily summary</h3>
+<div class="stat-grid"><div class="stat-box"><div class="num">6</div><div class="label">Stories</div></div><div class="stat-box"><div class="num">8</div><div class="label">Outlets</div></div><div class="stat-box"><div class="num">16</div><div class="label">Articles</div></div></div>
+<p><strong>Main topics:</strong> Salary increase, Iran&#x27;s nuclear situation, Amnesty Law, transportation in Caracas, economic sanctions</p><p><strong>Most balanced outlet:</strong> Globovision, for presenting balanced and humanistic coverage without the biases of conflict or propaganda present in other media.</p>
+<div class="bias-summary"><div class="bias-card right-missed"><strong>The right didn't cover:</strong> The right did not cover the news regarding the popular demand for the repeal of sanctions, leaving this topic exclusively to left-wing media. It also failed to provide visibility to the narrative of domestic public opinion regarding coercive measures.</div><div class="bias-card left-missed"><strong>The left didn't cover:</strong> The left ignored the issues surrounding the Amnesty Law and its impact on the freedom of political prisoners. Likewise, it did not report on the suspension of MetroBus routes, focusing primarily on the narrative of sanctions.</div></div>
+<p style="margin-top:20px;font-style:italic;text-align:center;font-size:15px;"><strong>&ldquo;The coverage of the week demonstrates how media framing can transform a war conflict into either a military defeat or a sign of living hope.&rdquo;</strong></p></div></div>
+<footer><p class="credits">WhiteBox News &middot; Automated media analysis &middot; Tuesday 9 June, 2026</p></footer></div></body></html>
