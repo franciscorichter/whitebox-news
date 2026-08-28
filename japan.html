@@ -1,0 +1,515 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News from Japón — 28 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>:root {
+    --wb-dark: #03040a;
+    --wb-accent: #5ef4d6;
+    --wb-accent-dim: #3dd4b8;
+    --blue: #5c6370;
+    --purple: #8c919a;
+    --red: #a89080;
+    --amber: #d4940a;
+    --green: #2dba8e;
+    --bg: #fafbfd;
+    --bg-warm: #f6f7fb;
+    --card: #ffffff;
+    --text: #0a0b10;
+    --text-secondary: #4a4d55;
+    --text-muted: #8a8d95;
+    --border: #e2e4ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'IBM Plex Sans', 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { text-align: center; padding: 48px 0 36px; border-bottom: 2px solid var(--text); margin-bottom: 36px; }
+  .wb-cube { width: 40px; height: 40px; color: var(--text); margin-bottom: 10px; }
+  .brand-bar { width: 80px; height: 3px; background: var(--wb-accent); margin: 16px auto 0; border-radius: 2px; }
+  header .logo { font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 38px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+  header .edition { font-family: 'Space Grotesk', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-muted); margin-top: 6px; font-weight: 500; }
+  header .date { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 16px; color: var(--text-secondary); font-style: italic; margin-top: 8px; }
+  header .subtitle { font-size: 14px; color: var(--text-secondary); margin-top: 16px; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .toc a { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 8px; border: 1px solid var(--border); transition: all 0.2s; }
+  .toc a:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
+  .section-divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 24px; }
+  .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .section-divider h2 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: var(--text-secondary); white-space: nowrap; text-transform: uppercase; letter-spacing: 1px; }
+  .explainer { background: rgba(94,244,214,0.08); border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; border: 1px solid rgba(94,244,214,0.25); position: relative; }
+  .explainer::before { content: "i"; position: absolute; top: -10px; left: 24px; width: 22px; height: 22px; background: var(--wb-accent-dim); color: var(--wb-dark); border-radius: 50%; font-family: 'IBM Plex Serif', serif; font-style: italic; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
+  .explainer h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #0a6b56; margin-bottom: 8px; }
+  .explainer p { font-size: 13.5px; color: #0a6b56; line-height: 1.75; }
+  .explainer .legend { display: flex; gap: 20px; margin-top: 14px; flex-wrap: wrap; }
+  .explainer .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #0a6b56; }
+  .legend-swatch { width: 24px; height: 12px; border-radius: 3px; }
+  .media-map { background: var(--card); border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); }
+  .media-map h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .media-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .media-col h4 { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; }
+  .media-col.left h4 { color: var(--blue); }
+  .media-col.center h4 { color: var(--purple); }
+  .media-col.right h4 { color: var(--red); }
+  .media-col ul { list-style: none; font-size: 12px; color: var(--text-secondary); line-height: 1.9; }
+  .story { background: var(--card); border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.03); transition: box-shadow 0.2s; }
+  .story:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
+  .story-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .blindspot-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .blindspot-tag.no-right { background: #f0ece6; color: #5c4e3a; }
+  .blindspot-tag.low-left { background: #e8eaed; color: #3c4043; }
+  .blindspot-tag.low-right { background: #f0ece6; color: #5c4e3a; }
+  .blindspot-tag.dual { background: #eae6ee; color: #4a3d55; }
+  .blindspot-tag.balanced { background: rgba(94,244,214,0.12); color: #0a6b56; }
+  .source-count { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  .story h2 { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 21px; font-weight: 600; line-height: 1.35; margin-bottom: 12px; letter-spacing: -0.3px; }
+  .story h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .story h2 a:hover { border-bottom-color: var(--text); }
+  .story .summary { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.75; }
+  .story .context { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.7; padding: 12px 16px; background: #f9fafb; border-radius: 8px; border-left: 3px solid var(--border); }
+  .story .context strong { color: var(--text); }
+  .coverage-bar-container { margin-top: 16px; }
+  .coverage-bar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; }
+  .coverage-bar { display: flex; height: 32px; border-radius: 10px; overflow: hidden; font-size: 11px; font-weight: 700; }
+  .bar-left { background: linear-gradient(135deg, #6b7280, #4b5563); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-center { background: linear-gradient(135deg, #9ca3af, #7c8390); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-right { background: linear-gradient(135deg, #b8a898, #a08e7c); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .bar-left span, .bar-center span, .bar-right span { padding: 0 8px; white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
+  .sources-list { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .sources-list a { font-size: 11px; color: var(--text-muted); text-decoration: none; padding: 3px 10px; border-radius: 6px; background: #f3f4f6; border: 1px solid #e5e7eb; transition: all 0.15s; font-weight: 500; }
+  .sources-list a:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
+  .sources-list .bias-left { border-left: 3px solid var(--blue); }
+  .sources-list .bias-center { border-left: 3px solid var(--purple); }
+  .sources-list .bias-right { border-left: 3px solid var(--red); }
+  .takeaway { background: rgba(94,244,214,0.08); border-left: 4px solid var(--wb-accent-dim); padding: 14px 18px; border-radius: 0 10px 10px 0; margin-top: 18px; font-size: 13px; color: #0a6b56; line-height: 1.7; }
+  .takeaway strong { color: #065e4a; }
+  .highlight-section { background: linear-gradient(135deg, var(--wb-dark) 0%, #0f1218 100%); border-radius: 18px; padding: 36px 32px; margin: 40px 0 24px; color: #fff; position: relative; overflow: hidden; }
+  .highlight-section::before { content: ""; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(94,244,214,0.12) 0%, transparent 70%); pointer-events: none; }
+  .highlight-section .section-tag { font-family: 'Space Grotesk', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--wb-accent); font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .highlight-section .section-tag::before { content: ""; width: 20px; height: 2px; background: var(--wb-accent); }
+  .highlight-section h2 { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; line-height: 1.35; letter-spacing: -0.3px; }
+  .highlight-section .hl-summary { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.7; }
+  .outlet-comparison { display: flex; flex-direction: column; gap: 8px; }
+  .outlet-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: background 0.15s; }
+  .outlet-row:hover { background: rgba(255,255,255,0.1); }
+  .outlet-bias { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; width: 52px; text-align: center; padding: 4px 0; border-radius: 5px; flex-shrink: 0; }
+  .outlet-bias.left { background: var(--blue); }
+  .outlet-bias.center { background: var(--purple); }
+  .outlet-bias.right { background: var(--red); }
+  .outlet-name { font-size: 12px; font-weight: 700; width: 120px; flex-shrink: 0; color: #e2e8f0; }
+  .outlet-headline { font-family: 'IBM Plex Serif', Georgia, serif; font-size: 13.5px; color: #cbd5e1; font-style: italic; line-height: 1.45; flex: 1; }
+  .hl-analysis { margin-top: 20px; padding: 16px 18px; background: rgba(94,244,214,0.08); border-radius: 10px; border: 1px solid rgba(94,244,214,0.15); }
+  .hl-analysis p { font-size: 13px; color: #a8f0df; line-height: 1.7; }
+  .hl-analysis strong { color: var(--wb-accent); }
+  .weekly-summary { background: linear-gradient(135deg, rgba(94,244,214,0.06), rgba(139,138,253,0.06)); border-radius: 14px; padding: 28px; margin: 36px 0; border: 1px solid rgba(94,244,214,0.2); }
+  .weekly-summary h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 18px; }
+  .weekly-summary .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .stat-box { text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.7); border-radius: 10px; border: 1px solid rgba(94,244,214,0.2); }
+  .stat-box .num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #065e4a; line-height: 1; }
+  .stat-box .label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #0a6b56; margin-top: 4px; font-weight: 500; }
+  .weekly-summary p { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+  .weekly-summary strong { color: var(--text); }
+  .bias-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .bias-card { padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; }
+  .bias-card.right-missed { background: rgba(184,168,152,0.1); border: 1px solid rgba(184,168,152,0.2); color: #5c4e3a; }
+  .bias-card.left-missed { background: rgba(107,114,128,0.1); border: 1px solid rgba(107,114,128,0.2); color: #3c4043; }
+  .bias-card strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.7; }
+  footer { text-align: center; padding: 36px 0 16px; border-top: 2px solid var(--text); margin-top: 48px; }
+  footer .wb-cube { width: 28px; height: 28px; color: var(--text-muted); margin-bottom: 6px; }
+  footer .wb-wordmark { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 10px; }
+  footer .brand-bar { width: 60px; height: 2px; background: var(--wb-accent-dim); margin: 8px auto 12px; border-radius: 2px; }
+  footer .credits { font-size: 11px; color: var(--text-muted); line-height: 1.6; }
+  @media (max-width: 520px) {
+    .container { padding: 16px 14px 40px; }
+    header .logo { font-size: 32px; }
+    .story { padding: 20px; }
+    .story h2 { font-size: 19px; }
+    .highlight-section { padding: 24px 20px; }
+    .highlight-section h2 { font-size: 20px; }
+    .outlet-row { flex-wrap: wrap; gap: 6px; }
+    .outlet-name { width: auto; }
+    .outlet-headline { min-width: 100%; }
+    .weekly-summary .stat-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-box .num { font-size: 22px; }
+    .bias-summary { grid-template-columns: 1fr; }
+    .media-columns { grid-template-columns: 1fr; }
+    .date-nav { flex-wrap: wrap; }
+  }
+  .date-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .date-nav-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-right: 4px; }
+  .date-link { font-size: 11px; color: var(--text-secondary); text-decoration: none; padding: 3px 10px; border-radius: 14px; border: 1px solid var(--border); transition: all 0.15s; font-weight: 500; }
+  .date-link:hover { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); }
+  .date-link.active { background: var(--wb-dark); color: var(--wb-accent); border-color: var(--wb-dark); font-weight: 700; pointer-events: none; }</style></head><body><div class="container">
+<header><div class="flag">&#127471;&#127477;</div><div class="logo">News from Japón</div><div class="edition">BLINDSPOT REPORT</div><div class="date">Friday 28 August, 2026</div>
+<nav class="toc"><a href="#blindspots">Blindspots</a><a href="#titulares">Headlines</a><a href="#resumen">Summary</a></nav>
+<div class="explainer"><h3>How to read this report</h3><p>Each story includes a <strong>coverage bar</strong>. When one side has little coverage, that's a <strong>blindspot</strong>.</p>
+<div class="legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--blue)"></span> Left</span><span class="legend-item"><span class="legend-swatch" style="background:var(--purple)"></span> Center</span><span class="legend-item"><span class="legend-swatch" style="background:var(--red)"></span> Right</span></div></div>
+<div class="media-map"><h3>Media map</h3><div class="media-columns"><div class="media-col left"><h4>Left</h4><ul><li>El Watan</li>
+<li>Interlignes</li>
+<li>Radio M</li>
+<li>El Manchar</li>
+<li>Casbah Tribune</li></ul></div><div class="media-col center"><h4>Center</h4><ul><li>TSA</li>
+<li>APS</li>
+<li>El Khabar</li>
+<li>L Expression</li>
+<li>Le Soir d Algerie</li>
+<li>Algerie 360</li></ul></div><div class="media-col right"><h4>Right</h4><ul><li>Echorouk</li>
+<li>El Moudjahid</li>
+<li>Horizons</li></ul></div></div></div>
+<div id="blindspots"><div class="section-divider"><h2>Same data, opposing narratives</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Good cross-spectrum coverage</span>
+    <span class="source-count">6 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Iran Closes Hormuz Strait Again; South Korea Sends Envoy</a></h2>
+  <p class="summary">Iran has re-closed the Strait of Hormuz in response to Israeli strikes on Lebanon, disrupting global oil flows. South Korea is dispatching a foreign ministry envoy to Tehran for direct negotiations. Trump has proposed jointly collecting transit tolls on the strait.</p>
+  <div class="context">
+    <strong>Context:</strong> The Strait of $Hormuz handles roughly 20% of global oil supply. Its closure directly threatens Japan&#x27;s energy security as a major oil importer.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:33%"><span>Left 33%</span></div>
+      <div class="bar-center" style="width:33%"><span>Center 33%</span></div>
+      <div class="bar-right" style="width:34%"><span>Right 34%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+    <a href="https://mainichi.jp" target="_blank" rel="noopener" class="bias-center">Mainichi Shimbun</a>
+    <a href="https://mainichi.jp" target="_blank" rel="noopener" class="bias-center">Mainichi Shimbun</a>
+    <a href="https://www.yomiuri.co.jp" target="_blank" rel="noopener" class="bias-right">Yomiuri Shimbun</a>
+    <a href="https://www.sankei.com" target="_blank" rel="noopener" class="bias-right">Sankei Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> All outlets covered the crisis but with different angles: left focused on humanitarian context in Lebanon, center on diplomatic efforts, and right on geopolitical maneuvering and economic implications.</div>
+</div>
+<div class="section-divider"><h2>Left blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No left-leaning coverage on corporate governance</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.nikkei.com" target="_blank" rel="noopener">Seven &amp; i Profits Up 69% but Convenience Store Recovery Stalls</a></h2>
+  <p class="summary">Seven &amp; i Holdings reported a 69% increase in net profit, but its core convenience store business remains under pressure with rising expenses. The company also postponed the IPO of its US subsidiary.</p>
+  <div class="context">
+    <strong>Context:</strong> Seven &amp; i has been restructuring after fending off a takeover bid, with pressure to improve its US operations.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-center" style="width:50%"><span>Center 50%</span></div>
+      <div class="bar-right" style="width:50%"><span>Right 50%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.nikkei.com" target="_blank" rel="noopener" class="bias-center">Nikkei</a>
+    <a href="https://www.sankei.com" target="_blank" rel="noopener" class="bias-right">Sankei Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Nikkei framed results positively (profit up) while Sankei emphasized the continued underperformance and IPO delay.</div>
+</div>
+<div class="section-divider"><h2>Right blindspots</h2></div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No conservative outlet coverage</span>
+    <span class="source-count">4 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Fujii Sota Wins Game 1 of Meijin Title Match</a></h2>
+  <p class="summary">Shogi champion Fujii Sota won the first game of the 7-game Meijin title match against Itodani Tetsuya 8-dan, starting his bid for a 4th consecutive title defense on a strong note.</p>
+  <div class="context">
+    <strong>Context:</strong> Fujii is considered one of the greatest shogi players in history and holds multiple titles simultaneously.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:50%"><span>Left 50%</span></div>
+      <div class="bar-center" style="width:50%"><span>Center 50%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+    <a href="https://mainichi.jp" target="_blank" rel="noopener" class="bias-center">Mainichi Shimbun</a>
+    <a href="https://mainichi.jp" target="_blank" rel="noopener" class="bias-center">Mainichi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Cultural story covered by left and center outlets but absent from right-leaning papers, which focused on geopolitics and business.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No business or conservative perspective supporting flexibility</span>
+    <span class="source-count">2 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">LDP Proposes Relaxing Overtime Labor Regulations</a></h2>
+  <p class="summary">The ruling LDP is preparing to recommend that the government ease labor inspection guidelines around overtime, potentially allowing more than 45 hours of monthly overtime. The proposal also seeks to promote broader adoption of the Article 36 labor agreement.</p>
+  <div class="context">
+    <strong>Context:</strong> Japan introduced overtime caps in 2019 to combat karoshi (death from overwork). This rollback signals business-friendly deregulation.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Only left-leaning outlets covered this labor deregulation push, framing it critically. Business and conservative perspectives that might support flexibility are absent.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Conservative outlets silent on imperial succession reform</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Centrist Party Backs Retaining Female Imperial Family Status</a></h2>
+  <p class="summary">The Chudo (centrist reform coalition) announced support for allowing female members of the imperial family to retain their royal status after marriage, based on an internal party survey.</p>
+  <div class="context">
+    <strong>Context:</strong> Japan faces a succession crisis with few male heirs in the imperial family, making female succession a politically sensitive topic.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Only Asahi covered this politically sensitive story about imperial succession reform, a topic conservatives typically oppose changing.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No right-leaning coverage</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Hungary&#x27;s Orban Shows Close Russia Ties Ahead of Election</a></h2>
+  <p class="summary">Hungarian PM Viktor Orban publicly stated he would help Russia with anything needed, highlighting his close relationship with Moscow ahead of Hungary&#x27;s April 12 general election.</p>
+  <div class="context">
+    <strong>Context:</strong> Orban has been the most Russia-friendly EU leader, frequently blocking EU sanctions and aid to Ukraine.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Only Asahi covered this European political story; right-leaning outlets may view Orban&#x27;s stance less critically.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left perspective on consumer impact</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Uniqlo Says Raw Material Price Hikes Have Limited Impact</a></h2>
+  <p class="summary">Fast Retailing (Uniqlo) stated that raw material cost increases due to the Iran crisis have limited impact so far, though future price hikes were not ruled out.</p>
+  <div class="context">
+    <strong>Context:</strong> The Iran-related oil price surge is raising costs across supply chains, affecting clothing retailers through synthetic fiber and transport costs.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Only Asahi covered Uniqlo&#x27;s response to raw material pressures, linking the Iran crisis to consumer goods pricing.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-leaning coverage of cultural stories</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Director Hamaguchi&#x27;s Rapid Rise to International Fame</a></h2>
+  <p class="summary">Director Ryusuke Hamaguchi has dramatically elevated his international profile since his first Cannes appearance 8 years ago, with his latest work selected for competition.</p>
+  <div class="context">
+    <strong>Context:</strong> Hamaguchi won the Oscar for Best International Feature Film with &#x27;Drive My Car&#x27; in 2022.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Arts and culture coverage remains concentrated in left-leaning outlets in Japan.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-leaning coverage</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Three Japanese Directors Selected for Cannes Competition</a></h2>
+  <p class="summary">For the first time in 25 years, three Japanese directors — Kore-eda, Hamaguchi, and Fukada — have been selected for the Cannes Film Festival&#x27;s main competition section.</p>
+  <div class="context">
+    <strong>Context:</strong> This is a historic achievement for Japanese cinema, reflecting a current golden age in international art house film.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A milestone for Japanese cinema covered only by Asahi, suggesting arts coverage is concentrated on the left.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-wing coverage of business impact survey</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">40% of Firms Would Cut Operations if Oil Prices Stay High</a></h2>
+  <p class="summary">A Teikoku Databank survey found that 40% of Japanese companies would significantly scale back core operations if current high oil prices persist for six months.</p>
+  <div class="context">
+    <strong>Context:</strong> Japan imports nearly all its oil, making it highly vulnerable to price shocks from the Hormuz Strait closure.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Important economic impact data covered only by Asahi, despite being highly relevant to business-focused outlets.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-wing coverage of energy policy</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.asahi.com" target="_blank" rel="noopener">Japan Plans Additional Release of Strategic Oil Reserves</a></h2>
+  <p class="summary">Japan is considering releasing approximately 20 days&#x27; worth of strategic petroleum reserves to compensate for supply shortfalls from alternative sourcing after Iran&#x27;s Hormuz closure.</p>
+  <div class="context">
+    <strong>Context:</strong> This follows Iran&#x27;s re-closure of the Strait of Hormuz, which has disrupted oil supplies to energy-dependent Japan.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.asahi.com" target="_blank" rel="noopener" class="bias-left">Asahi Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> A critical energy security policy move covered only by Asahi.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left-wing coverage</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener">Four Arrested for Defrauding Elderly with Fake Repair Scam</a></h2>
+  <p class="summary">Four men were arrested for scamming victims by claiming their circuit breakers needed urgent replacement to prevent fires, collecting approximately 47 million yen in fraudulent fees.</p>
+  <div class="context">
+    <strong>Context:</strong> Elderly fraud remains a major social issue in Japan&#x27;s aging society.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Consumer protection and fraud stories appear primarily in left-leaning outlets.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No right-wing perspective supporting amendments</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener">LDP Supermajority Could Accelerate Constitutional Amendment</a></h2>
+  <p class="summary">The House of Representatives Constitutional Review Board held its first discussion, with multiple calls for drafting specific amendment language, enabled by the LDP&#x27;s overwhelming parliamentary majority.</p>
+  <div class="context">
+    <strong>Context:</strong> Constitutional revision, particularly Article 9 regarding the military, has been a longstanding goal of Japan&#x27;s conservative establishment.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Tokyo Shimbun frames this with concern about &#x27;power of numbers&#x27;; pro-amendment right-wing outlets did not cover the session.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">No right-leaning coverage on base politics</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener">Okinawa Activists Urge Centrist Party to Oppose Henoko Base</a></h2>
+  <p class="summary">Three former candidates asked the Chudo party to oppose the Henoko US military base construction ahead of the Okinawa governor election, but the party maintained its ambiguous position.</p>
+  <div class="context">
+    <strong>Context:</strong> The US military base relocation to Henoko has been one of Japan&#x27;s most divisive political issues for decades.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Base opposition coverage appears only in left-leaning Tokyo Shimbun; right outlets supportive of the US alliance tend to avoid this framing.</div>
+</div>
+
+<div class="story">
+  <div class="story-meta">
+    <span class="blindspot-tag balanced">Only left coverage questioning sumo governance</span>
+    <span class="source-count">1 verified sources</span>
+  </div>
+  <h2><a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener">Sumo Stablemaster Demoted Over Violence but Stable Stays Open</a></h2>
+  <p class="summary">Isegahama-oyakata was demoted two ranks for a violence incident but his stable was not shut down, raising questions about inconsistent punishment compared to the earlier Miyagino stable closure.</p>
+  <div class="context">
+    <strong>Context:</strong> Sumo has faced recurring violence scandals, with debate over whether punishment is applied consistently.
+  </div>
+  <div class="coverage-bar-container">
+    <div class="coverage-bar-label">Coverage by leaning</div>
+    <div class="coverage-bar">
+      <div class="bar-left" style="width:100%"><span>Left 100%</span></div>
+    </div>
+  </div>
+  <div class="sources-list">
+    <a href="https://www.tokyo-np.co.jp" target="_blank" rel="noopener" class="bias-left">Tokyo Shimbun</a>
+  </div>
+  <div class="takeaway"><strong>&#128270; Why it matters:</strong> Tokyo Shimbun critically examines inconsistent punishments in sumo, a traditionally conservative institution.</div>
+</div>
+</div><div id="titulares"></div>
+<div id="resumen"><div class="weekly-summary"><h3>Daily summary</h3>
+<div class="stat-grid"><div class="stat-box"><div class="num">15</div><div class="label">Stories</div></div><div class="stat-box"><div class="num">14</div><div class="label">Outlets</div></div><div class="stat-box"><div class="num">?</div><div class="label">Articles</div></div></div>
+<p><strong>Main topics:</strong> </p><p><strong>Most balanced outlet:</strong> </p>
+<div class="bias-summary"><div class="bias-card right-missed"><strong>The right didn't cover:</strong> </div><div class="bias-card left-missed"><strong>The left didn't cover:</strong> </div></div>
+<p style="margin-top:20px;font-style:italic;text-align:center;font-size:15px;"><strong>&ldquo;No single source gives the full picture.&rdquo;</strong></p></div></div>
+<footer><p class="credits">WhiteBox News &middot; Automated media analysis &middot; Friday 28 August, 2026</p></footer></div></body></html>
